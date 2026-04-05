@@ -1,0 +1,25 @@
+profile: conservative
+
+commission: 0.00055
+stop_loss_pct: 0.03
+use_phase_filter: true
+short_only: false
+long_only: false
+adaptive_mode: true
+min_hold_bars: 10
+cooldown_bars: 3
+long_exit_confirm_bars: 7
+short_exit_confirm_bars: 4
+
+regime_filter_enabled: true
+extreme_zscore_cut: 2.20
+regime_entropy_cut: 1.55
+post_extreme_bars: 6
+
+use_dynamic_zscore: true
+dynamic_z_window: 400
+dynamic_z_percentile: 90
+dynamic_z_fallback_cut: 2.20
+dynamic_z_min_cut: 2.20
+dynamic_z_max_cut: 3.00
+dynamic_z_min_samples: 50

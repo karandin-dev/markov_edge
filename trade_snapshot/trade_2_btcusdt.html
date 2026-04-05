@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trade 2 - BTCUSDT</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #171a21;
+      --muted: #9aa4b2;
+      --text: #ecf0f7;
+      --grid: #2b3240;
+      --up: #2ecc71;
+      --down: #ff5c5c;
+      --accent: #4aa8ff;
+      --warn: #ffcd10;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.6fr 0.9fr;
+      gap: 18px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid #232834;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.22);
+      padding: 18px;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: 24px; margin-bottom: 8px; }
+    .sub { color: var(--muted); margin-bottom: 12px; }
+    .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      background: #202735;
+      border: 1px solid #303a4d;
+    }
+    .badge.win { color: var(--up); }
+    .badge.loss { color: var(--down); }
+    .badge.warn { color: var(--warn); }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .kv {
+      background: #121722;
+      border: 1px solid #252c39;
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .kv .k { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+    .kv .v { font-size: 15px; font-weight: 600; }
+    svg {
+      width: 100%;
+      height: auto;
+      background: #0d1118;
+      border-radius: 16px;
+      border: 1px solid #252c39;
+      display: block;
+    }
+    .legend {
+      margin-top: 12px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .legend span::before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .legend .entry::before { background: var(--accent); }
+    .legend .exit::before { background: var(--warn); }
+    .legend .up::before { background: var(--up); }
+    .legend .down::before { background: var(--down); }
+    .note {
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    @media (max-width: 980px) {
+      .wrap { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>BTCUSDT · сделка #2</h1>
+      <div class="sub">Окно: 2023-01-23 09:00 → 2023-01-24 22:00 · 48 свечей до входа, 100 после</div>
+      <div class="badges">
+        <div class="badge">LONG</div>
+        <div class="badge">state: strong_up</div>
+        <div class="badge">reason: signal_exit</div>
+        <div class="badge win">PnL USD: 0.19</div>
+        <div class="badge win">PnL %%: 0.048</div>
+      </div>
+      <svg id="chart" viewBox="0 0 1200 720" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="legend">
+        <span class="entry">вход</span>
+        <span class="exit">выход</span>
+        <span class="up">бычья свеча</span>
+        <span class="down">медвежья свеча</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Параметры входа</h2>
+      <div class="grid">
+        <div class="kv"><div class="k">Вход</div><div class="v">2023-01-23 21:00:00 UTC</div></div>
+        <div class="kv"><div class="k">Выход</div><div class="v">2023-01-24 01:30:00 UTC</div></div>
+        <div class="kv"><div class="k">Entry price</div><div class="v">22957.000000</div></div>
+        <div class="kv"><div class="k">Exit price</div><div class="v">22968.000000</div></div>
+        <div class="kv"><div class="k">Z-score</div><div class="v">1.5153</div></div>
+        <div class="kv"><div class="k">Entropy</div><div class="v">1.2194</div></div>
+        <div class="kv"><div class="k">Long score</div><div class="v">0.3816</div></div>
+        <div class="kv"><div class="k">Short score</div><div class="v">-0.2499</div></div>
+        <div class="kv"><div class="k">Hold bars</div><div class="v">18</div></div>
+        <div class="kv"><div class="k">Fee USD</div><div class="v">0.2191</div></div>
+      </div>
+      <h3 style="margin-top:18px;">Как читать</h3>
+      <div class="note">
+        Синяя вертикаль — момент входа. Жёлтая — выход. Сверху над входом есть подпись с state, z-score и entropy. Окно вокруг сделки помогает понять, вход был в начале движения или уже в экстремуме.
+      </div>
+      <div class="note" style="margin-top:10px;">
+        Сгенерировано: 2026-03-31 09:24:43 UTC
+      </div>
+    </div>
+  </div>
+
+<script>
+const candles = [{"Index":0,"Time":"2023-01-23 09:00","Open":22716.5,"High":22742,"Low":22703,"Close":22738,"Volume":391.334,"IsEntry":false,"IsExit":false},{"Index":1,"Time":"2023-01-23 09:15","Open":22738,"High":22780,"Low":22731,"Close":22779.5,"Volume":475.478,"IsEntry":false,"IsExit":false},{"Index":2,"Time":"2023-01-23 09:30","Open":22779.5,"High":22789.5,"Low":22756,"Close":22766,"Volume":876.1,"IsEntry":false,"IsExit":false},{"Index":3,"Time":"2023-01-23 09:45","Open":22766,"High":22790.5,"Low":22745,"Close":22785.5,"Volume":504.593,"IsEntry":false,"IsExit":false},{"Index":4,"Time":"2023-01-23 10:00","Open":22785.5,"High":22920,"Low":22770.5,"Close":22858,"Volume":3243.671,"IsEntry":false,"IsExit":false},{"Index":5,"Time":"2023-01-23 10:15","Open":22858,"High":22942,"Low":22836,"Close":22898,"Volume":2639.387,"IsEntry":false,"IsExit":false},{"Index":6,"Time":"2023-01-23 10:30","Open":22898,"High":22926,"Low":22883,"Close":22904,"Volume":1287.466,"IsEntry":false,"IsExit":false},{"Index":7,"Time":"2023-01-23 10:45","Open":22904,"High":22959,"Low":22893.5,"Close":22912.5,"Volume":1674.04,"IsEntry":false,"IsExit":false},{"Index":8,"Time":"2023-01-23 11:00","Open":22912.5,"High":22930,"Low":22835.5,"Close":22870,"Volume":1862.242,"IsEntry":false,"IsExit":false},{"Index":9,"Time":"2023-01-23 11:15","Open":22870,"High":22892.5,"Low":22827.5,"Close":22832.5,"Volume":1264.074,"IsEntry":false,"IsExit":false},{"Index":10,"Time":"2023-01-23 11:30","Open":22832.5,"High":22911.5,"Low":22832.5,"Close":22884,"Volume":1026.046,"IsEntry":false,"IsExit":false},{"Index":11,"Time":"2023-01-23 11:45","Open":22884,"High":22915,"Low":22838,"Close":22907.5,"Volume":1257.946,"IsEntry":false,"IsExit":false},{"Index":12,"Time":"2023-01-23 12:00","Open":22907.5,"High":22919.5,"Low":22808,"Close":22874,"Volume":2055.118,"IsEntry":false,"IsExit":false},{"Index":13,"Time":"2023-01-23 12:15","Open":22874,"High":22908,"Low":22852.5,"Close":22869,"Volume":940.573,"IsEntry":false,"IsExit":false},{"Index":14,"Time":"2023-01-23 12:30","Open":22869,"High":22910,"Low":22855.5,"Close":22910,"Volume":522.429,"IsEntry":false,"IsExit":false},{"Index":15,"Time":"2023-01-23 12:45","Open":22910,"High":22988,"Low":22898,"Close":22911.5,"Volume":2968.153,"IsEntry":false,"IsExit":false},{"Index":16,"Time":"2023-01-23 13:00","Open":22911.5,"High":22939,"Low":22834,"Close":22894,"Volume":1861.317,"IsEntry":false,"IsExit":false},{"Index":17,"Time":"2023-01-23 13:15","Open":22894,"High":22927,"Low":22860,"Close":22877,"Volume":1041.75,"IsEntry":false,"IsExit":false},{"Index":18,"Time":"2023-01-23 13:30","Open":22877,"High":22889.5,"Low":22836.5,"Close":22873.5,"Volume":907.82,"IsEntry":false,"IsExit":false},{"Index":19,"Time":"2023-01-23 13:45","Open":22873.5,"High":22874,"Low":22649,"Close":22797,"Volume":7937.859,"IsEntry":false,"IsExit":false},{"Index":20,"Time":"2023-01-23 14:00","Open":22797,"High":22824,"Low":22672.5,"Close":22731,"Volume":3321.011,"IsEntry":false,"IsExit":false},{"Index":21,"Time":"2023-01-23 14:15","Open":22731,"High":22801.5,"Low":22682.5,"Close":22792,"Volume":1994.871,"IsEntry":false,"IsExit":false},{"Index":22,"Time":"2023-01-23 14:30","Open":22792,"High":22826,"Low":22735.5,"Close":22805,"Volume":2231.433,"IsEntry":false,"IsExit":false},{"Index":23,"Time":"2023-01-23 14:45","Open":22805,"High":23160,"Low":22459.5,"Close":22620,"Volume":27531.748,"IsEntry":false,"IsExit":false},{"Index":24,"Time":"2023-01-23 15:00","Open":22620,"High":22802.5,"Low":22571,"Close":22777.5,"Volume":8373.135,"IsEntry":false,"IsExit":false},{"Index":25,"Time":"2023-01-23 15:15","Open":22777.5,"High":22874,"Low":22729,"Close":22854.5,"Volume":3971.588,"IsEntry":false,"IsExit":false},{"Index":26,"Time":"2023-01-23 15:30","Open":22854.5,"High":22902,"Low":22795.5,"Close":22858.5,"Volume":2160.306,"IsEntry":false,"IsExit":false},{"Index":27,"Time":"2023-01-23 15:45","Open":22858.5,"High":22919,"Low":22831.5,"Close":22849.5,"Volume":1828.11,"IsEntry":false,"IsExit":false},{"Index":28,"Time":"2023-01-23 16:00","Open":22849.5,"High":22939.5,"Low":22849,"Close":22870.5,"Volume":1551.036,"IsEntry":false,"IsExit":false},{"Index":29,"Time":"2023-01-23 16:15","Open":22870.5,"High":22923,"Low":22800.5,"Close":22807,"Volume":1429.733,"IsEntry":false,"IsExit":false},{"Index":30,"Time":"2023-01-23 16:30","Open":22807,"High":22882,"Low":22757.5,"Close":22862.5,"Volume":2233.095,"IsEntry":false,"IsExit":false},{"Index":31,"Time":"2023-01-23 16:45","Open":22862.5,"High":22931,"Low":22854.5,"Close":22906,"Volume":1164.642,"IsEntry":false,"IsExit":false},{"Index":32,"Time":"2023-01-23 17:00","Open":22906,"High":22909,"Low":22853,"Close":22874.5,"Volume":772.392,"IsEntry":false,"IsExit":false},{"Index":33,"Time":"2023-01-23 17:15","Open":22874.5,"High":22924,"Low":22869,"Close":22904,"Volume":536.682,"IsEntry":false,"IsExit":false},{"Index":34,"Time":"2023-01-23 17:30","Open":22904,"High":22908,"Low":22868,"Close":22882,"Volume":335.55,"IsEntry":false,"IsExit":false},{"Index":35,"Time":"2023-01-23 17:45","Open":22882,"High":23070.5,"Low":22848,"Close":23067.5,"Volume":3803.148,"IsEntry":false,"IsExit":false},{"Index":36,"Time":"2023-01-23 18:00","Open":23067.5,"High":23131.5,"Low":22995,"Close":23129.5,"Volume":4718.061,"IsEntry":false,"IsExit":false},{"Index":37,"Time":"2023-01-23 18:15","Open":23129.5,"High":23187,"Low":23080,"Close":23107,"Volume":2914.016,"IsEntry":false,"IsExit":false},{"Index":38,"Time":"2023-01-23 18:30","Open":23107,"High":23153.5,"Low":23079.5,"Close":23113,"Volume":1975.722,"IsEntry":false,"IsExit":false},{"Index":39,"Time":"2023-01-23 18:45","Open":23113,"High":23124,"Low":22852.5,"Close":22930,"Volume":4239.509,"IsEntry":false,"IsExit":false},{"Index":40,"Time":"2023-01-23 19:00","Open":22930,"High":22964.5,"Low":22782.5,"Close":22935.5,"Volume":5386.679,"IsEntry":false,"IsExit":false},{"Index":41,"Time":"2023-01-23 19:15","Open":22935.5,"High":22935.5,"Low":22800.5,"Close":22851,"Volume":1694.83,"IsEntry":false,"IsExit":false},{"Index":42,"Time":"2023-01-23 19:30","Open":22851,"High":22883.5,"Low":22666,"Close":22745.5,"Volume":5242.51,"IsEntry":false,"IsExit":false},{"Index":43,"Time":"2023-01-23 19:45","Open":22745.5,"High":22798.5,"Low":22650,"Close":22792,"Volume":3042.783,"IsEntry":false,"IsExit":false},{"Index":44,"Time":"2023-01-23 20:00","Open":22792,"High":22866.5,"Low":22753.5,"Close":22843,"Volume":1687.407,"IsEntry":false,"IsExit":false},{"Index":45,"Time":"2023-01-23 20:15","Open":22843,"High":22873.5,"Low":22817.5,"Close":22847.5,"Volume":1041.469,"IsEntry":false,"IsExit":false},{"Index":46,"Time":"2023-01-23 20:30","Open":22847.5,"High":22890,"Low":22821,"Close":22886.5,"Volume":734.791,"IsEntry":false,"IsExit":false},{"Index":47,"Time":"2023-01-23 20:45","Open":22886.5,"High":23038.5,"Low":22865.5,"Close":23023.5,"Volume":2358.114,"IsEntry":false,"IsExit":false},{"Index":48,"Time":"2023-01-23 21:00","Open":23023.5,"High":23047,"Low":22939,"Close":22957,"Volume":1466.752,"IsEntry":true,"IsExit":false},{"Index":49,"Time":"2023-01-23 21:15","Open":22957,"High":22992.5,"Low":22943,"Close":22985.5,"Volume":415.336,"IsEntry":false,"IsExit":false},{"Index":50,"Time":"2023-01-23 21:30","Open":22985.5,"High":23014.5,"Low":22962,"Close":23014,"Volume":489.288,"IsEntry":false,"IsExit":false},{"Index":51,"Time":"2023-01-23 21:45","Open":23014,"High":23014.5,"Low":22942.5,"Close":22997,"Volume":722.945,"IsEntry":false,"IsExit":false},{"Index":52,"Time":"2023-01-23 22:00","Open":22997,"High":23037,"Low":22964,"Close":22965,"Volume":820.838,"IsEntry":false,"IsExit":false},{"Index":53,"Time":"2023-01-23 22:15","Open":22965,"High":22994.5,"Low":22965,"Close":22975.5,"Volume":319.706,"IsEntry":false,"IsExit":false},{"Index":54,"Time":"2023-01-23 22:30","Open":22975.5,"High":23003.5,"Low":22932,"Close":22946,"Volume":728.629,"IsEntry":false,"IsExit":false},{"Index":55,"Time":"2023-01-23 22:45","Open":22946,"High":22971,"Low":22832,"Close":22917,"Volume":1718.766,"IsEntry":false,"IsExit":false},{"Index":56,"Time":"2023-01-23 23:00","Open":22917,"High":22932.5,"Low":22880,"Close":22902.5,"Volume":794.049,"IsEntry":false,"IsExit":false},{"Index":57,"Time":"2023-01-23 23:15","Open":22902.5,"High":22924,"Low":22864,"Close":22922.5,"Volume":454.859,"IsEntry":false,"IsExit":false},{"Index":58,"Time":"2023-01-23 23:30","Open":22922.5,"High":22944,"Low":22886.5,"Close":22931,"Volume":746.734,"IsEntry":false,"IsExit":false},{"Index":59,"Time":"2023-01-23 23:45","Open":22931,"High":22953,"Low":22904.5,"Close":22908.5,"Volume":665.44,"IsEntry":false,"IsExit":false},{"Index":60,"Time":"2023-01-24 00:00","Open":22908.5,"High":22939,"Low":22861.5,"Close":22935.5,"Volume":816.169,"IsEntry":false,"IsExit":false},{"Index":61,"Time":"2023-01-24 00:15","Open":22935.5,"High":22981.5,"Low":22925,"Close":22973.5,"Volume":739.539,"IsEntry":false,"IsExit":false},{"Index":62,"Time":"2023-01-24 00:30","Open":22973.5,"High":23000,"Low":22961.5,"Close":22972.5,"Volume":1018.505,"IsEntry":false,"IsExit":false},{"Index":63,"Time":"2023-01-24 00:45","Open":22972.5,"High":22987,"Low":22936,"Close":22981,"Volume":573.842,"IsEntry":false,"IsExit":false},{"Index":64,"Time":"2023-01-24 01:00","Open":22981,"High":23028,"Low":22975,"Close":22979,"Volume":931.325,"IsEntry":false,"IsExit":false},{"Index":65,"Time":"2023-01-24 01:15","Open":22979,"High":22998,"Low":22926,"Close":22938.5,"Volume":464.963,"IsEntry":false,"IsExit":false},{"Index":66,"Time":"2023-01-24 01:30","Open":22938.5,"High":22983,"Low":22930.5,"Close":22968,"Volume":636.507,"IsEntry":false,"IsExit":true},{"Index":67,"Time":"2023-01-24 01:45","Open":22968,"High":23108,"Low":22968,"Close":23092.5,"Volume":2597.507,"IsEntry":false,"IsExit":false},{"Index":68,"Time":"2023-01-24 02:00","Open":23092.5,"High":23121,"Low":23074,"Close":23099,"Volume":1408.123,"IsEntry":false,"IsExit":false},{"Index":69,"Time":"2023-01-24 02:15","Open":23099,"High":23145.5,"Low":23087.5,"Close":23119,"Volume":1672.015,"IsEntry":false,"IsExit":false},{"Index":70,"Time":"2023-01-24 02:30","Open":23119,"High":23125,"Low":23039,"Close":23084.5,"Volume":1272.943,"IsEntry":false,"IsExit":false},{"Index":71,"Time":"2023-01-24 02:45","Open":23084.5,"High":23090,"Low":23033,"Close":23033,"Volume":838.844,"IsEntry":false,"IsExit":false},{"Index":72,"Time":"2023-01-24 03:00","Open":23033,"High":23050,"Low":23019.5,"Close":23031,"Volume":567.005,"IsEntry":false,"IsExit":false},{"Index":73,"Time":"2023-01-24 03:15","Open":23031,"High":23049.5,"Low":23005,"Close":23021.5,"Volume":484.26,"IsEntry":false,"IsExit":false},{"Index":74,"Time":"2023-01-24 03:30","Open":23021.5,"High":23063,"Low":23018,"Close":23051.5,"Volume":653.046,"IsEntry":false,"IsExit":false},{"Index":75,"Time":"2023-01-24 03:45","Open":23051.5,"High":23080,"Low":23040.5,"Close":23074.5,"Volume":397.384,"IsEntry":false,"IsExit":false},{"Index":76,"Time":"2023-01-24 04:00","Open":23074.5,"High":23088,"Low":23069,"Close":23084.5,"Volume":382.351,"IsEntry":false,"IsExit":false},{"Index":77,"Time":"2023-01-24 04:15","Open":23084.5,"High":23118.5,"Low":23073,"Close":23105,"Volume":876.761,"IsEntry":false,"IsExit":false},{"Index":78,"Time":"2023-01-24 04:30","Open":23105,"High":23105,"Low":23057.5,"Close":23087,"Volume":643.122,"IsEntry":false,"IsExit":false},{"Index":79,"Time":"2023-01-24 04:45","Open":23087,"High":23089.5,"Low":23060.5,"Close":23070.5,"Volume":161.222,"IsEntry":false,"IsExit":false},{"Index":80,"Time":"2023-01-24 05:00","Open":23070.5,"High":23070.5,"Low":23026,"Close":23049.5,"Volume":511.221,"IsEntry":false,"IsExit":false},{"Index":81,"Time":"2023-01-24 05:15","Open":23049.5,"High":23071.5,"Low":23037,"Close":23071,"Volume":332.524,"IsEntry":false,"IsExit":false},{"Index":82,"Time":"2023-01-24 05:30","Open":23071,"High":23165.5,"Low":23071,"Close":23149.5,"Volume":1495.787,"IsEntry":false,"IsExit":false},{"Index":83,"Time":"2023-01-24 05:45","Open":23149.5,"High":23159,"Low":23088.5,"Close":23115,"Volume":1044.012,"IsEntry":false,"IsExit":false},{"Index":84,"Time":"2023-01-24 06:00","Open":23115,"High":23154,"Low":23115,"Close":23122.5,"Volume":706.617,"IsEntry":false,"IsExit":false},{"Index":85,"Time":"2023-01-24 06:15","Open":23122.5,"High":23143,"Low":23107,"Close":23126.5,"Volume":547.993,"IsEntry":false,"IsExit":false},{"Index":86,"Time":"2023-01-24 06:30","Open":23126.5,"High":23128,"Low":23090,"Close":23103.5,"Volume":456.876,"IsEntry":false,"IsExit":false},{"Index":87,"Time":"2023-01-24 06:45","Open":23103.5,"High":23110,"Low":23062.5,"Close":23093.5,"Volume":702.89,"IsEntry":false,"IsExit":false},{"Index":88,"Time":"2023-01-24 07:00","Open":23093.5,"High":23103,"Low":23083.5,"Close":23103,"Volume":393.166,"IsEntry":false,"IsExit":false},{"Index":89,"Time":"2023-01-24 07:15","Open":23103,"High":23125,"Low":23088,"Close":23091.5,"Volume":584.11,"IsEntry":false,"IsExit":false},{"Index":90,"Time":"2023-01-24 07:30","Open":23091.5,"High":23092,"Low":23037.5,"Close":23050.5,"Volume":760.474,"IsEntry":false,"IsExit":false},{"Index":91,"Time":"2023-01-24 07:45","Open":23050.5,"High":23064.5,"Low":23006,"Close":23050,"Volume":1039.5,"IsEntry":false,"IsExit":false},{"Index":92,"Time":"2023-01-24 08:00","Open":23050,"High":23064,"Low":23030,"Close":23038,"Volume":453.899,"IsEntry":false,"IsExit":false},{"Index":93,"Time":"2023-01-24 08:15","Open":23038,"High":23087,"Low":23037.5,"Close":23070,"Volume":331.486,"IsEntry":false,"IsExit":false},{"Index":94,"Time":"2023-01-24 08:30","Open":23070,"High":23078,"Low":23040,"Close":23077.5,"Volume":260.322,"IsEntry":false,"IsExit":false},{"Index":95,"Time":"2023-01-24 08:45","Open":23077.5,"High":23077.5,"Low":23043.5,"Close":23046,"Volume":405.959,"IsEntry":false,"IsExit":false},{"Index":96,"Time":"2023-01-24 09:00","Open":23046,"High":23050,"Low":22800,"Close":22910.5,"Volume":7737.404,"IsEntry":false,"IsExit":false},{"Index":97,"Time":"2023-01-24 09:15","Open":22910.5,"High":22954,"Low":22883.5,"Close":22913,"Volume":1746.456,"IsEntry":false,"IsExit":false},{"Index":98,"Time":"2023-01-24 09:30","Open":22913,"High":22921,"Low":22770,"Close":22811,"Volume":4617.738,"IsEntry":false,"IsExit":false},{"Index":99,"Time":"2023-01-24 09:45","Open":22811,"High":22893,"Low":22801,"Close":22850,"Volume":1817.043,"IsEntry":false,"IsExit":false},{"Index":100,"Time":"2023-01-24 10:00","Open":22850,"High":22904,"Low":22845.5,"Close":22882,"Volume":1259.791,"IsEntry":false,"IsExit":false},{"Index":101,"Time":"2023-01-24 10:15","Open":22882,"High":22924,"Low":22860,"Close":22913.5,"Volume":1282.356,"IsEntry":false,"IsExit":false},{"Index":102,"Time":"2023-01-24 10:30","Open":22913.5,"High":22937.5,"Low":22900,"Close":22930,"Volume":666.736,"IsEntry":false,"IsExit":false},{"Index":103,"Time":"2023-01-24 10:45","Open":22930,"High":22933,"Low":22901,"Close":22902.5,"Volume":642.12,"IsEntry":false,"IsExit":false},{"Index":104,"Time":"2023-01-24 11:00","Open":22902.5,"High":22919.5,"Low":22871,"Close":22905.5,"Volume":876.443,"IsEntry":false,"IsExit":false},{"Index":105,"Time":"2023-01-24 11:15","Open":22905.5,"High":22932.5,"Low":22887.5,"Close":22926,"Volume":390.078,"IsEntry":false,"IsExit":false},{"Index":106,"Time":"2023-01-24 11:30","Open":22926,"High":22934,"Low":22903.5,"Close":22903.5,"Volume":539.962,"IsEntry":false,"IsExit":false},{"Index":107,"Time":"2023-01-24 11:45","Open":22903.5,"High":22925,"Low":22871,"Close":22917.5,"Volume":542.978,"IsEntry":false,"IsExit":false},{"Index":108,"Time":"2023-01-24 12:00","Open":22917.5,"High":22930,"Low":22882,"Close":22889.5,"Volume":527.296,"IsEntry":false,"IsExit":false},{"Index":109,"Time":"2023-01-24 12:15","Open":22889.5,"High":22994,"Low":22887,"Close":22994,"Volume":1369.481,"IsEntry":false,"IsExit":false},{"Index":110,"Time":"2023-01-24 12:30","Open":22994,"High":23030,"Low":22960.5,"Close":22981,"Volume":2093.448,"IsEntry":false,"IsExit":false},{"Index":111,"Time":"2023-01-24 12:45","Open":22981,"High":22981.5,"Low":22949,"Close":22957.5,"Volume":682.961,"IsEntry":false,"IsExit":false},{"Index":112,"Time":"2023-01-24 13:00","Open":22957.5,"High":23010,"Low":22951.5,"Close":22996.5,"Volume":1040.783,"IsEntry":false,"IsExit":false},{"Index":113,"Time":"2023-01-24 13:15","Open":22996.5,"High":23004.5,"Low":22936,"Close":22953.5,"Volume":660.284,"IsEntry":false,"IsExit":false},{"Index":114,"Time":"2023-01-24 13:30","Open":22953.5,"High":22969.5,"Low":22780,"Close":22816,"Volume":5386.718,"IsEntry":false,"IsExit":false},{"Index":115,"Time":"2023-01-24 13:45","Open":22816,"High":22877,"Low":22814.5,"Close":22860,"Volume":1532.451,"IsEntry":false,"IsExit":false},{"Index":116,"Time":"2023-01-24 14:00","Open":22860,"High":22948.5,"Low":22802.5,"Close":22933.5,"Volume":2319.213,"IsEntry":false,"IsExit":false},{"Index":117,"Time":"2023-01-24 14:15","Open":22933.5,"High":22937,"Low":22797.5,"Close":22851,"Volume":2093.695,"IsEntry":false,"IsExit":false},{"Index":118,"Time":"2023-01-24 14:30","Open":22851,"High":22885,"Low":22687,"Close":22842,"Volume":7547.998,"IsEntry":false,"IsExit":false},{"Index":119,"Time":"2023-01-24 14:45","Open":22842,"High":22976,"Low":22810,"Close":22864.5,"Volume":4198.342,"IsEntry":false,"IsExit":false},{"Index":120,"Time":"2023-01-24 15:00","Open":22864.5,"High":22891.5,"Low":22746,"Close":22890.5,"Volume":3986.502,"IsEntry":false,"IsExit":false},{"Index":121,"Time":"2023-01-24 15:15","Open":22890.5,"High":22916.5,"Low":22845,"Close":22905,"Volume":1811.266,"IsEntry":false,"IsExit":false},{"Index":122,"Time":"2023-01-24 15:30","Open":22905,"High":22923,"Low":22856,"Close":22909,"Volume":860.471,"IsEntry":false,"IsExit":false},{"Index":123,"Time":"2023-01-24 15:45","Open":22909,"High":22960,"Low":22898,"Close":22931.5,"Volume":1680.956,"IsEntry":false,"IsExit":false},{"Index":124,"Time":"2023-01-24 16:00","Open":22931.5,"High":22942,"Low":22880.5,"Close":22895,"Volume":689.794,"IsEntry":false,"IsExit":false},{"Index":125,"Time":"2023-01-24 16:15","Open":22895,"High":22952.5,"Low":22870.5,"Close":22947,"Volume":980.148,"IsEntry":false,"IsExit":false},{"Index":126,"Time":"2023-01-24 16:30","Open":22947,"High":22949,"Low":22879.5,"Close":22897.5,"Volume":564.419,"IsEntry":false,"IsExit":false},{"Index":127,"Time":"2023-01-24 16:45","Open":22897.5,"High":22915,"Low":22836.5,"Close":22875,"Volume":1025.661,"IsEntry":false,"IsExit":false},{"Index":128,"Time":"2023-01-24 17:00","Open":22875,"High":22888,"Low":22786,"Close":22880,"Volume":1766.147,"IsEntry":false,"IsExit":false},{"Index":129,"Time":"2023-01-24 17:15","Open":22880,"High":22928.5,"Low":22860,"Close":22904,"Volume":939.075,"IsEntry":false,"IsExit":false},{"Index":130,"Time":"2023-01-24 17:30","Open":22904,"High":22923.5,"Low":22873.5,"Close":22897.5,"Volume":609.921,"IsEntry":false,"IsExit":false},{"Index":131,"Time":"2023-01-24 17:45","Open":22897.5,"High":22926,"Low":22890,"Close":22913.5,"Volume":653.73,"IsEntry":false,"IsExit":false},{"Index":132,"Time":"2023-01-24 18:00","Open":22913.5,"High":23007.5,"Low":22876,"Close":22999.5,"Volume":2179.696,"IsEntry":false,"IsExit":false},{"Index":133,"Time":"2023-01-24 18:15","Open":22999.5,"High":23050,"Low":22949.5,"Close":22995,"Volume":2882.28,"IsEntry":false,"IsExit":false},{"Index":134,"Time":"2023-01-24 18:30","Open":22995,"High":23041,"Low":22977,"Close":23009,"Volume":879.523,"IsEntry":false,"IsExit":false},{"Index":135,"Time":"2023-01-24 18:45","Open":23009,"High":23028.5,"Low":22979.5,"Close":22997,"Volume":650.386,"IsEntry":false,"IsExit":false},{"Index":136,"Time":"2023-01-24 19:00","Open":22997,"High":22997.5,"Low":22959,"Close":22987,"Volume":529.868,"IsEntry":false,"IsExit":false},{"Index":137,"Time":"2023-01-24 19:15","Open":22987,"High":23012,"Low":22980.5,"Close":22998,"Volume":345.013,"IsEntry":false,"IsExit":false},{"Index":138,"Time":"2023-01-24 19:30","Open":22998,"High":23086.5,"Low":22988.5,"Close":23027.5,"Volume":1319.902,"IsEntry":false,"IsExit":false},{"Index":139,"Time":"2023-01-24 19:45","Open":23027.5,"High":23063.5,"Low":22989.5,"Close":23017,"Volume":966.133,"IsEntry":false,"IsExit":false},{"Index":140,"Time":"2023-01-24 20:00","Open":23017,"High":23033.5,"Low":22953,"Close":22969.5,"Volume":974.346,"IsEntry":false,"IsExit":false},{"Index":141,"Time":"2023-01-24 20:15","Open":22969.5,"High":22980,"Low":22924,"Close":22978.5,"Volume":775.099,"IsEntry":false,"IsExit":false},{"Index":142,"Time":"2023-01-24 20:30","Open":22978.5,"High":23000,"Low":22870.5,"Close":22894.5,"Volume":2358.828,"IsEntry":false,"IsExit":false},{"Index":143,"Time":"2023-01-24 20:45","Open":22894.5,"High":23020,"Low":22867,"Close":23010.5,"Volume":1780.709,"IsEntry":false,"IsExit":false},{"Index":144,"Time":"2023-01-24 21:00","Open":23010.5,"High":23082,"Low":22963,"Close":22992,"Volume":2977.263,"IsEntry":false,"IsExit":false},{"Index":145,"Time":"2023-01-24 21:15","Open":22992,"High":23029,"Low":22992,"Close":22995,"Volume":413.317,"IsEntry":false,"IsExit":false},{"Index":146,"Time":"2023-01-24 21:30","Open":22995,"High":23017.5,"Low":22976,"Close":22991,"Volume":422.41,"IsEntry":false,"IsExit":false},{"Index":147,"Time":"2023-01-24 21:45","Open":22991,"High":22995.5,"Low":22814.5,"Close":22902,"Volume":3798.671,"IsEntry":false,"IsExit":false},{"Index":148,"Time":"2023-01-24 22:00","Open":22902,"High":22920,"Low":22825,"Close":22895.5,"Volume":2311.583,"IsEntry":false,"IsExit":false}];
+const entryIndex =  48 ;
+const exitIndex =  66 ;
+const priceMin = "22401.299999999999";
+const priceMax = "23245.200000000001";
+const tradeMeta = {
+  symbol: "\"BTCUSDT\"",
+  direction: "\"LONG\"",
+  state: "\"strong_up\"",
+  z: "1.515334",
+  entropy: "1.219440",
+  pnlUsd: "0.190885",
+  pnlPct: "0.047916",
+  reason: "\"signal_exit\""
+};
+
+const svg = document.getElementById('chart');
+const W = 1200;
+const H = 720;
+const margin = {top: 42, right: 70, bottom: 76, left: 70};
+const plotW = W - margin.left - margin.right;
+const plotH = H - margin.top - margin.bottom;
+const xStep = plotW / Math.max(candles.length, 1);
+const candleBody = Math.max(5, xStep * 0.58);
+
+function y(price) {
+  return margin.top + (priceMax - price) / (priceMax - priceMin) * plotH;
+}
+function x(index) {
+  return margin.left + index * xStep + xStep / 2;
+}
+function line(x1, y1, x2, y2, stroke, width=1, dash='') {
+  const el = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+  el.setAttribute('x1', x1); el.setAttribute('y1', y1);
+  el.setAttribute('x2', x2); el.setAttribute('y2', y2);
+  el.setAttribute('stroke', stroke); el.setAttribute('stroke-width', width);
+  if (dash) el.setAttribute('stroke-dasharray', dash);
+  svg.appendChild(el);
+  return el;
+}
+function text(str, xPos, yPos, fill, size=12, anchor='middle', weight='500') {
+  const el = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  el.textContent = str;
+  el.setAttribute('x', xPos); el.setAttribute('y', yPos);
+  el.setAttribute('fill', fill); el.setAttribute('font-size', size);
+  el.setAttribute('text-anchor', anchor);
+  el.setAttribute('font-family', 'Inter, system-ui, sans-serif');
+  el.setAttribute('font-weight', weight);
+  svg.appendChild(el);
+  return el;
+}
+function rect(xPos, yPos, w, h, fill, stroke='none', rx=0, opacity='1') {
+  const el = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  el.setAttribute('x', xPos); el.setAttribute('y', yPos);
+  el.setAttribute('width', w); el.setAttribute('height', h);
+  el.setAttribute('fill', fill); el.setAttribute('stroke', stroke);
+  el.setAttribute('rx', rx);
+  el.setAttribute('opacity', opacity);
+  svg.appendChild(el);
+  return el;
+}
+function circle(cx, cy, r, fill, stroke='none') {
+  const el = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  el.setAttribute('cx', cx); el.setAttribute('cy', cy);
+  el.setAttribute('r', r); el.setAttribute('fill', fill); el.setAttribute('stroke', stroke);
+  svg.appendChild(el);
+  return el;
+}
+
+rect(0, 0, W, H, '#0d1118');
+for (let i = 0; i <= 5; i++) {
+  const yy = margin.top + i * plotH / 5;
+  line(margin.left, yy, margin.left + plotW, yy, '#2b3240', 1);
+  const price = priceMax - (priceMax - priceMin) * (i / 5);
+  text(price.toFixed(2), W - 8, yy + 4, '#9aa4b2', 12, 'end', '400');
+}
+
+candles.forEach((c, idx) => {
+  const cx = x(idx);
+  const openY = y(c.Open);
+  const closeY = y(c.Close);
+  const highY = y(c.High);
+  const lowY = y(c.Low);
+  const bullish = c.Close >= c.Open;
+  const color = bullish ? '#2ecc71' : '#ff5c5c';
+  line(cx, highY, cx, lowY, color, 1.5);
+  const top = Math.min(openY, closeY);
+  const bodyH = Math.max(2, Math.abs(closeY - openY));
+  rect(cx - candleBody / 2, top, candleBody, bodyH, color, color, 2);
+});
+
+const entryX = x(entryIndex);
+const exitX = x(exitIndex);
+line(entryX, margin.top, entryX, margin.top + plotH, '#4aa8ff', 2, '6 5');
+line(exitX, margin.top, exitX, margin.top + plotH, '#ffcd10', 2, '6 5');
+
+const entryCandle = candles[entryIndex];
+const exitCandle = candles[exitIndex];
+const entryY = y(entryCandle.Close);
+const exitY = y(exitCandle.Close);
+circle(entryX, entryY, 7, '#4aa8ff', '#d5e9ff');
+circle(exitX, exitY, 7, '#ffcd10', '#fff2b8');
+
+const label =
+  tradeMeta.direction + ' | ' +
+  tradeMeta.state + ' | z=' +
+  tradeMeta.z.toFixed(2) + ' | e=' +
+  tradeMeta.entropy.toFixed(2);
+
+text(
+  'PnL ' + tradeMeta.pnlUsd.toFixed(2) +
+  ' USD (' + tradeMeta.pnlPct.toFixed(2) + '%) · ' +
+  tradeMeta.reason,
+  Math.min(W - 170, Math.max(200, exitX)),
+  Math.min(H - 20, y(exitCandle.Low) + 28),
+  '#9aa4b2',
+  12,
+  'middle',
+  '500'
+);
+const tickStep = Math.max(1, Math.ceil(candles.length / 8));
+for (let i = 0; i < candles.length; i += tickStep) {
+  const xx = x(i);
+  line(xx, margin.top + plotH, xx, margin.top + plotH + 6, '#576175', 1);
+  text(candles[i].Time.slice(5), xx, H - 20, '#9aa4b2', 11, 'middle', '400');
+}
+line(margin.left, margin.top + plotH, margin.left + plotW, margin.top + plotH, '#576175', 1);
+line(margin.left, margin.top, margin.left, margin.top + plotH, '#576175', 1);
+</script>
+</body>
+</html>

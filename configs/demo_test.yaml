@@ -1,0 +1,67 @@
+symbols:
+  - BTCUSDT
+  - ETHUSDT
+  - SOLUSDT
+  - LINKUSDT
+  - HBARUSDT
+
+timeframe: 15m
+candles: 1000
+workers: 4
+
+markov_window: 300
+vol_window: 80
+extrema_window: 3
+
+include_shorts: true
+commission: 0.001
+
+z_strong_threshold: 1.2
+z_weak_threshold: 0.3
+
+stop_loss_pct: 1.0
+use_phase_filter: false
+short_only: false
+long_only: false
+adaptive_mode: true
+min_hold_bars: 1
+cooldown_bars: 1
+long_exit_confirm_bars: 1
+short_exit_confirm_bars: 1
+
+long_score_threshold: 0.06
+short_score_threshold: 0.08
+
+regime_filter_enabled: false
+extreme_zscore_cut: 99
+regime_entropy_cut: 99
+post_extreme_bars: 0
+
+use_dynamic_zscore: true
+dynamic_z_window: 300
+dynamic_z_percentile: 0.65
+dynamic_z_fallback_cut: 1.0
+dynamic_z_min_cut: 0.5
+dynamic_z_max_cut: 2.0
+dynamic_z_min_samples: 50
+
+exchange:
+  provider: bybit
+  env: demo
+  category: linear
+  base_url: https://api-demo.bybit.com
+
+execution:
+  enabled: false
+  dry_run: true
+  position_mode: one_way
+  order_type: market
+  usdt_per_trade: 20
+  reduce_only_exit: true
+  set_stop_loss: true
+  stop_loss_percent: 1.0
+
+runtime:
+  bootstrap_days: 7
+  run_on_start: true
+  poll_interval_seconds: 5
