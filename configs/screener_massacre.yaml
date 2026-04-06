@@ -1,0 +1,208 @@
+# ================================
+# MASSACRE MODE - STRESS TEST
+# ================================
+
+exchange:
+  provider: bybit
+  env: demo
+  category: linear
+  base_url: https://api-demo.bybit.com
+
+execution:
+  enabled: true
+  dry_run: false             # ← КЛЮЧЕВОЕ: реальные ордера на демо-счете
+  position_mode: one_way
+  order_type: market
+  usdt_per_trade: 50         # Маленький размер для частых сделок
+  reduce_only_exit: true     # Выходить только уменьшением позиции (безопасно)
+  set_stop_loss: true        # Ставить стоп-лосс сразу при входе
+  stop_loss_percent: 1.5     # Узкий стоп для теста
+
+timeframe: 15m
+
+# ✅ 17 МОНЕТ ДЛЯ СТРЕСС-ТЕСТА
+symbols:
+  - BTCUSDT
+  - ETHUSDT
+  - SOLUSDT
+  - LINKUSDT
+  - HBARUSDT
+  - BNBUSDT
+  - XRPUSDT
+  - AVAXUSDT
+  - NEARUSDT
+  - DOGEUSDT
+  - APTUSDT
+  - SUIUSDT
+  - ARBUSDT
+  - TIAUSDT
+  - ATOMUSDT
+  - DOTUSDT
+  - OPUSDT
+
+candles: 1000
+vol_window: 100
+markov_window: 500
+extrema_window: 3
+include_shorts: true
+commission: 0.001
+workers: 4
+
+# === АГРЕССИВНЫЕ ПОРОГИ ===
+z_strong_threshold: 1.0
+z_weak_threshold: 0.20
+long_score_threshold: 0.035
+short_score_threshold: 0.04
+
+# === БЫСТРЫЙ ВЫХОД ===
+adaptive_mode: true    
+min_hold_bars: 4
+cooldown_bars: 1
+long_exit_confirm_bars: 2
+short_exit_confirm_bars: 2
+
+# === СЛАБЫЕ ФИЛЬТРЫ ===
+use_phase_filter: false
+regime_filter_enabled: false
+extreme_zscore_cut: 3.5
+regime_entropy_cut: 1.65
+post_extreme_bars: 0
+
+# === DYNAMIC Z-SCORE ===
+use_dynamic_zscore: true
+dynamic_z_window: 300
+dynamic_z_percentile: 0.65
+dynamic_z_fallback_cut: 1.0
+dynamic_z_min_cut: 0.5
+dynamic_z_max_cut: 2.0
+dynamic_z_min_samples: 50
+
+# === RUNTIME ===
+runtime:
+  bootstrap_days: 3
+  run_on_start: true
+  poll_interval_seconds: 5
+
+# ================================
+# ПРОФИЛИ (упрощённые для теста)
+# ================================
+Profile:
+  BTC:
+    ZWeakThreshold: 0.20
+    ZStrongThreshold: 1.0
+    EntropyCut: 1.65
+    ShortScoreThreshold: 0.005
+    LongScoreThreshold: 0.005
+
+  ETH:
+    ZWeakThreshold: 0.20
+    ZStrongThreshold: 1.0
+    EntropyCut: 1.65
+    ShortScoreThreshold: 0.005
+    LongScoreThreshold: 0.005
+
+  SOL:
+    ZWeakThreshold: 0.25
+    ZStrongThreshold: 1.1
+    EntropyCut: 1.60
+    ShortScoreThreshold: 0.008
+    LongScoreThreshold: 0.008
+
+  LINK:
+    ZWeakThreshold: 0.35
+    ZStrongThreshold: 1.3
+    EntropyCut: 1.50
+    ShortScoreThreshold: 0.01
+    LongScoreThreshold: 0.01
+
+  HBAR:
+    ZWeakThreshold: 0.35
+    ZStrongThreshold: 1.3
+    EntropyCut: 1.50
+    ShortScoreThreshold: 0.01
+    LongScoreThreshold: 0.01
+
+  # Для остальных монет используем SOL как базу
+  BNB:
+    ZWeakThreshold: 0.20
+    ZStrongThreshold: 1.0
+    EntropyCut: 1.65
+    ShortScoreThreshold: 0.005
+    LongScoreThreshold: 0.005
+
+  XRP:
+    ZWeakThreshold: 0.20
+    ZStrongThreshold: 1.0
+    EntropyCut: 1.65
+    ShortScoreThreshold: 0.005
+    LongScoreThreshold: 0.005
+
+  AVAX:
+    ZWeakThreshold: 0.25
+    ZStrongThreshold: 1.1
+    EntropyCut: 1.60
+    ShortScoreThreshold: 0.008
+    LongScoreThreshold: 0.008
+
+  NEAR:
+    ZWeakThreshold: 0.25
+    ZStrongThreshold: 1.1
+    EntropyCut: 1.60
+    ShortScoreThreshold: 0.008
+    LongScoreThreshold: 0.008
+
+  APT:
+    ZWeakThreshold: 0.35
+    ZStrongThreshold: 1.3
+    EntropyCut: 1.50
+    ShortScoreThreshold: 0.01
+    LongScoreThreshold: 0.01
+
+  SUI:
+    ZWeakThreshold: 0.35
+    ZStrongThreshold: 1.3
+    EntropyCut: 1.50
+    ShortScoreThreshold: 0.01
+    LongScoreThreshold: 0.01
+
+  ARB:
+    ZWeakThreshold: 0.25
+    ZStrongThreshold: 1.1
+    EntropyCut: 1.60
+    ShortScoreThreshold: 0.008
+    LongScoreThreshold: 0.008
+
+  TIA:
+    ZWeakThreshold: 0.35
+    ZStrongThreshold: 1.3
+    EntropyCut: 1.50
+    ShortScoreThreshold: 0.01
+    LongScoreThreshold: 0.01
+
+  ATOM:
+    ZWeakThreshold: 0.25
+    ZStrongThreshold: 1.1
+    EntropyCut: 1.60
+    ShortScoreThreshold: 0.008
+    LongScoreThreshold: 0.008
+
+  DOT:
+    ZWeakThreshold: 0.25
+    ZStrongThreshold: 1.1
+    EntropyCut: 1.60
+    ShortScoreThreshold: 0.008
+    LongScoreThreshold: 0.008
+
+  OP:
+    ZWeakThreshold: 0.25
+    ZStrongThreshold: 1.1
+    EntropyCut: 1.60
+    ShortScoreThreshold: 0.008
+    LongScoreThreshold: 0.008
+
+  DOGE:
+    ZWeakThreshold: 0.35
+    ZStrongThreshold: 1.3
+    EntropyCut: 1.50
+    ShortScoreThreshold: 0.01
+    LongScoreThreshold: 0.01

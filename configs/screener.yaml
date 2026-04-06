@@ -1,3 +1,7 @@
+# ================================
+# SCREENER - MAIN CONFIG
+# ================================
+
 exchange:
   provider: bybit
   env: demo
@@ -15,6 +19,8 @@ execution:
   stop_loss_percent: 1.5
 
 timeframe: 15m
+
+# ✅ СПИСОК СИМВОЛОВ (отдельно, чисто)
 symbols:
   - BTCUSDT
   - ETHUSDT
@@ -26,15 +32,13 @@ candles: 1000
 vol_window: 100
 markov_window: 500
 extrema_window: 3
-
 include_shorts: true
 commission: 0.00055
-
 workers: 4
 
+# === ПОРОГИ ===
 z_strong_threshold: 1.2
 z_weak_threshold: 0.3
-
 stop_loss_pct: 0.03
 use_phase_filter: true
 short_only: false
@@ -45,14 +49,17 @@ cooldown_bars: 3
 long_exit_confirm_bars: 7
 short_exit_confirm_bars: 4
 
-short_score_threshold:  0.02 #0.10
-long_score_threshold: 0.02 #0.12
+# === СКОРЫ (тестовые низкие) ===
+short_score_threshold: 0.02  # #0.10
+long_score_threshold: 0.02   # #0.12
 
+# === ФИЛЬТРЫ ===
 regime_filter_enabled: true
 extreme_zscore_cut: 2.20
 regime_entropy_cut: 1.55
 post_extreme_bars: 6
 
+# === DYNAMIC Z-SCORE ===
 use_dynamic_zscore: true
 dynamic_z_window: 400
 dynamic_z_percentile: 90
@@ -61,7 +68,47 @@ dynamic_z_min_cut: 2.20
 dynamic_z_max_cut: 3.00
 dynamic_z_min_samples: 50
 
+# === RUNTIME ===
 runtime:
   bootstrap_days: 7
   run_on_start: true
   poll_interval_seconds: 5
+
+# ================================
+# ИНДИВИДУАЛЬНЫЕ ПРОФИЛИ
+# ================================
+Profile:
+  BTC:
+    ZWeakThreshold: 0.30
+    ZStrongThreshold: 1.2
+    EntropyCut: 1.55
+    ShortScoreThreshold: 0.10
+    LongScoreThreshold: 0.12
+
+  ETH:
+    ZWeakThreshold: 0.35
+    ZStrongThreshold: 1.4
+    EntropyCut: 1.45
+    ShortScoreThreshold: 0.11
+    LongScoreThreshold: 0.14
+
+  SOL:
+    ZWeakThreshold: 0.35
+    ZStrongThreshold: 1.4
+    EntropyCut: 1.45
+    ShortScoreThreshold: 0.11
+    LongScoreThreshold: 0.14
+
+  LINK:
+    ZWeakThreshold: 0.40
+    ZStrongThreshold: 1.5
+    EntropyCut: 1.40
+    ShortScoreThreshold: 0.13
+    LongScoreThreshold: 0.15
+
+  HBAR:
+    ZWeakThreshold: 0.55
+    ZStrongThreshold: 1.6
+    EntropyCut: 1.35
+    ShortScoreThreshold: 0.14
+    LongScoreThreshold: 0.17

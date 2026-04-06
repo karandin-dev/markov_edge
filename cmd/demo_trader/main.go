@@ -4,9 +4,11 @@ import (
 	"context"
 	"flag"
 	"fmt"
+	"io"
 	"math"
 	"os"
 	"os/signal"
+	"strconv"
 	"strings"
 	"sync"
 	"syscall"
@@ -31,10 +33,17 @@ type symbolRuntimeState struct {
 	Direction        int // 1 long, -1 short
 	EntryAnchor      time.Time
 	EntryPrice       float64
+	EntryScore       float64 // <-- ADAPTIVE EXIT
+	PeakPrice        float64 // <-- ADAPTIVE EXIT
+	TrailingActive   bool    // <-- ADAPTIVE EXIT
+	BaselineEntropy  float64 // <-- ADAPTIVE EXIT (fallback ~1.0-1.2)
 	HoldBars         int
 	LongBarsAgainst  int
 	ShortBarsAgainst int
 	CooldownBarsLeft int
+
+	PreviouslyLoggedThruster bool // чтобы не спамить про трейлинг
+	EntryPnlWasNegative      bool // чтобы отследить первый плюс
 }
 
 type tradeCandidate struct {
@@ -55,6 +64,28 @@ type tradeResult struct {
 
 func main() {
 	_ = godotenv.Load()
+
+	// 🔥 SETUP FILE LOGGING
+	os.MkdirAll("logs", 0755)
+	logPath := fmt.Sprintf("logs/massacre_%s.log", time.Now().Format("20060102_150405"))
+
+	logFile, err := os.OpenFile(logPath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		panic(fmt.Errorf("failed to create log file: %w", err))
+	}
+
+	// Пишем и в консоль, и в файл
+	multiWriter := io.MultiWriter(os.Stdout, logFile)
+
+	// Простая обёртка для логирования
+	logPrintf := func(format string, args ...interface{}) {
+		fmt.Fprintf(multiWriter, format, args...)
+	}
+
+	// 🔥 Теперь используй logPrintf вместо fmt.Printf во всём коде
+	// Пример:
+	logPrintf("DEMO TRADER LIVE EXECUTION\n")
+	logPrintf("--------------------------------------------------\n")
 
 	configPath := flag.String("config", "configs/screener.yaml", "path to YAML config")
 	flag.Parse()
@@ -530,57 +561,154 @@ func processSymbol(
 	if state.InPosition {
 		state.HoldBars++
 
-		if state.Direction == 1 {
-			if state.HoldBars >= cfg.MinHoldBars {
-				if desiredPos != 1 {
-					state.LongBarsAgainst++
-				} else {
-					state.LongBarsAgainst = 0
-				}
+		// 🔥 Mark III: Трейлинг-стоп
+		currentPrice := score.LastPrice
+
+		// TrailingStop
+		manageTrailingStop(ctx, tradingClient, symbol, state, currentPrice)
+
+		// ... дальше идёт адаптивный выход ...
+
+		// <-- ADAPTIVE EXIT START
+		// 🔒 ЗАЩИТА: Не выходим по адаптиву, пока не отдержали min_hold
+		if state.HoldBars >= cfg.MinHoldBars {
+			currentPrice := score.LastPrice
+			currentScore := score.LongScore
+			if state.Direction == -1 {
+				currentScore = score.ShortScore
 			}
 
-			if state.HoldBars >= cfg.MinHoldBars && state.LongBarsAgainst >= cfg.LongExitConfirmBars {
+			unrealizedPnlPct := (currentPrice - state.EntryPrice) / state.EntryPrice * 100.0 * float64(state.Direction)
+
+			// Обновляем пик цены
+			if state.Direction == 1 && currentPrice > state.PeakPrice {
+				state.PeakPrice = currentPrice
+			}
+			if state.Direction == -1 && (currentPrice < state.PeakPrice || state.PeakPrice == 0) {
+				state.PeakPrice = currentPrice
+			}
+
+			// 🟢 НОВЫЙ МОНИТОРИНГ ПОЗИЦИИ
+			directionText := "LONG"
+			if state.Direction == -1 {
+				directionText = "SHORT"
+			}
+
+			thrusterStatus := "OFF"
+			if state.TrailingActive {
+				thrusterStatus = "🛡️ ON"
+			}
+
+			// Показываем лог ТОЛЬКО если:
+			// 1. Включился трейлинг (важное событие)
+			// 2. PnL стал положительным (первый раз)
+			// 3. Скор сильно упал (модель теряет уверенность)
+			shouldLog := false
+
+			if state.TrailingActive && !state.PreviouslyLoggedThruster {
+				shouldLog = true
+				state.PreviouslyLoggedThruster = true
+			}
+
+			if unrealizedPnlPct > 0 && state.EntryPnlWasNegative {
+				shouldLog = true
+				state.EntryPnlWasNegative = false
+			}
+
+			// Всегда логируем если PnL > 0.5% или скор упал сильно
+			if unrealizedPnlPct > 0.5 {
+				shouldLog = true
+			}
+
+			if shouldLog {
+				fmt.Printf("[MONITOR] %s %s | PnL: %.2f%% | Peak: %.4f | CurrScore: %.4f | Thrusters: %s\n",
+					symbol, directionText, unrealizedPnlPct, state.PeakPrice, currentScore, thrusterStatus)
+			}
+
+			// Расчёт адаптивного выхода
+			exitCtx := markov.ExitContext{
+				EntryScore:       state.EntryScore,
+				CurrentScore:     currentScore,
+				UnrealizedPnlPct: unrealizedPnlPct,
+				VolRatio:         1.0,
+				BarsHeld:         state.HoldBars,
+				Entropy:          score.Entropy,
+				BaselineEntropy:  state.BaselineEntropy,
+				MacroRegime:      string(score.RegimeClass),
+			}
+			confidence := markov.CalcAdaptiveExitConfidence(exitCtx)
+			threshold := markov.CalcAdaptiveExitThreshold(exitCtx.VolRatio, 0.65)
+
+			if confidence > threshold {
+				closeSide := exchange.SideSell
+				if state.Direction == -1 {
+					closeSide = exchange.SideBuy
+				}
 				closeText, closeErr := closePositionOnExchange(
 					ctx,
 					tradingClient,
 					symbol,
 					position,
-					exchange.SideSell,
+					closeSide,
 					cycleCloseTime,
-					"signal_exit_long",
+					fmt.Sprintf("adaptive_exit(conf=%.2f>thr=%.2f)", confidence, threshold),
 				)
 				if closeErr != nil {
-					return tradeResult{
-						Symbol: symbol,
-						Err:    closeErr,
-					}
+					return tradeResult{Symbol: symbol, Err: closeErr}
 				}
-
 				resetStateAfterClose(state, cfg)
-
 				return tradeResult{
 					Symbol: symbol,
 					Text: fmt.Sprintf(
-						"[%s] CLOSED LONG | anchor=%s | hold=%d/%d | against=%d/%d | signal=%s | score=%.4f | long=%.4f | short=%.4f | %s",
+						"[%s] ADAPTIVE EXIT | anchor=%s | pnl=%.2f%% | score_entry=%.2f->%.2f | entropy=%.2f | conf=%.2f>%.2f | %s",
 						symbol,
 						cycleCloseTime.Format(time.RFC3339),
-						state.HoldBars,
-						cfg.MinHoldBars,
-						state.LongBarsAgainst,
-						cfg.LongExitConfirmBars,
-						score.HumanSignal,
-						score.Score,
-						score.LongScore,
-						score.ShortScore,
+						unrealizedPnlPct,
+						state.EntryScore,
+						currentScore,
+						score.Entropy,
+						confidence,
+						threshold,
 						closeText,
 					),
 				}
 			}
+		}
+		// <-- ADAPTIVE EXIT END
+	}
+
+	if state.Direction == 1 {
+		if state.HoldBars >= cfg.MinHoldBars {
+			if desiredPos != 1 {
+				state.LongBarsAgainst++
+			} else {
+				state.LongBarsAgainst = 0
+			}
+		}
+
+		if state.HoldBars >= cfg.MinHoldBars && state.LongBarsAgainst >= cfg.LongExitConfirmBars {
+			closeText, closeErr := closePositionOnExchange(
+				ctx,
+				tradingClient,
+				symbol,
+				position,
+				exchange.SideSell,
+				cycleCloseTime,
+				"signal_exit_long",
+			)
+			if closeErr != nil {
+				return tradeResult{
+					Symbol: symbol,
+					Err:    closeErr,
+				}
+			}
+
+			resetStateAfterClose(state, cfg)
 
 			return tradeResult{
 				Symbol: symbol,
 				Text: fmt.Sprintf(
-					"[%s] HOLD LONG | anchor=%s | hold=%d/%d | against=%d/%d | signal=%s | score=%.4f | long=%.4f | short=%.4f%s",
+					"[%s] CLOSED LONG | anchor=%s | hold=%d/%d | against=%d/%d | signal=%s | score=%.4f | long=%.4f | short=%.4f | %s",
 					symbol,
 					cycleCloseTime.Format(time.RFC3339),
 					state.HoldBars,
@@ -591,62 +719,62 @@ func processSymbol(
 					score.Score,
 					score.LongScore,
 					score.ShortScore,
-					formatNote(syncNote),
+					closeText,
 				),
 			}
 		}
 
-		if state.Direction == -1 {
-			if state.HoldBars >= cfg.MinHoldBars {
-				if desiredPos != -1 {
-					state.ShortBarsAgainst++
-				} else {
-					state.ShortBarsAgainst = 0
-				}
+		return tradeResult{
+			Symbol: symbol,
+			Text: fmt.Sprintf(
+				"[%s] HOLD LONG | anchor=%s | hold=%d/%d | against=%d/%d | signal=%s | score=%.4f | long=%.4f | short=%.4f%s",
+				symbol,
+				cycleCloseTime.Format(time.RFC3339),
+				state.HoldBars,
+				cfg.MinHoldBars,
+				state.LongBarsAgainst,
+				cfg.LongExitConfirmBars,
+				score.HumanSignal,
+				score.Score,
+				score.LongScore,
+				score.ShortScore,
+				formatNote(syncNote),
+			),
+		}
+	}
+
+	if state.Direction == -1 {
+		if state.HoldBars >= cfg.MinHoldBars {
+			if desiredPos != -1 {
+				state.ShortBarsAgainst++
+			} else {
+				state.ShortBarsAgainst = 0
 			}
+		}
 
-			if state.HoldBars >= cfg.MinHoldBars && state.ShortBarsAgainst >= cfg.ShortExitConfirmBars {
-				closeText, closeErr := closePositionOnExchange(
-					ctx,
-					tradingClient,
-					symbol,
-					position,
-					exchange.SideBuy,
-					cycleCloseTime,
-					"signal_exit_short",
-				)
-				if closeErr != nil {
-					return tradeResult{
-						Symbol: symbol,
-						Err:    closeErr,
-					}
-				}
-
-				resetStateAfterClose(state, cfg)
-
+		if state.HoldBars >= cfg.MinHoldBars && state.ShortBarsAgainst >= cfg.ShortExitConfirmBars {
+			closeText, closeErr := closePositionOnExchange(
+				ctx,
+				tradingClient,
+				symbol,
+				position,
+				exchange.SideBuy,
+				cycleCloseTime,
+				"signal_exit_short",
+			)
+			if closeErr != nil {
 				return tradeResult{
 					Symbol: symbol,
-					Text: fmt.Sprintf(
-						"[%s] CLOSED SHORT | anchor=%s | hold=%d/%d | against=%d/%d | signal=%s | score=%.4f | long=%.4f | short=%.4f | %s",
-						symbol,
-						cycleCloseTime.Format(time.RFC3339),
-						state.HoldBars,
-						cfg.MinHoldBars,
-						state.ShortBarsAgainst,
-						cfg.ShortExitConfirmBars,
-						score.HumanSignal,
-						score.Score,
-						score.LongScore,
-						score.ShortScore,
-						closeText,
-					),
+					Err:    closeErr,
 				}
 			}
+
+			resetStateAfterClose(state, cfg)
 
 			return tradeResult{
 				Symbol: symbol,
 				Text: fmt.Sprintf(
-					"[%s] HOLD SHORT | anchor=%s | hold=%d/%d | against=%d/%d | signal=%s | score=%.4f | long=%.4f | short=%.4f%s",
+					"[%s] CLOSED SHORT | anchor=%s | hold=%d/%d | against=%d/%d | signal=%s | score=%.4f | long=%.4f | short=%.4f | %s",
 					symbol,
 					cycleCloseTime.Format(time.RFC3339),
 					state.HoldBars,
@@ -657,9 +785,27 @@ func processSymbol(
 					score.Score,
 					score.LongScore,
 					score.ShortScore,
-					formatNote(syncNote),
+					closeText,
 				),
 			}
+		}
+
+		return tradeResult{
+			Symbol: symbol,
+			Text: fmt.Sprintf(
+				"[%s] HOLD SHORT | anchor=%s | hold=%d/%d | against=%d/%d | signal=%s | score=%.4f | long=%.4f | short=%.4f%s",
+				symbol,
+				cycleCloseTime.Format(time.RFC3339),
+				state.HoldBars,
+				cfg.MinHoldBars,
+				state.ShortBarsAgainst,
+				cfg.ShortExitConfirmBars,
+				score.HumanSignal,
+				score.Score,
+				score.LongScore,
+				score.ShortScore,
+				formatNote(syncNote),
+			),
 		}
 	}
 
@@ -830,13 +976,20 @@ func processSymbol(
 		stopText = fmt.Sprintf("stop=%.4f", stopLoss)
 	}
 
+	// Инициализация новых полей при входе
 	state.InPosition = true
 	state.Direction = desiredPos
 	state.EntryAnchor = cycleCloseTime
 	state.EntryPrice = candidate.LastPrice
+	state.EntryScore = candidate.Score    // <-- ADAPTIVE EXIT
+	state.PeakPrice = candidate.LastPrice // <-- ADAPTIVE EXIT
+	state.TrailingActive = false          // <-- ADAPTIVE EXIT
+	state.BaselineEntropy = 1.05          // <-- ADAPTIVE EXIT
 	state.HoldBars = 0
 	state.LongBarsAgainst = 0
 	state.ShortBarsAgainst = 0
+	state.PreviouslyLoggedThruster = false
+	state.EntryPnlWasNegative = true // считаем что на входе PnL = 0 (не отрицательный)
 
 	return tradeResult{
 		Symbol: symbol,
@@ -996,14 +1149,26 @@ func calcRawQtyFromUSDT(usdt, price float64) float64 {
 }
 
 func normalizeQty(rawQty, qtyStep float64) float64 {
-	if rawQty <= 0 {
+	if rawQty <= 0 || qtyStep <= 0 {
 		return 0
 	}
-	if qtyStep <= 0 {
-		return rawQty
+	// +1e-9 защищает от float-артефактов
+	steps := math.Floor(rawQty/qtyStep + 1e-9)
+	normalized := steps * qtyStep
+	if normalized <= 0 {
+		return qtyStep
 	}
-	steps := math.Floor(rawQty / qtyStep)
-	return steps * qtyStep
+
+	// Точное форматирование под шаг биржи
+	stepStr := fmt.Sprintf("%g", qtyStep)
+	decimals := 0
+	if idx := strings.Index(stepStr, "."); idx != -1 {
+		decimals = len(stepStr) - idx - 1
+	}
+	safeStr := fmt.Sprintf("%.*f", decimals, normalized)
+	safeQty, _ := strconv.ParseFloat(safeStr, 64)
+
+	return safeQty
 }
 
 func calcStopLoss(side exchange.Side, price, stopLossPercent float64) float64 {
@@ -1128,11 +1293,13 @@ func syncStateWithExchange(
 ) string {
 	hasExchangePos := position.Side != exchange.PositionSideNone && position.Size > 0
 
+	// 1. Биржа закрыла позицию, а бот ещё думает, что она открыта
 	if state.InPosition && !hasExchangePos {
 		resetStateAfterClose(state, cfg)
 		return "detected_exchange_close"
 	}
 
+	// 2. Бот не знает о позиции, а на бирже она есть (перезапуск, ручной вход и т.д.)
 	if !state.InPosition && hasExchangePos {
 		state.InPosition = true
 		state.Direction = directionFromPositionSide(position.Side)
@@ -1141,11 +1308,26 @@ func syncStateWithExchange(
 		state.HoldBars = 0
 		state.LongBarsAgainst = 0
 		state.ShortBarsAgainst = 0
+		state.PeakPrice = position.AvgPrice // 🔥 Для трейлинг-стопа
 		return "detected_existing_exchange_position"
 	}
 
-	if state.InPosition && hasExchangePos && state.EntryPrice == 0 {
-		state.EntryPrice = position.AvgPrice
+	// 3. Позиция есть у всех, обновляем PeakPrice для трейлинга
+	// ✅ ПРАВИЛЬНО: Сравниваем с числами
+	// Обновляем пик цены в зависимости от направления
+	if state.InPosition && hasExchangePos {
+		if state.EntryPrice == 0 {
+			state.EntryPrice = position.AvgPrice
+		}
+
+		// Long (1): новый пик - это максимум
+		if state.Direction == 1 && position.MarkPrice > state.PeakPrice {
+			state.PeakPrice = position.MarkPrice
+		}
+		// Short (-1): новый пик - это минимум
+		if state.Direction == -1 && (position.MarkPrice < state.PeakPrice || state.PeakPrice == 0) {
+			state.PeakPrice = position.MarkPrice
+		}
 	}
 
 	return ""
@@ -1156,10 +1338,97 @@ func resetStateAfterClose(state *symbolRuntimeState, cfg config.Config) {
 	state.Direction = 0
 	state.EntryAnchor = time.Time{}
 	state.EntryPrice = 0
+	state.EntryScore = 0         // <-- ADAPTIVE EXIT
+	state.PeakPrice = 0          // <-- ADAPTIVE EXIT
+	state.TrailingActive = false // <-- ADAPTIVE EXIT
+	state.BaselineEntropy = 1.05 // <-- ADAPTIVE EXIT
 	state.HoldBars = 0
 	state.LongBarsAgainst = 0
 	state.ShortBarsAgainst = 0
 	state.CooldownBarsLeft = cfg.CooldownBars
+}
+
+// manageTrailingStop - Mark III: Тюнинг реакторов
+func manageTrailingStop(
+	ctx context.Context,
+	tradingClient exchange.TradingClient,
+	symbol string,
+	state *symbolRuntimeState,
+	currentPrice float64,
+) {
+
+	// ... дальше твой код
+	if !state.InPosition || state.EntryPrice == 0 {
+		return
+	}
+
+	// Считаем PnL
+	direction := float64(state.Direction)
+	unrealizedPnlPct := (currentPrice - state.EntryPrice) / state.EntryPrice * 100.0 * direction
+
+	// Обновляем PeakPrice
+	if state.Direction == 1 && currentPrice > state.PeakPrice {
+		state.PeakPrice = currentPrice
+	}
+	if state.Direction == -1 && (currentPrice < state.PeakPrice || state.PeakPrice == 0) {
+		state.PeakPrice = currentPrice
+	}
+
+	// 1) Режим "Безубыток" (+0.3%)
+	if unrealizedPnlPct >= 0.3 && !state.TrailingActive {
+
+		// 🔥 NEW: Добавляем буфер на комиссии (0.1%)
+		feeBuffer := 0.001
+
+		var newStop float64
+		if state.Direction == 1 {
+			// Для LONG: стоп чуть выше входа
+			newStop = state.EntryPrice * (1.0 + feeBuffer)
+		} else {
+			// Для SHORT: стоп чуть ниже входа
+			newStop = state.EntryPrice * (1.0 - feeBuffer)
+		}
+
+		err := tradingClient.SetStopLoss(ctx, exchange.StopLossRequest{
+			Symbol:   symbol,
+			StopLoss: newStop,
+		})
+		if err == nil {
+			state.TrailingActive = true
+			// Логируем реальный стоп, чтобы видеть разницу
+			fmt.Printf("[%s] 🛡️ THRUSTERS: SL moved to True BE (Entry: %.4f -> Stop: %.4f)\n",
+				symbol, state.EntryPrice, newStop)
+		}
+	}
+
+	// 2) Режим "Фиксация" (+0.6%) - тянем стоп за ценой
+	if unrealizedPnlPct >= 0.6 && state.TrailingActive {
+		var newStop float64
+		if state.Direction == 1 {
+			newStop = state.PeakPrice * 0.998 // -0.2% от пика
+		} else {
+			newStop = state.PeakPrice * 1.002 // +0.2% от пика
+		}
+
+		// Проверяем, что новый стоп лучше старого
+		shouldUpdate := false
+		if state.Direction == 1 && newStop > state.EntryPrice {
+			shouldUpdate = true
+		}
+		if state.Direction == -1 && newStop < state.EntryPrice {
+			shouldUpdate = true
+		}
+
+		if shouldUpdate {
+			err := tradingClient.SetStopLoss(ctx, exchange.StopLossRequest{
+				Symbol:   symbol,
+				StopLoss: newStop,
+			})
+			if err == nil {
+				fmt.Printf("[%s] 🔥 THRUSTERS MAX: Trailing SL at %.4f (PnL: %.2f%%)\n", symbol, newStop, unrealizedPnlPct)
+			}
+		}
+	}
 }
 
 func closePositionOnExchange(
