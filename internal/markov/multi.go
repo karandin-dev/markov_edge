@@ -107,6 +107,9 @@ func AnalyzeSymbol(symbol string, candles []market.Candle, cfg config.Config) (m
 		ProbDown1:         probDown1,
 		ProbUp2:           probUp2,
 		ProbDown2:         probDown2,
+
+		VolRatio:    CalculateVolRatio(candles, cfg), // см. ниже
+		MacroRegime: DetermineMacroRegime(candles),   // см. ниже
 	}
 
 	return result, nil

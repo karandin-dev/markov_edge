@@ -1,5 +1,7 @@
 package config
 
+import "strings"
+
 type Config struct {
 	Timeframe        string   `yaml:"timeframe"`
 	Symbols          []string `yaml:"symbols"`
@@ -43,6 +45,15 @@ type Config struct {
 	Execution ExecutionConfig `yaml:"execution"`
 
 	Runtime RuntimeConfig `yaml:"runtime"`
+	Exit    ExitConfig    `yaml:"exit"` //
+
+	SubFrame SubFrameConfig `yaml:"subframe"`
+
+	// 🔵 Take Profit настройки
+	TakeProfit TakeProfitConfig `yaml:"take_profit"`
+
+	// Индивидуальные профили
+	Profiles map[string]CoinProfile `yaml:"Profile"`
 }
 
 type RuntimeConfig struct {
@@ -149,4 +160,61 @@ func applyDefaults(cfg *Config) {
 	if cfg.Execution.StopLossPercent <= 0 && cfg.StopLossPct > 0 {
 		cfg.Execution.StopLossPercent = cfg.StopLossPct
 	}
+}
+
+type TakeProfitConfig struct {
+	Enabled  bool             `yaml:"enabled"`
+	Partial  PartialTPConfig  `yaml:"partial"`
+	Trailing TrailingTPConfig `yaml:"trailing"`
+}
+
+type PartialTPConfig struct {
+	Enabled    bool    `yaml:"enabled"`
+	AtPercent  float64 `yaml:"at_percent"`
+	CloseRatio float64 `yaml:"close_ratio"`
+}
+
+type TrailingTPConfig struct {
+	AggressiveOffset float64 `yaml:"aggressive_offset"`
+}
+
+// CoinProfile — индивидуальные настройки для монеты
+type CoinProfile struct {
+	ZWeakThreshold      float64 `yaml:"ZWeakThreshold"`
+	ZStrongThreshold    float64 `yaml:"ZStrongThreshold"`
+	EntropyCut          float64 `yaml:"EntropyCut"`
+	ShortScoreThreshold float64 `yaml:"ShortScoreThreshold"`
+	LongScoreThreshold  float64 `yaml:"LongScoreThreshold"`
+}
+
+// GetEffectiveLongThreshold возвращает порог для long с учётом профиля монеты
+func (cfg *Config) GetEffectiveLongThreshold(symbol string) float64 {
+	// Убираем USDT суффикс для поиска в профиле
+	symbolKey := strings.TrimSuffix(symbol, "USDT")
+
+	if profile, ok := cfg.Profiles[symbolKey]; ok && profile.LongScoreThreshold > 0 {
+		return profile.LongScoreThreshold
+	}
+	// Фоллбэк на глобальный порог
+	return cfg.LongScoreThreshold
+}
+
+// GetEffectiveShortThreshold — аналогично для short
+func (cfg *Config) GetEffectiveShortThreshold(symbol string) float64 {
+	symbolKey := strings.TrimSuffix(symbol, "USDT")
+
+	if profile, ok := cfg.Profiles[symbolKey]; ok && profile.ShortScoreThreshold > 0 {
+		return profile.ShortScoreThreshold
+	}
+	return cfg.ShortScoreThreshold
+}
+
+// GetEntropyCut — порог энтропии для монеты
+func (cfg *Config) GetEntropyCut(symbol string) float64 {
+	symbolKey := strings.TrimSuffix(symbol, "USDT")
+
+	if profile, ok := cfg.Profiles[symbolKey]; ok && profile.EntropyCut > 0 {
+		return profile.EntropyCut
+	}
+	return 1.6 // дефолт
 }

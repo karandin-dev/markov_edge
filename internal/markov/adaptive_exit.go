@@ -1,7 +1,10 @@
 package markov
 
 import (
+	"markov_screener/internal/config"
 	"math"
+
+	"github.com/bytedance/gopkg/util/logger"
 )
 
 // ExitContext содержит все метрики, необходимые для расчёта уверенности в выходе
@@ -52,12 +55,17 @@ func CalcAdaptiveExitConfidence(ctx ExitContext) float64 {
 	return clampF64(confidence, 0.0, 1.0)
 }
 
-// CalcAdaptiveExitThreshold динамически подстраивает порог выхода под волатильность
-func CalcAdaptiveExitThreshold(volRatio, baseThreshold float64) float64 {
-	// Высокая волатильность → порог ниже (выходим раньше, фиксируем прибыль)
-	// Низкая волатильность → порог выше (даём позиции "дышать")
-	adj := baseThreshold * (1.0 - 0.25*(volRatio-1.0))
-	return clampF64(adj, 0.45, 0.80)
+func CalcAdaptiveExitThreshold(volRatio float64, cfg config.AdaptiveExitConfig) float64 {
+	baseThreshold := cfg.BaseConfThreshold
+
+	if !cfg.VolAdjustment.Enabled {
+		return baseThreshold
+	}
+
+	factor := cfg.VolAdjustment.Factor
+	adj := baseThreshold * (1.0 - factor*(volRatio-1.0))
+
+	return clampF64(adj, cfg.Clamp.Min, cfg.Clamp.Max)
 }
 
 func calcAdaptiveWeights(regime string, volRatio float64) (float64, float64, float64) {
@@ -89,12 +97,34 @@ func calcAdaptiveWeights(regime string, volRatio float64) (float64, float64, flo
 	return wS / sum, wP / sum, wE / sum
 }
 
-func clampF64(v, minV, maxV float64) float64 {
-	if v < minV {
-		return minV
+// clampF64 ограничивает значение в диапазоне [min, max]
+func clampF64(v, min, max float64) float64 {
+	if v < min {
+		return min
 	}
-	if v > maxV {
-		return maxV
+	if v > max {
+		return max
 	}
 	return v
+}
+
+// exit.go — при любом типе выхода
+func (p *Position) Close(exitPrice float64, reason string) {
+	// Финальный расчет
+	if p.Side == "Long" {
+		p.FinalPnL = (exitPrice - p.EntryPrice) / p.EntryPrice
+	} else {
+		p.FinalPnL = (p.EntryPrice - exitPrice) / p.EntryPrice
+	}
+	p.ExitPrice = exitPrice
+	p.ExitReason = reason
+
+	// 🔥 Ключевой лог для анализа
+	logger.Infof("[STATS] %s %s | MAE:%.2f%% MFE:%.2f%% Final:%.2f%% | Reason:%s",
+		p.Symbol, p.Side,
+		p.MAE*100, p.MFE*100, p.FinalPnL*100,
+		reason)
+
+	// 🔥 Дополнительно: экспортируем в CSV для бэктеста
+	exportTradeStats(p)
 }

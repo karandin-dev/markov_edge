@@ -1,0 +1,285 @@
+# ================================
+# MASSACRE MODE - STRESS TEST
+# ================================
+
+exchange:
+  provider: bybit
+  env: demo
+  category: linear
+  base_url: https://api-demo.bybit.com
+
+execution:
+  enabled: true
+  dry_run: false             # ← КЛЮЧЕВОЕ: реальные ордера на демо-счете
+  position_mode: one_way
+  order_type: market
+  usdt_per_trade: 50         # Маленький размер для частых сделок
+  reduce_only_exit: true     # Выходить только уменьшением позиции (безопасно)
+  set_stop_loss: true        # Ставить стоп-лосс сразу при входе
+  stop_loss_percent: 1.5     # Узкий стоп для теста
+
+timeframe: 15m
+
+# ✅ 17 МОНЕТ ДЛЯ СТРЕСС-ТЕСТА
+symbols:
+  - BTCUSDT
+  - ETHUSDT
+  - SOLUSDT
+  - LINKUSDT
+  - HBARUSDT
+  - BNBUSDT
+  - XRPUSDT
+  - AVAXUSDT
+  - NEARUSDT
+  - DOGEUSDT
+  - APTUSDT
+  - SUIUSDT
+  - ARBUSDT
+  - TIAUSDT
+  - ATOMUSDT
+  - DOTUSDT
+  - OPUSDT
+
+candles: 1000
+vol_window: 100
+markov_window: 500
+extrema_window: 3
+include_shorts: true
+commission: 0.001
+workers: 4
+
+# === АГРЕССИВНЫЕ ПОРОГИ ===
+z_strong_threshold: 1.0
+z_weak_threshold: 0.20
+long_score_threshold: 0.04
+short_score_threshold: 0.045
+
+# === БЫСТРЫЙ ВЫХОД ===
+adaptive_mode: true    
+min_hold_bars: 4
+cooldown_bars: 1
+long_exit_confirm_bars: 2
+short_exit_confirm_bars: 2
+
+# === СЛАБЫЕ ФИЛЬТРЫ ===
+use_phase_filter: false
+regime_filter_enabled: false
+extreme_zscore_cut: 3.5
+regime_entropy_cut: 1.65
+post_extreme_bars: 0
+
+# === DYNAMIC Z-SCORE ===
+use_dynamic_zscore: true
+dynamic_z_window: 300
+dynamic_z_percentile: 0.65
+dynamic_z_fallback_cut: 1.0
+dynamic_z_min_cut: 0.5
+dynamic_z_max_cut: 2.0
+dynamic_z_min_samples: 50
+
+# === RUNTIME ===
+runtime:
+  bootstrap_days: 3
+  run_on_start: true
+  poll_interval_seconds: 5
+
+# ================================
+# ПРОФИЛИ МОНЕТ (оптимизированные)
+# ================================
+Profile:
+  # 🔴 NEAR - САМАЯ ПРОБЛЕМНАЯ МОНЕТА
+  # Много ложных пробоев, даже при скорах 0.20+ уходит в минус
+  NEAR:
+    ZWeakThreshold: 0.40          # ↑ было 0.25 (фильтруем шум)
+    ZStrongThreshold: 1.4         # ↑ было 1.1
+    EntropyCut: 1.45              # ↓ было 1.60 (быстрее выходим при хаосе)
+    ShortScoreThreshold: 0.050    # ↑ было 0.008 (фильтр на вход)
+    LongScoreThreshold: 0.060     # ↑ было 0.008 (очень высокий порог!)
+
+  # 🟢 ATOM - ЛУЧШАЯ ТРЕНДОВАЯ МОНЕТА
+  # Даёт жирные хвосты (+0.76%), нужно ловить все сигналы
+  ATOM:
+    ZWeakThreshold: 0.20          # ↓ было 0.25 (меньше фильтруем)
+    ZStrongThreshold: 1.0         # ↓ было 1.1
+    EntropyCut: 1.65              # ↑ было 1.60 (даём пространство)
+    ShortScoreThreshold: 0.040    # ↓ было 0.008 (ловим больше)
+    LongScoreThreshold: 0.045     # ↓ было 0.008 (ловим больше)
+
+  # 🟢 TIA - КОРОЛЬ ШОРТОВ
+  # Отлично падает, но шумная на лонгах
+  TIA:
+    ZWeakThreshold: 0.30          # ↔ оставили 0.35
+    ZStrongThreshold: 1.2         # ↓ было 1.3
+    EntropyCut: 1.55              # ↓ было 1.50
+    ShortScoreThreshold: 0.040    # ↓ было 0.01 (ловим падения!)
+    LongScoreThreshold: 0.055     # ↑ было 0.01 (осторожнее с лонгами)
+
+  # 🟢 LINK - ОТЛИЧНА ДЛЯ ШОРТОВ
+  # Model Decay: +0.33%, +0.68%
+  LINK:
+    ZWeakThreshold: 0.30          # ↓ было 0.35
+    ZStrongThreshold: 1.2         # ↓ было 1.3
+    EntropyCut: 1.55              # ↑ было 1.50
+    ShortScoreThreshold: 0.040    # ↓ было 0.01 (ловим шорты!)
+    LongScoreThreshold: 0.055     # ↑ было 0.01 (фильтр на лонги)
+
+  # 🟡 XRP - СТАБИЛЬНАЯ
+  # Model Decay: +0.59%, +0.54%
+  XRP:
+    ZWeakThreshold: 0.20          # ↔ оставили
+    ZStrongThreshold: 1.0         # ↔ оставили
+    EntropyCut: 1.65              # ↔ оставили
+    ShortScoreThreshold: 0.045    # ↓ было 0.005 (немного снижаем)
+    LongScoreThreshold: 0.045     # ↓ было 0.005
+
+  # 🔴 BTC/ETH - СЛИШКОМ ШУМНЫЕ
+  # Много мелких сделок с околонулевым PnL
+  BTC:
+    ZWeakThreshold: 0.30          # ↑ было 0.20 (фильтруем)
+    ZStrongThreshold: 1.2         # ↑ было 1.0
+    EntropyCut: 1.60              # ↔ оставили
+    ShortScoreThreshold: 0.055    # ↑ было 0.005 (высокий порог!)
+    LongScoreThreshold: 0.055     # ↑ было 0.005
+
+  ETH:
+    ZWeakThreshold: 0.30          # ↑ было 0.20
+    ZStrongThreshold: 1.2         # ↑ было 1.0
+    EntropyCut: 1.55              # ↔ оставили
+    ShortScoreThreshold: 0.055    # ↑ было 0.005
+    LongScoreThreshold: 0.055     # ↑ было 0.005
+
+  # 🟡 BNB - СРЕДНЯЯ, НО МНОГО SUBFRAME ВЫХОДОВ
+  BNB:
+    ZWeakThreshold: 0.25          # ↑ было 0.20
+    ZStrongThreshold: 1.1         # ↑ было 1.0
+    EntropyCut: 1.55              # ↓ было 1.65 (быстрее выходим)
+    ShortScoreThreshold: 0.045    # ↑ было 0.005
+    LongScoreThreshold: 0.045     # ↑ было 0.005
+
+  # 🟡 AVAX - СРЕДНЯЯ
+  AVAX:
+    ZWeakThreshold: 0.30          # ↑ было 0.25
+    ZStrongThreshold: 1.2         # ↑ было 1.1
+    EntropyCut: 1.60              # ↔ оставили
+    ShortScoreThreshold: 0.045    # ↑ было 0.008
+    LongScoreThreshold: 0.045     # ↑ было 0.008
+
+  # 🟡 SOL - СРЕДНЯЯ
+  SOL:
+    ZWeakThreshold: 0.30          # ↑ было 0.25
+    ZStrongThreshold: 1.2         # ↑ было 1.1
+    EntropyCut: 1.60              # ↔ оставили
+    ShortScoreThreshold: 0.045    # ↑ было 0.008
+    LongScoreThreshold: 0.045     # ↑ было 0.008
+
+  # 🟡 HBAR - СРЕДНЯЯ
+  HBAR:
+    ZWeakThreshold: 0.30          # ↓ было 0.35
+    ZStrongThreshold: 1.2         # ↓ было 1.3
+    EntropyCut: 1.55              # ↑ было 1.50
+    ShortScoreThreshold: 0.045    # ↑ было 0.01
+    LongScoreThreshold: 0.045     # ↑ было 0.01
+
+  # 🟡 APT - СРЕДНЯЯ
+  APT:
+    ZWeakThreshold: 0.30          # ↓ было 0.35
+    ZStrongThreshold: 1.2         # ↓ было 1.3
+    EntropyCut: 1.55              # ↑ было 1.50
+    ShortScoreThreshold: 0.045    # ↑ было 0.01
+    LongScoreThreshold: 0.045     # ↑ было 0.01
+
+  # 🟡 SUI - СРЕДНЯЯ
+  SUI:
+    ZWeakThreshold: 0.30          # ↓ было 0.35
+    ZStrongThreshold: 1.2         # ↓ было 1.3
+    EntropyCut: 1.55              # ↑ было 1.50
+    ShortScoreThreshold: 0.045    # ↑ было 0.01
+    LongScoreThreshold: 0.045     # ↑ было 0.01
+
+  # 🔴 ARB - ПРОБЛЕМНАЯ (SubFrame: -0.71%)
+  ARB:
+    ZWeakThreshold: 0.35          # ↑ было 0.25 (фильтруем)
+    ZStrongThreshold: 1.3         # ↑ было 1.1
+    EntropyCut: 1.55              # ↓ было 1.60
+    ShortScoreThreshold: 0.055   # ↑ было 0.008
+    LongScoreThreshold: 0.055     # ↑ было 0.008
+
+  # 🟡 DOT - СРЕДНЯЯ (SubFrame: -0.64%)
+  DOT:
+    ZWeakThreshold: 0.30          # ↑ было 0.25
+    ZStrongThreshold: 1.2         # ↑ было 1.1
+    EntropyCut: 1.60              # ↔ оставили
+    ShortScoreThreshold: 0.045    # ↑ было 0.008
+    LongScoreThreshold: 0.045     # ↑ было 0.008
+
+  # 🟡 OP - СРЕДНЯЯ
+  OP:
+    ZWeakThreshold: 0.30          # ↑ было 0.25
+    ZStrongThreshold: 1.2         # ↑ было 1.1
+    EntropyCut: 1.60              # ↔ оставили
+    ShortScoreThreshold: 0.045    # ↑ было 0.008
+    LongScoreThreshold: 0.045     # ↑ было 0.008
+
+  # 🟡 DOGE - СРЕДНЯЯ
+  DOGE:
+    ZWeakThreshold: 0.30          # ↓ было 0.35
+    ZStrongThreshold: 1.2         # ↓ было 1.3
+    EntropyCut: 1.55              # ↑ было 1.50
+    ShortScoreThreshold: 0.045    # ↑ было 0.01
+    LongScoreThreshold: 0.045     # ↑ было 0.01
+# === EXIT LOGIC ===
+exit:
+  # Адаптивный выход на основе уверенности модели
+  adaptive:
+    enabled: true
+    base_conf_threshold: 0.85          # Базовый порог уверенности для выхода
+    
+    # Динамическая подстройка под волатильность
+    vol_adjustment:
+      enabled: true
+      factor: 0.25                     # Коэффициент влияния volRatio: adj = base * (1 - factor*(vol-1))
+      
+    # Ограничения динамического порога (clamp)
+    clamp:
+      min: 0.45                        # Минимальный порог (при очень высокой волатильности)
+      max: 0.90                        # Максимальный порог (при очень низкой волатильности)
+  
+  # Сигнальный выход (деградация скоринга)
+  signal:
+    long_confirm_bars: 2               # Сколько свечей подряд сигнал должен быть против позиции
+    short_confirm_bars: 2
+    
+  # Минимальное удержание позиции (в свечах)
+  min_hold_bars: 4
+
+# === SUB-FRAME MONITORING ===
+subframe:
+  enabled: true
+  timeframe: 5m                    # Суб-фрейм для мониторинга
+  
+  # Влияние на выходы
+  exit:
+    early_warning: true            # Раннее предупреждение о развороте
+    pnl_protection: true           # Ускоренный выход при убытке на 5m
+    trail_refinement: true         # Уточнение трейлинг-стопа
+    
+  # Пороги для 5m сигналов
+  thresholds:
+    score_change_warning: 0.03     # Изменение скора на 5m для предупреждения
+    pnl_acceleration: 0.4          # % PnL на 5m для ускоренного выхода
+    confirm_bars: 2                # Сколько свечей 5m подряд для подтверждения
+    
+  # Ограничения
+  constraints:
+    respect_min_hold: true         # Не выходить раньше min_hold_bars из 15m
+    max_early_exit_loss: 0.8       # Макс. убыток % для раннего выхода
+
+# === TAKE PROFIT ===
+take_profit:
+  enabled: true
+  partial:
+    enabled: true
+    at_percent: 1.5        # Фиксируем 30% когда профит 1.5%
+    close_ratio: 0.30      # Закрываем 30% позиции
+  trailing:
+    aggressive_offset: 0.0015  # Ужесточаем трейлинг до 0.15% после частичного выхода

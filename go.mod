@@ -3,6 +3,7 @@ module markov_screener
 go 1.25.0
 
 require (
+	github.com/bytedance/gopkg v0.1.4
 	github.com/joho/godotenv v1.5.1
 	gopkg.in/yaml.v3 v3.0.1
 	modernc.org/sqlite v1.48.1

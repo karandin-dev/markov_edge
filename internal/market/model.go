@@ -69,4 +69,7 @@ type SymbolScore struct {
 	ProbDown1         float64
 	ProbUp2           float64
 	ProbDown2         float64
+
+	VolRatio    float64 // Текущая волатильность / базовая
+	MacroRegime string  // "bull", "bear", "neutral", etc.
 }

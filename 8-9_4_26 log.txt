@@ -1,0 +1,1289 @@
+DEMO TRADER LIVE EXECUTION
+--------------------------------------------------
+🔵 SUBFRAME: enabled=true | tf=5m | pnl_protect=0.40%
+DEMO TRADER LIVE EXECUTION
+--------------------------------------------------
+TIMEFRAME: 15m
+SYMBOLS: [BTCUSDT ETHUSDT SOLUSDT LINKUSDT HBARUSDT BNBUSDT XRPUSDT AVAXUSDT NEARUSDT DOGEUSDT APTUSDT SUIUSDT ARBUSDT TIAUSDT ATOMUSDT DOTUSDT OPUSDT]
+EXECUTION ENABLED: true
+DRY RUN: false
+USDT PER TRADE: 50
+BOOTSTRAP DAYS: 3
+RUN ON START: true
+POLL INTERVAL SEC: 5
+
+ACTIVE SETTINGS
+--------------------------------------------------
+timeframe=15m | candles=1000 | markov_window=500 | vol_window=100
+adaptive_mode=true | regime_filter_enabled=false | use_dynamic_zscore=true
+long_threshold=0.0400 | short_threshold=0.0450 | bootstrap_days=3
+min_hold=4 | cooldown=1 | long_exit_confirm=2 | short_exit_confirm=2
+usdt_per_trade=50.0000 | stop_loss_percent=1.5000
+MONETAS / SYMBOLS:
+ - BTCUSDT
+ - ETHUSDT
+ - SOLUSDT
+ - LINKUSDT
+ - HBARUSDT
+ - BNBUSDT
+ - XRPUSDT
+ - AVAXUSDT
+ - NEARUSDT
+ - DOGEUSDT
+ - APTUSDT
+ - SUIUSDT
+ - ARBUSDT
+ - TIAUSDT
+ - ATOMUSDT
+ - DOTUSDT
+ - OPUSDT
+
+
+BOOTSTRAP COMPLETE
+--------------------------------------------------
+[BTCUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[ETHUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[SOLUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[LINKUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[HBARUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[BNBUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[XRPUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[AVAXUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[NEARUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[DOGEUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[APTUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[SUIUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[ARBUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[TIAUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[ATOMUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[DOTUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+[OPUSDT] last_closed_open=2026-04-08T20:00:00+03:00 | next_close_expected=2026-04-08T20:30:00+03:00
+
+INITIAL RUN
+--------------------------------------------------
+2026/04/08 20:26:45.523701 logger.go:161: [Info] [BTCUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 71350.1000 -> Stop: 71421.4501)
+2026/04/08 20:26:46.970490 logger.go:169: [Debug] [AVAXUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.001
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-08T20:00:00+03:00 | signal=flat / wait | score=-0.0658 | long=-0.1727 | short=-0.0658
+[ETHUSDT] SKIP | anchor=2026-04-08T20:00:00+03:00 | signal=flat / wait | score=-0.0468 | long=-0.1999 | short=-0.0468
+[BTCUSDT] HOLD LONG | anchor=2026-04-08T20:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0491 | long=0.0491 | short=-0.1935
+[HBARUSDT] HOLD SHORT | anchor=2026-04-08T20:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0419 | long=-0.1338 | short=-0.0419
+[LINKUSDT] HOLD SHORT | anchor=2026-04-08T20:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0364 | long=-0.2923 | short=0.0364
+[XRPUSDT] SKIP | anchor=2026-04-08T20:00:00+03:00 | signal=flat / wait | score=-0.0288 | long=-0.1665 | short=-0.0288
+[BNBUSDT] HOLD LONG | anchor=2026-04-08T20:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0561 | long=0.0561 | short=-0.2281
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-08T20:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0065 | long=-0.1599 | short=-0.0065
+[DOGEUSDT] SKIP | anchor=2026-04-08T20:00:00+03:00 | signal=flat / wait | score=-0.0637 | long=-0.1000 | short=-0.0637
+[NEARUSDT] SKIP | anchor=2026-04-08T20:00:00+03:00 | signal=flat / wait | score=-0.0047 | long=-0.0047 | short=-0.1898
+[SUIUSDT] SKIP | anchor=2026-04-08T20:00:00+03:00 | signal=flat / wait | score=-0.0910 | long=-0.0910 | short=-0.0962
+[APTUSDT] SKIP | anchor=2026-04-08T20:00:00+03:00 | signal=flat / wait | score=-0.0078 | long=-0.1770 | short=-0.0078
+[ARBUSDT] SKIP | anchor=2026-04-08T20:00:00+03:00 | signal=flat / wait | score=-0.0465 | long=-0.1798 | short=-0.0465
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-08T20:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0040 | long=-0.2207 | short=-0.0040
+[TIAUSDT] EXECUTED | anchor=2026-04-08T20:00:00+03:00 | placed Sell TIAUSDT | raw_qty=163.23865491 | qty=163.20000000 | step=0.10000000 | min_qty=0.10000000 | last=0.3063 | stop=0.3109 | order_id=08801d3c-4fd3-4407-902e-c674f55a062e | score=0.0606 (thr=0.0100) | entropy=1.55 | vol=0.92 | long=-0.2808 | short=0.0606 | reason=short_score 0.0606 >= threshold 0.0100 (profile)
+[DOTUSDT] SKIP | anchor=2026-04-08T20:00:00+03:00 | signal=flat / wait | score=-0.0437 | long=-0.1257 | short=-0.0437
+[OPUSDT] SKIP | anchor=2026-04-08T20:00:00+03:00 | signal=flat / wait | score=-0.0180 | long=-0.1944 | short=-0.0180
+INITIAL CYCLE COMPLETE
+
+LIVE LOOP STARTED
+--------------------------------------------------
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T17:30:00Z
+CYCLE ANCHOR: 2026-04-08T20:15:00+03:00
+--------------------------------------------------
+2026/04/08 20:30:07.556405 logger.go:169: [Debug] [TIAUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=up | scoreChange=0.053
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-08T20:15:00+03:00 | signal=flat / wait | score=-0.0678 | long=-0.0678 | short=-0.0802
+[ETHUSDT] SKIP | anchor=2026-04-08T20:15:00+03:00 | signal=weak short | score=-0.0358 | long=-0.1216 | short=-0.0358
+[LINKUSDT] HOLD SHORT | anchor=2026-04-08T20:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0274 | long=-0.1522 | short=0.0274
+[HBARUSDT] HOLD SHORT | anchor=2026-04-08T20:15:00+03:00 | hold=2/4 | against=0/2 | signal=strong short | score=0.0509 | long=-0.2033 | short=0.0509
+[BTCUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.36% | Score dropped from 0.000 to -0.041 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=5be9878d-8e52-4891-a020-c35d409fb6dd reason=Model_Decay_TP qty=0.00100000
+[XRPUSDT] SKIP | anchor=2026-04-08T20:15:00+03:00 | signal=flat / wait | score=0.0037 | long=-0.1283 | short=0.0037
+[BNBUSDT] HOLD LONG | anchor=2026-04-08T20:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0703 | long=0.0703 | short=-0.1859
+[DOGEUSDT] EXECUTED | anchor=2026-04-08T20:15:00+03:00 | placed Sell DOGEUSDT | raw_qty=535.61863953 | qty=535.00000000 | step=1.00000000 | min_qty=1.00000000 | last=0.0934 | stop=0.0948 | order_id=13fe5abe-eb23-4956-bcf6-edc02915e9d9 | score=0.0500 (thr=0.0100) | entropy=1.53 | vol=0.91 | long=-0.2348 | short=0.0500 | reason=short_score 0.0500 >= threshold 0.0100 (profile)
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-08T20:15:00+03:00 | hold=2/4 | against=0/2 | signal=weak short | score=0.0800 | long=-0.2483 | short=0.0800
+[NEARUSDT] EXECUTED | anchor=2026-04-08T20:15:00+03:00 | placed Buy NEARUSDT | raw_qty=36.93034936 | qty=36.90000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3539 | stop=1.3336 | order_id=d7cd342d-184f-440b-9f59-fa658ec1a565 | score=0.0931 (thr=0.0080) | entropy=1.58 | vol=1.15 | long=0.0931 | short=-0.2133 | reason=long_score 0.0931 >= threshold 0.0080 (profile)
+[SUIUSDT] SKIP | anchor=2026-04-08T20:15:00+03:00 | signal=flat / wait | score=-0.0080 | long=-0.1544 | short=-0.0080
+[APTUSDT] EXECUTED | anchor=2026-04-08T20:15:00+03:00 | placed Sell APTUSDT | raw_qty=59.29791271 | qty=59.29000000 | step=0.01000000 | min_qty=0.01000000 | last=0.8432 | stop=0.8558 | order_id=4ffdf7b4-a4f1-417f-ab0d-3785f10088c9 | score=0.0823 (thr=0.0100) | entropy=1.57 | vol=0.90 | long=-0.2433 | short=0.0823 | reason=short_score 0.0823 >= threshold 0.0100 (profile)
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-08T20:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0048 | long=-0.1371 | short=-0.0048
+[ARBUSDT] EXECUTED | anchor=2026-04-08T20:15:00+03:00 | placed Buy ARBUSDT | raw_qty=496.17941848 | qty=496.10000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1008 | stop=0.0993 | order_id=52fe4fbd-830f-4dc8-94ba-5d61d1c6dd23 | score=0.1307 (thr=0.0080) | entropy=1.51 | vol=0.84 | long=0.1307 | short=-0.1262 | reason=long_score 0.1307 >= threshold 0.0080 (profile)
+[TIAUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.82% | Score dropped from 0.000 to 0.010 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=5aa9a8ef-69a8-4b27-8b08-8fc56dd81029 reason=Model_Decay_TP qty=163.20000000
+[DOTUSDT] EXECUTED | anchor=2026-04-08T20:15:00+03:00 | placed Sell DOTUSDT | raw_qty=38.79878948 | qty=38.70000000 | step=0.10000000 | min_qty=0.10000000 | last=1.2887 | stop=1.3080 | order_id=12bf1f58-0086-4964-9eaf-696c971cb2a6 | score=0.0373 (thr=0.0080) | entropy=1.57 | vol=0.82 | long=-0.2208 | short=0.0373 | reason=short_score 0.0373 >= threshold 0.0080 (profile)
+[OPUSDT] EXECUTED | anchor=2026-04-08T20:15:00+03:00 | placed Buy OPUSDT | raw_qty=429.33195947 | qty=429.30000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1165 | stop=0.1147 | order_id=0c977951-37dc-4b70-8848-d352163338d5 | score=0.0274 (thr=0.0080) | entropy=1.58 | vol=1.04 | long=0.0274 | short=-0.0955 | reason=long_score 0.0274 >= threshold 0.0080 (profile)
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T17:45:00Z
+CYCLE ANCHOR: 2026-04-08T20:30:00+03:00
+--------------------------------------------------
+2026/04/08 20:45:01.247126 logger.go:169: [Debug] [LINKUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.004
+2026/04/08 20:45:03.444965 logger.go:169: [Debug] [AVAXUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.001
+2026/04/08 20:45:04.963507 logger.go:169: [Debug] [DOGEUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.020
+2026/04/08 20:45:05.755371 logger.go:169: [Debug] [APTUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.022
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-08T20:30:00+03:00 | signal=flat / wait | score=-0.0155 | long=-0.0155 | short=-0.1520
+[ETHUSDT] SKIP | anchor=2026-04-08T20:30:00+03:00 | signal=flat / wait | score=-0.0584 | long=-0.0584 | short=-0.1379
+[LINKUSDT] HOLD SHORT | anchor=2026-04-08T20:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0109 | long=-0.2057 | short=-0.0109
+[XRPUSDT] SKIP | anchor=2026-04-08T20:30:00+03:00 | signal=flat / wait | score=-0.0349 | long=-0.1629 | short=-0.0349
+[BTCUSDT] EXECUTED | anchor=2026-04-08T20:30:00+03:00 | placed Buy BTCUSDT | raw_qty=0.00069624 | qty=0.00100000 | step=0.00100000 | min_qty=0.00100000 | last=71813.9000 | stop=70736.6915 | order_id=d5ab67d0-79ee-4e16-af97-0611be19d11c | score=0.0528 (thr=0.0050) | entropy=1.48 | vol=1.18 | long=0.0528 | short=-0.1981 | reason=long_score 0.0528 >= threshold 0.0050 (profile)
+[BNBUSDT] HOLD LONG | anchor=2026-04-08T20:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.1229 | long=-0.1229 | short=-0.1296
+[HBARUSDT] HOLD SHORT | anchor=2026-04-08T20:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0435 | long=-0.1382 | short=-0.0435
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-08T20:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0817 | long=0.0817 | short=-0.1911
+[SUIUSDT] SKIP | anchor=2026-04-08T20:30:00+03:00 | signal=flat / wait | score=-0.0876 | long=-0.0876 | short=-0.1008
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-08T20:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0031 | long=-0.2213 | short=-0.0031
+[NEARUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.48% | Score dropped from 0.000 to 0.004 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=3d8f0338-9864-4300-9bd8-9de0052bae5c reason=Model_Decay_TP qty=36.90000000
+[APTUSDT] HOLD SHORT | anchor=2026-04-08T20:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0361 | long=-0.2466 | short=0.0361
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-08T20:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0010 | long=-0.1459 | short=0.0010
+[ARBUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.41% | Score dropped from 0.000 to -0.200 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=1d34b8fb-8ce2-48ea-8dd0-38bdb77dd500 reason=Model_Decay_TP qty=496.10000000
+[DOTUSDT] HOLD SHORT | anchor=2026-04-08T20:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0397 | long=-0.1344 | short=-0.0397
+[TIAUSDT] EXECUTED | anchor=2026-04-08T20:30:00+03:00 | placed Sell TIAUSDT | raw_qty=164.25755585 | qty=164.20000000 | step=0.10000000 | min_qty=0.10000000 | last=0.3044 | stop=0.3090 | order_id=20ef9ca6-d9f1-449f-8bdd-eff4fa96d2d9 | score=0.0112 (thr=0.0100) | entropy=1.57 | vol=1.03 | long=-0.2127 | short=0.0112 | reason=short_score 0.0112 >= threshold 0.0100 (profile)
+[OPUSDT] HOLD LONG | anchor=2026-04-08T20:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0364 | long=-0.1475 | short=-0.0364
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T18:00:00Z
+CYCLE ANCHOR: 2026-04-08T20:45:00+03:00
+--------------------------------------------------
+2026/04/08 21:00:02.123927 logger.go:169: [Debug] [LINKUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.001
+2026/04/08 21:00:03.810861 logger.go:169: [Debug] [AVAXUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=up | scoreChange=0.008
+2026/04/08 21:00:04.388485 logger.go:169: [Debug] [DOGEUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.019
+2026/04/08 21:00:04.697410 logger.go:169: [Debug] [APTUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=up | scoreChange=0.004
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-08T20:45:00+03:00 | signal=flat / wait | score=-0.0228 | long=-0.0228 | short=-0.1214
+[ETHUSDT] SKIP | anchor=2026-04-08T20:45:00+03:00 | signal=weak short | score=-0.0447 | long=-0.1115 | short=-0.0447
+[BTCUSDT] HOLD LONG | anchor=2026-04-08T20:45:00+03:00 | hold=1/4 | against=0/2 | signal=avoid | score=-0.0724 | long=-0.0724 | short=-0.1204
+[BNBUSDT] HOLD LONG | anchor=2026-04-08T20:45:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0906 | long=0.0906 | short=-0.1992
+[XRPUSDT] SKIP | anchor=2026-04-08T20:45:00+03:00 | signal=flat / wait | score=-0.0276 | long=-0.1550 | short=-0.0276
+[HBARUSDT] HOLD SHORT | anchor=2026-04-08T20:45:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0335 | long=-0.1785 | short=0.0335
+[LINKUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-08T20:45:00+03:00 | pnl=-0.53% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.001 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=cb2e8143-040d-4670-9f48-d00183937445 reason=subframe_exit(subframe_pnl_protection) qty=5.50000000
+[AVAXUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-08T20:45:00+03:00 | pnl=-0.78% | reason=subframe_pnl_protection | trend5m=up | scoreChange=0.008 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=d75ea2d6-f1ee-4637-af7c-35d5535401f8 reason=subframe_exit(subframe_pnl_protection) qty=5.40000000
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-08T20:45:00+03:00 | hold=2/4 | against=0/2 | signal=avoid | score=-0.0661 | long=-0.0976 | short=-0.0661
+[APTUSDT] HOLD SHORT | anchor=2026-04-08T20:45:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0834 | long=-0.2939 | short=0.0834
+[ARBUSDT] SKIP | anchor=2026-04-08T20:45:00+03:00 | signal=avoid | score=-0.0280 | long=-0.1361 | short=-0.0280
+[NEARUSDT] EXECUTED | anchor=2026-04-08T20:45:00+03:00 | placed Buy NEARUSDT | raw_qty=36.70532961 | qty=36.70000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3622 | stop=1.3418 | order_id=ce4dfee7-6cb8-404c-8003-584e91f5588e | score=0.0147 (thr=0.0080) | entropy=1.55 | vol=1.11 | long=0.0147 | short=-0.2158 | reason=long_score 0.0147 >= threshold 0.0080 (profile)
+[SUIUSDT] SKIP | anchor=2026-04-08T20:45:00+03:00 | signal=flat / wait | score=-0.0748 | long=-0.0748 | short=-0.1116
+[DOTUSDT] HOLD SHORT | anchor=2026-04-08T20:45:00+03:00 | hold=2/4 | against=0/2 | signal=avoid | score=-0.0030 | long=-0.1902 | short=-0.0030
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-08T20:45:00+03:00 | hold=4/4 | against=0/2 | signal=avoid | score=0.0374 | long=-0.3061 | short=0.0374
+[TIAUSDT] HOLD SHORT | anchor=2026-04-08T20:45:00+03:00 | hold=1/4 | against=0/2 | signal=avoid | score=-0.0462 | long=-0.0462 | short=-0.0616
+[OPUSDT] HOLD LONG | anchor=2026-04-08T20:45:00+03:00 | hold=2/4 | against=0/2 | signal=avoid | score=-0.0085 | long=-0.2031 | short=-0.0085
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T18:15:00Z
+CYCLE ANCHOR: 2026-04-08T21:00:00+03:00
+--------------------------------------------------
+2026/04/08 21:15:03.864760 logger.go:169: [Debug] [DOGEUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.002
+2026/04/08 21:15:05.776886 logger.go:169: [Debug] [ATOMUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.022
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-08T21:00:00+03:00 | signal=flat / wait | score=-0.0608 | long=-0.0608 | short=-0.0839
+[ETHUSDT] SKIP | anchor=2026-04-08T21:00:00+03:00 | signal=weak short | score=-0.0323 | long=-0.1297 | short=-0.0323
+[BTCUSDT] HOLD LONG | anchor=2026-04-08T21:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0314 | long=-0.0314 | short=-0.1033
+[XRPUSDT] SKIP | anchor=2026-04-08T21:00:00+03:00 | signal=flat / wait | score=-0.0015 | long=-0.1199 | short=-0.0015
+[BNBUSDT] HOLD LONG | anchor=2026-04-08T21:00:00+03:00 | hold=5/4 | against=0/2 | signal=flat / wait | score=0.0694 | long=0.0694 | short=-0.1862
+[HBARUSDT] HOLD SHORT | anchor=2026-04-08T21:00:00+03:00 | hold=5/4 | against=0/2 | signal=strong short | score=0.0404 | long=-0.1874 | short=0.0404
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-08T21:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0361 | long=-0.2116 | short=0.0361
+[AVAXUSDT] EXECUTED | anchor=2026-04-08T21:00:00+03:00 | placed Sell AVAXUSDT | raw_qty=5.39607166 | qty=5.30000000 | step=0.10000000 | min_qty=0.10000000 | last=9.2660 | stop=9.4050 | order_id=6dfd9aae-4dcb-4fe8-b498-ea4ede92492d | score=0.0416 (thr=0.0080) | entropy=1.48 | vol=0.80 | long=-0.2789 | short=0.0416 | reason=short_score 0.0416 >= threshold 0.0080 (profile)
+[LINKUSDT] EXECUTED | anchor=2026-04-08T21:00:00+03:00 | placed Sell LINKUSDT | raw_qty=5.51146384 | qty=5.50000000 | step=0.10000000 | min_qty=0.10000000 | last=9.0720 | stop=9.2081 | order_id=2cb27ac9-7cf8-4488-818f-47d9e68b9f71 | score=0.0199 (thr=0.0100) | entropy=1.56 | vol=0.89 | long=-0.1424 | short=0.0199 | reason=short_score 0.0199 >= threshold 0.0100 (profile)
+[SUIUSDT] SKIP | anchor=2026-04-08T21:00:00+03:00 | signal=flat / wait | score=-0.0241 | long=-0.1335 | short=-0.0241
+[NEARUSDT] HOLD LONG | anchor=2026-04-08T21:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0259 | long=-0.0259 | short=-0.1411
+[APTUSDT] HOLD SHORT | anchor=2026-04-08T21:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0636 | long=-0.2175 | short=0.0636
+[ATOMUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-08T21:00:00+03:00 | pnl=-0.48% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.022 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=e325bc3a-9818-495b-b7e8-fde428878350 reason=subframe_exit(subframe_pnl_protection) qty=28.00000000
+[TIAUSDT] HOLD SHORT | anchor=2026-04-08T21:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.1335 | long=-0.3370 | short=0.1335
+[ARBUSDT] EXECUTED | anchor=2026-04-08T21:00:00+03:00 | placed Sell ARBUSDT | raw_qty=494.80455220 | qty=494.80000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1011 | stop=0.1026 | order_id=fbcd463d-407b-41f2-8a95-9ade0e0cd82c | score=0.0626 (thr=0.0080) | entropy=1.57 | vol=0.82 | long=-0.2853 | short=0.0626 | reason=short_score 0.0626 >= threshold 0.0080 (profile)
+[DOTUSDT] HOLD SHORT | anchor=2026-04-08T21:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0484 | long=-0.2085 | short=0.0484
+[OPUSDT] HOLD LONG | anchor=2026-04-08T21:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0225 | long=-0.2053 | short=0.0225
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T18:30:00Z
+CYCLE ANCHOR: 2026-04-08T21:15:00+03:00
+--------------------------------------------------
+2026/04/08 21:30:01.123578 logger.go:169: [Debug] [BTCUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.054
+2026/04/08 21:30:02.468079 logger.go:161: [Info] [LINKUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 9.0720 -> Stop: 9.0629)
+2026/04/08 21:30:03.128027 logger.go:161: [Info] [LINKUSDT] 🔥 THRUSTERS MAX [standard]: Trailing SL at 9.0340 (PnL: 0.62%, offset: 0.002)
+2026/04/08 21:30:05.011760 logger.go:169: [Debug] [AVAXUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=up | scoreChange=0.039
+2026/04/08 21:30:05.357937 logger.go:169: [Debug] [NEARUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.054
+2026/04/08 21:30:06.073580 logger.go:145: [Warn] [NEARUSDT] SUBFRAME critical loss: -1.06% < -0.80% (min_hold not reached)
+2026/04/08 21:30:08.323832 logger.go:169: [Debug] [OPUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=down | scoreChange=0.025
+2026/04/08 21:30:08.582383 logger.go:161: [Info] [DOTUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 1.2887 -> Stop: 1.2874)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-08T21:15:00+03:00 | signal=flat / wait | score=-0.0116 | long=-0.0116 | short=-0.1068
+[BTCUSDT] HOLD LONG | anchor=2026-04-08T21:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0570 | long=-0.1166 | short=-0.0570
+[ETHUSDT] EXECUTED | anchor=2026-04-08T21:15:00+03:00 | placed Buy ETHUSDT | raw_qty=0.02260142 | qty=0.02000000 | step=0.01000000 | min_qty=0.01000000 | last=2212.2500 | stop=2179.0662 | order_id=332c2592-99c6-4ec3-86c2-337b22fe3477 | score=0.0737 (thr=0.0050) | entropy=1.56 | vol=0.95 | long=0.0737 | short=-0.1513 | reason=long_score 0.0737 >= threshold 0.0050 (profile)
+[LINKUSDT] HOLD SHORT | anchor=2026-04-08T21:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0193 | long=-0.1801 | short=0.0193
+[HBARUSDT] HOLD SHORT | anchor=2026-04-08T21:15:00+03:00 | hold=6/4 | against=0/2 | signal=strong short | score=0.0444 | long=-0.1945 | short=0.0444
+[BNBUSDT] HOLD LONG | anchor=2026-04-08T21:15:00+03:00 | hold=6/4 | against=1/2 | signal=flat / wait | score=-0.0619 | long=-0.0619 | short=-0.1137
+[XRPUSDT] SKIP | anchor=2026-04-08T21:15:00+03:00 | signal=flat / wait | score=0.0018 | long=-0.1273 | short=0.0018
+[AVAXUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.71% | Score dropped from 0.000 to -0.030 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=f753df7e-3520-4fc6-b3d5-841e7f868114 reason=Model_Decay_TP qty=5.30000000
+[APTUSDT] HOLD SHORT | anchor=2026-04-08T21:15:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0659 | long=-0.2190 | short=0.0659
+[NEARUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-08T21:15:00+03:00 | pnl=-1.06% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.054 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=cb4e5bf3-6c9c-42f8-a9c2-69d2ee88e76b reason=subframe_exit(subframe_pnl_protection) qty=36.70000000
+[SUIUSDT] SKIP | anchor=2026-04-08T21:15:00+03:00 | signal=flat / wait | score=-0.0201 | long=-0.1417 | short=-0.0201
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-08T21:15:00+03:00 | hold=4/4 | against=1/2 | signal=flat / wait | score=-0.0102 | long=-0.1485 | short=-0.0102
+[ATOMUSDT] SKIP | anchor=2026-04-08T21:15:00+03:00 | signal=flat / wait | score=0.0000 | long=-0.1453 | short=0.0000
+[ARBUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.55% | Score dropped from 0.000 to -0.133 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=484e1c18-1788-4045-8d88-0fe191111486 reason=Model_Decay_TP qty=494.80000000
+[TIAUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.79% | Score dropped from 0.000 to -0.013 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=825581f5-7fbf-402c-9cea-2d34a1211d37 reason=Model_Decay_TP qty=164.20000000
+[DOTUSDT] HOLD SHORT | anchor=2026-04-08T21:15:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0373 | long=-0.2208 | short=0.0373
+[OPUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-08T21:15:00+03:00 | pnl=-0.58% | reason=subframe_pnl_protection | trend5m=down | scoreChange=0.025 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=d63147ed-25c6-40c8-a199-a58315c5dcbc reason=subframe_exit(subframe_pnl_protection) qty=429.30000000
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T18:45:00Z
+CYCLE ANCHOR: 2026-04-08T21:30:00+03:00
+--------------------------------------------------
+2026/04/08 21:45:01.209253 logger.go:169: [Debug] [BTCUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.075
+2026/04/08 21:45:03.290655 logger.go:169: [Debug] [BNBUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.051
+2026/04/08 21:45:03.385238 logger.go:161: [Info] [HBARUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 0.0904 -> Stop: 0.0903)
+2026/04/08 21:45:06.324721 logger.go:161: [Info] [APTUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 0.8432 -> Stop: 0.8424)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-08T21:30:00+03:00 | signal=flat / wait | score=-0.0722 | long=-0.0736 | short=-0.0722
+[LINKUSDT] COOLDOWN | anchor=2026-04-08T21:30:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=0.0306 | long=-0.1602 | short=0.0306 | note=detected_exchange_close
+[BTCUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-08T21:30:00+03:00 | pnl=-0.77% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.075 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=b9e8b812-86a1-4d32-9e52-ce7178fb8940 reason=subframe_exit(subframe_pnl_protection) qty=0.00100000
+[ETHUSDT] HOLD LONG | anchor=2026-04-08T21:30:00+03:00 | hold=1/4 | against=0/2 | signal=weak short | score=-0.0269 | long=-0.1388 | short=-0.0269
+[HBARUSDT] HOLD SHORT | anchor=2026-04-08T21:30:00+03:00 | hold=7/4 | against=0/2 | signal=strong short | score=0.0577 | long=-0.2121 | short=0.0577
+[BNBUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-08T21:30:00+03:00 | pnl=-0.41% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.051 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=98de7d4d-74e4-4b48-b36e-2113dffd65f7 reason=subframe_exit(subframe_pnl_protection) qty=0.08000000
+[AVAXUSDT] EXECUTED | anchor=2026-04-08T21:30:00+03:00 | placed Sell AVAXUSDT | raw_qty=5.44365814 | qty=5.40000000 | step=0.10000000 | min_qty=0.10000000 | last=9.1850 | stop=9.3228 | order_id=1b8ed609-3f05-4dca-89a1-2171310dc883 | score=0.0747 (thr=0.0080) | entropy=1.51 | vol=0.83 | long=-0.2365 | short=0.0747 | reason=short_score 0.0747 >= threshold 0.0080 (profile)
+[NEARUSDT] SKIP | anchor=2026-04-08T21:30:00+03:00 | signal=flat / wait | score=-0.0491 | long=-0.0491 | short=-0.1230
+[XRPUSDT] EXECUTED | anchor=2026-04-08T21:30:00+03:00 | placed Sell XRPUSDT | raw_qty=37.01236213 | qty=37.00000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3509 | stop=1.3712 | order_id=b97af061-20b2-4442-b357-37b58b064925 | score=0.0077 (thr=0.0050) | entropy=1.55 | vol=0.85 | long=-0.1361 | short=0.0077 | reason=short_score 0.0077 >= threshold 0.0050 (profile)
+[SUIUSDT] SKIP | anchor=2026-04-08T21:30:00+03:00 | signal=flat / wait | score=-0.0061 | long=-0.1614 | short=-0.0061
+[APTUSDT] HOLD SHORT | anchor=2026-04-08T21:30:00+03:00 | hold=5/4 | against=0/2 | signal=flat / wait | score=0.0745 | long=-0.2290 | short=0.0745
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-08T21:30:00+03:00 | hold=5/4 | against=0/2 | signal=flat / wait | score=0.0465 | long=-0.2228 | short=0.0465
+[ARBUSDT] EXECUTED | anchor=2026-04-08T21:30:00+03:00 | placed Sell ARBUSDT | raw_qty=499.55040464 | qty=499.50000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1001 | stop=0.1016 | order_id=0c0e0435-4bee-4a28-970b-ff2d075da89a | score=0.0657 (thr=0.0080) | entropy=1.58 | vol=0.90 | long=-0.2916 | short=0.0657 | reason=short_score 0.0657 >= threshold 0.0080 (profile)
+[TIAUSDT] EXECUTED | anchor=2026-04-08T21:30:00+03:00 | placed Sell TIAUSDT | raw_qty=166.00265604 | qty=166.00000000 | step=0.10000000 | min_qty=0.10000000 | last=0.3012 | stop=0.3057 | order_id=41ba5f5c-e090-4bc2-b9f1-f7d34454bc3d | score=0.1253 (thr=0.0100) | entropy=1.53 | vol=1.04 | long=-0.3277 | short=0.1253 | reason=short_score 0.1253 >= threshold 0.0100 (profile)
+[ATOMUSDT] EXECUTED | anchor=2026-04-08T21:30:00+03:00 | placed Sell ATOMUSDT | raw_qty=28.05206463 | qty=28.00000000 | step=0.10000000 | min_qty=0.10000000 | last=1.7824 | stop=1.8091 | order_id=6ce3cd56-1d51-480a-a0b1-2b1f929d56bf | score=0.0086 (thr=0.0080) | entropy=1.58 | vol=1.38 | long=-0.1556 | short=0.0086 | reason=short_score 0.0086 >= threshold 0.0080 (profile)
+[DOTUSDT] COOLDOWN | anchor=2026-04-08T21:30:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=0.0499 | long=-0.2097 | short=0.0499 | note=detected_exchange_close
+[OPUSDT] EXECUTED | anchor=2026-04-08T21:30:00+03:00 | placed Sell OPUSDT | raw_qty=433.83947939 | qty=433.80000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1153 | stop=0.1170 | order_id=29301834-5cdd-450f-a1e2-ad4ac2a23c92 | score=0.0297 (thr=0.0080) | entropy=1.59 | vol=1.03 | long=-0.2146 | short=0.0297 | reason=short_score 0.0297 >= threshold 0.0080 (profile)
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T19:00:00Z
+CYCLE ANCHOR: 2026-04-08T21:45:00+03:00
+--------------------------------------------------
+2026/04/08 22:00:01.194049 logger.go:169: [Debug] [ETHUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=down | scoreChange=0.044
+2026/04/08 22:00:05.167248 logger.go:161: [Info] [AVAXUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 9.1850 -> Stop: 9.1758)
+2026/04/08 22:00:05.279254 logger.go:161: [Info] [DOGEUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 0.0934 -> Stop: 0.0933)
+2026/04/08 22:00:07.125161 logger.go:161: [Info] [APTUSDT] 🔥 THRUSTERS MAX [standard]: Trailing SL at 0.8396 (PnL: 0.62%, offset: 0.002)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-08T21:45:00+03:00 | signal=flat / wait | score=-0.0627 | long=-0.0852 | short=-0.0627
+[BTCUSDT] SKIP | anchor=2026-04-08T21:45:00+03:00 | signal=flat / wait | score=-0.0614 | long=-0.0614 | short=-0.0822
+[ETHUSDT] HOLD LONG | anchor=2026-04-08T21:45:00+03:00 | hold=2/4 | against=0/2 | signal=weak short | score=-0.0169 | long=-0.1501 | short=-0.0169
+[LINKUSDT] EXECUTED | anchor=2026-04-08T21:45:00+03:00 | placed Sell LINKUSDT | raw_qty=5.58222619 | qty=5.50000000 | step=0.10000000 | min_qty=0.10000000 | last=8.9570 | stop=9.0914 | order_id=90fc7d76-2c7b-4ab6-83d3-29685f85490c | score=0.0344 (thr=0.0100) | entropy=1.60 | vol=0.91 | long=-0.2009 | short=0.0344 | reason=short_score 0.0344 >= threshold 0.0100 (profile)
+[HBARUSDT] 🎯 ATR TP HIT | type=SHORT | PnL: 1.12% (Target: 0.80%) | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=2aeba2bf-933e-4bfa-b694-589c541bcbfd reason=ATR_TP qty=553.00000000
+[XRPUSDT] HOLD SHORT | anchor=2026-04-08T21:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0139 | long=-0.1451 | short=0.0139
+[BNBUSDT] EXECUTED | anchor=2026-04-08T21:45:00+03:00 | placed Buy BNBUSDT | raw_qty=0.08296001 | qty=0.08000000 | step=0.01000000 | min_qty=0.01000000 | last=602.7000 | stop=593.6595 | order_id=270c6972-17ec-4239-9782-5bc19fba0a3f | score=0.0410 (thr=0.0050) | entropy=1.50 | vol=0.95 | long=0.0410 | short=-0.1633 | reason=long_score 0.0410 >= threshold 0.0050 (profile)
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-08T21:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0843 | long=-0.2468 | short=0.0843
+[NEARUSDT] SKIP | anchor=2026-04-08T21:45:00+03:00 | signal=flat / wait | score=-0.0605 | long=-0.0605 | short=-0.1144
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-08T21:45:00+03:00 | hold=6/4 | against=0/2 | signal=flat / wait | score=0.0538 | long=-0.2320 | short=0.0538
+[SUIUSDT] SKIP | anchor=2026-04-08T21:45:00+03:00 | signal=flat / wait | score=0.0042 | long=-0.1731 | short=0.0042
+[APTUSDT] HOLD SHORT | anchor=2026-04-08T21:45:00+03:00 | hold=6/4 | against=0/2 | signal=flat / wait | score=0.0939 | long=-0.3069 | short=0.0939
+[ARBUSDT] HOLD SHORT | anchor=2026-04-08T21:45:00+03:00 | hold=1/4 | against=0/2 | signal=avoid | score=-0.0167 | long=-0.1411 | short=-0.0167
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-08T21:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0051 | long=-0.2201 | short=-0.0051
+[TIAUSDT] HOLD SHORT | anchor=2026-04-08T21:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.1253 | long=-0.3277 | short=0.1253
+[OPUSDT] HOLD SHORT | anchor=2026-04-08T21:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0343 | long=-0.2225 | short=0.0343
+[DOTUSDT] EXECUTED | anchor=2026-04-08T21:45:00+03:00 | placed Sell DOTUSDT | raw_qty=39.22183872 | qty=39.20000000 | step=0.10000000 | min_qty=0.10000000 | last=1.2748 | stop=1.2939 | order_id=84e605b4-8ec9-436e-a684-31aa19b5f7f8 | score=0.0568 (thr=0.0080) | entropy=1.54 | vol=0.78 | long=-0.2186 | short=0.0568 | reason=short_score 0.0568 >= threshold 0.0080 (profile)
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T19:15:00Z
+CYCLE ANCHOR: 2026-04-08T22:00:00+03:00
+--------------------------------------------------
+2026/04/08 22:15:05.730378 logger.go:161: [Info] [APTUSDT] 🔥 THRUSTERS MAX [standard]: Trailing SL at 0.8382 (PnL: 0.78%, offset: 0.002)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-08T22:00:00+03:00 | signal=flat / wait | score=-0.0424 | long=-0.1994 | short=-0.0424
+[ETHUSDT] HOLD LONG | anchor=2026-04-08T22:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0334 | long=-0.2148 | short=-0.0334
+[LINKUSDT] HOLD SHORT | anchor=2026-04-08T22:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0252 | long=-0.1338 | short=-0.0252
+[BTCUSDT] EXECUTED | anchor=2026-04-08T22:00:00+03:00 | placed Buy BTCUSDT | raw_qty=0.00070187 | qty=0.00100000 | step=0.00100000 | min_qty=0.00100000 | last=71237.9000 | stop=70169.3315 | order_id=5415646a-0bf2-46e3-aede-35e78c246e3c | score=0.0277 (thr=0.0050) | entropy=1.48 | vol=0.91 | long=0.0277 | short=-0.1764 | reason=long_score 0.0277 >= threshold 0.0050 (profile)
+[BNBUSDT] HOLD LONG | anchor=2026-04-08T22:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0341 | long=0.0341 | short=-0.2076
+[HBARUSDT] EXECUTED | anchor=2026-04-08T22:00:00+03:00 | placed Sell HBARUSDT | raw_qty=559.65972689 | qty=559.00000000 | step=1.00000000 | min_qty=1.00000000 | last=0.0893 | stop=0.0907 | order_id=ed2fd6ad-b702-4b90-a57a-57ca4b9f7e45 | score=0.0120 (thr=0.0100) | entropy=1.47 | vol=0.62 | long=-0.2080 | short=0.0120 | reason=short_score 0.0120 >= threshold 0.0100 (profile)
+[XRPUSDT] HOLD SHORT | anchor=2026-04-08T22:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0000 | long=-0.1870 | short=0.0000
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-08T22:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0624 | long=-0.2982 | short=0.0624
+[APTUSDT] HOLD SHORT | anchor=2026-04-08T22:00:00+03:00 | hold=7/4 | against=0/2 | signal=flat / wait | score=0.0833 | long=-0.2340 | short=0.0833
+[DOGEUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.31% | Score dropped from 0.000 to -0.032 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=64f7f4a6-faa7-4674-9934-973737f24d39 reason=Model_Decay_TP qty=535.00000000
+[NEARUSDT] EXECUTED | anchor=2026-04-08T22:00:00+03:00 | placed Buy NEARUSDT | raw_qty=37.30786450 | qty=37.30000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3402 | stop=1.3201 | order_id=a8e09c0f-b430-4fe1-a017-e0b7ec6d9342 | score=0.0440 (thr=0.0080) | entropy=1.56 | vol=0.96 | long=0.0440 | short=-0.2075 | reason=long_score 0.0440 >= threshold 0.0080 (profile)
+[SUIUSDT] EXECUTED | anchor=2026-04-08T22:00:00+03:00 | placed Sell SUIUSDT | raw_qty=54.38920918 | qty=50.00000000 | step=10.00000000 | min_qty=10.00000000 | last=0.9193 | stop=0.9331 | order_id=524e960e-80f4-47b5-a6e7-18d4b63e40db | score=0.0146 (thr=0.0100) | entropy=1.50 | vol=0.84 | long=-0.1848 | short=0.0146 | reason=short_score 0.0146 >= threshold 0.0100 (profile)
+[ARBUSDT] HOLD SHORT | anchor=2026-04-08T22:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0113 | long=-0.2000 | short=0.0113
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-08T22:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0157 | long=-0.2062 | short=-0.0157
+[DOTUSDT] HOLD SHORT | anchor=2026-04-08T22:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0661 | long=-0.2289 | short=0.0661
+[TIAUSDT] HOLD SHORT | anchor=2026-04-08T22:00:00+03:00 | hold=2/4 | against=0/2 | signal=avoid | score=-0.0500 | long=-0.0620 | short=-0.0500
+[OPUSDT] HOLD SHORT | anchor=2026-04-08T22:00:00+03:00 | hold=2/4 | against=0/2 | signal=avoid | score=0.0055 | long=-0.2105 | short=0.0055
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T19:30:00Z
+CYCLE ANCHOR: 2026-04-08T22:15:00+03:00
+--------------------------------------------------
+2026/04/08 22:30:00.897589 logger.go:169: [Debug] [ETHUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=down | scoreChange=0.023
+2026/04/08 22:30:03.468952 logger.go:161: [Info] [XRPUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 1.3509 -> Stop: 1.3495)
+2026/04/08 22:30:04.470650 logger.go:169: [Debug] [NEARUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=down | scoreChange=0.036
+2026/04/08 22:30:04.580631 logger.go:161: [Info] [AVAXUSDT] 🔥 THRUSTERS MAX [standard]: Trailing SL at 9.1392 (PnL: 0.70%, offset: 0.002)
+2026/04/08 22:30:06.532930 logger.go:169: [Debug] [ARBUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=down | scoreChange=0.015
+2026/04/08 22:30:06.585218 logger.go:161: [Info] [TIAUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 0.3012 -> Stop: 0.3009)
+2026/04/08 22:30:06.721847 logger.go:161: [Info] [SUIUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 0.9193 -> Stop: 0.9184)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-08T22:15:00+03:00 | signal=flat / wait | score=-0.0640 | long=-0.0791 | short=-0.0640
+[BTCUSDT] HOLD LONG | anchor=2026-04-08T22:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0540 | long=-0.0540 | short=-0.0859
+[ETHUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-08T22:15:00+03:00 | pnl=-0.62% | reason=subframe_pnl_protection | trend5m=down | scoreChange=0.023 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=af8e4029-cd35-4cf8-ba4f-9129e5efe22d reason=subframe_exit(subframe_pnl_protection) qty=0.02000000
+[HBARUSDT] HOLD SHORT | anchor=2026-04-08T22:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0639 | long=-0.2209 | short=0.0639
+[LINKUSDT] HOLD SHORT | anchor=2026-04-08T22:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0385 | long=-0.1706 | short=0.0385
+[BNBUSDT] HOLD LONG | anchor=2026-04-08T22:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0482 | long=0.0482 | short=-0.1658
+[XRPUSDT] HOLD SHORT | anchor=2026-04-08T22:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0178 | long=-0.1474 | short=0.0178
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-08T22:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0871 | long=-0.2481 | short=0.0871
+[NEARUSDT] HOLD LONG | anchor=2026-04-08T22:15:00+03:00 | hold=1/4 | against=0/2 | signal=avoid | score=0.0443 | long=0.0443 | short=-0.2110
+[DOGEUSDT] EXECUTED | anchor=2026-04-08T22:15:00+03:00 | placed Sell DOGEUSDT | raw_qty=539.08355795 | qty=539.00000000 | step=1.00000000 | min_qty=1.00000000 | last=0.0927 | stop=0.0941 | order_id=2da9c0ea-3a12-4816-a0bd-3c15c414611e | score=0.0555 (thr=0.0100) | entropy=1.54 | vol=0.79 | long=-0.2327 | short=0.0555 | reason=short_score 0.0555 >= threshold 0.0100 (profile)
+[APTUSDT] 🎯 ATR TP HIT | type=SHORT | PnL: 0.83% (Target: 0.80%) | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=c2969a5d-39a7-48db-a70a-b987c068371a reason=ATR_TP qty=59.29000000
+[TIAUSDT] HOLD SHORT | anchor=2026-04-08T22:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.1310 | long=-0.3359 | short=0.1310
+[SUIUSDT] HOLD SHORT | anchor=2026-04-08T22:15:00+03:00 | hold=1/4 | against=0/2 | signal=weak short | score=0.0194 | long=-0.1930 | short=0.0194
+[ARBUSDT] HOLD SHORT | anchor=2026-04-08T22:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0010 | long=-0.1864 | short=0.0010
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-08T22:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0122 | long=-0.1276 | short=-0.0122
+[DOTUSDT] HOLD SHORT | anchor=2026-04-08T22:15:00+03:00 | hold=2/4 | against=0/2 | signal=avoid | score=0.0118 | long=-0.2078 | short=0.0118
+[OPUSDT] HOLD SHORT | anchor=2026-04-08T22:15:00+03:00 | hold=3/4 | against=0/2 | signal=avoid | score=0.0027 | long=-0.2088 | short=0.0027
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T19:45:00Z
+CYCLE ANCHOR: 2026-04-08T22:30:00+03:00
+--------------------------------------------------
+2026/04/08 22:45:04.461209 logger.go:169: [Debug] [NEARUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=down | scoreChange=0.040
+2026/04/08 22:45:05.664673 logger.go:169: [Debug] [ARBUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.005
+DEMO TRADER RESULTS
+--------------------------------------------------
+[ETHUSDT] SKIP | anchor=2026-04-08T22:30:00+03:00 | signal=flat / wait | score=-0.0334 | long=-0.2148 | short=-0.0334
+[SOLUSDT] SKIP | anchor=2026-04-08T22:30:00+03:00 | signal=flat / wait | score=-0.0424 | long=-0.1994 | short=-0.0424
+[BTCUSDT] HOLD LONG | anchor=2026-04-08T22:30:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0277 | long=0.0277 | short=-0.1764
+[LINKUSDT] HOLD SHORT | anchor=2026-04-08T22:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0424 | long=-0.2869 | short=0.0424
+[HBARUSDT] HOLD SHORT | anchor=2026-04-08T22:30:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0268 | long=-0.1542 | short=-0.0268
+[AVAXUSDT] COOLDOWN | anchor=2026-04-08T22:30:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=0.0378 | long=-0.2182 | short=0.0378 | note=detected_exchange_close
+[BNBUSDT] HOLD LONG | anchor=2026-04-08T22:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0341 | long=0.0341 | short=-0.2076
+[XRPUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.31% | Score dropped from 0.000 to -0.030 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=33554050-cae2-4468-b223-034dfc74e94f reason=Model_Decay_TP qty=37.00000000
+[APTUSDT] SKIP | anchor=2026-04-08T22:30:00+03:00 | signal=flat / wait | score=0.0095 | long=-0.2060 | short=0.0095
+[NEARUSDT] HOLD LONG | anchor=2026-04-08T22:30:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0013 | long=-0.0013 | short=-0.1974
+[SUIUSDT] COOLDOWN | anchor=2026-04-08T22:30:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=-0.0814 | long=-0.1048 | short=-0.0814 | note=detected_exchange_close
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-08T22:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0593 | long=-0.0972 | short=-0.0593
+[ARBUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-08T22:30:00+03:00 | pnl=-0.81% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.005 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=2e007910-1710-4a98-8b6c-8872b5c0b8b5 reason=subframe_exit(subframe_pnl_protection) qty=499.50000000
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-08T22:30:00+03:00 | hold=4/4 | against=0/2 | signal=avoid | score=0.0222 | long=-0.2818 | short=0.0222
+[DOTUSDT] HOLD SHORT | anchor=2026-04-08T22:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0366 | long=-0.1308 | short=-0.0366
+[TIAUSDT] COOLDOWN | anchor=2026-04-08T22:30:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=0.0115 | long=-0.2124 | short=0.0115 | note=detected_exchange_close
+[OPUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-08T22:30:00+03:00 | pnl=-0.16% | score_entry=0.00->-0.04 | entropy=1.53 | conf=1.00>thr=0.89 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=7cd50cc8-110a-4d7d-a1e0-b0aa19fd7ecb reason=adaptive_exit(conf=1.00>thr=0.89) qty=433.80000000
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T20:00:00Z
+CYCLE ANCHOR: 2026-04-08T22:45:00+03:00
+--------------------------------------------------
+2026/04/08 23:00:10.298004 logger.go:169: [Debug] [DOTUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.008
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-08T22:45:00+03:00 | signal=flat / wait | score=-0.0471 | long=-0.1900 | short=-0.0471
+[ETHUSDT] SKIP | anchor=2026-04-08T22:45:00+03:00 | signal=flat / wait | score=-0.0334 | long=-0.2148 | short=-0.0334
+[LINKUSDT] HOLD SHORT | anchor=2026-04-08T22:45:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0345 | long=-0.2738 | short=0.0345
+[BTCUSDT] HOLD LONG | anchor=2026-04-08T22:45:00+03:00 | hold=3/4 | against=0/2 | signal=avoid | score=-0.0816 | long=-0.0816 | short=-0.1051
+[XRPUSDT] SKIP | anchor=2026-04-08T22:45:00+03:00 | signal=flat / wait | score=-0.0299 | long=-0.1548 | short=-0.0299
+[HBARUSDT] HOLD SHORT | anchor=2026-04-08T22:45:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0214 | long=-0.2215 | short=0.0214
+[BNBUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-08T22:45:00+03:00 | pnl=0.20% | score_entry=0.00->-0.04 | entropy=1.48 | conf=0.97>thr=0.89 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=b43451fc-7128-40fe-a90f-44cd7b5c3ca1 reason=adaptive_exit(conf=0.97>thr=0.89) qty=0.08000000
+[NEARUSDT] HOLD LONG | anchor=2026-04-08T22:45:00+03:00 | hold=3/4 | against=0/2 | signal=avoid | score=0.0552 | long=0.0552 | short=-0.2150
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-08T22:45:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0614 | long=-0.0949 | short=-0.0614
+[SUIUSDT] SKIP | anchor=2026-04-08T22:45:00+03:00 | signal=flat / wait | score=-0.0869 | long=-0.0952 | short=-0.0869
+[AVAXUSDT] EXECUTED | anchor=2026-04-08T22:45:00+03:00 | placed Sell AVAXUSDT | raw_qty=5.44425087 | qty=5.40000000 | step=0.10000000 | min_qty=0.10000000 | last=9.1840 | stop=9.3218 | order_id=8874dab3-a1c8-423b-975a-205c005d5345 | score=0.0303 (thr=0.0080) | entropy=1.45 | vol=0.71 | long=-0.2065 | short=0.0303 | reason=short_score 0.0303 >= threshold 0.0080 (profile)
+[ARBUSDT] SKIP | anchor=2026-04-08T22:45:00+03:00 | signal=flat / wait | score=-0.0660 | long=-0.1591 | short=-0.0660
+[APTUSDT] EXECUTED | anchor=2026-04-08T22:45:00+03:00 | placed Sell APTUSDT | raw_qty=59.53798523 | qty=59.53000000 | step=0.01000000 | min_qty=0.01000000 | last=0.8398 | stop=0.8524 | order_id=2580e1b5-5686-448d-9038-5890e5c94e3d | score=0.0933 (thr=0.0100) | entropy=1.41 | vol=0.67 | long=-0.3033 | short=0.0933 | reason=short_score 0.0933 >= threshold 0.0100 (profile)
+[TIAUSDT] SKIP | anchor=2026-04-08T22:45:00+03:00 | signal=flat / wait | score=-0.0036 | long=-0.1908 | short=-0.0036
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-08T22:45:00+03:00 | hold=5/4 | against=1/2 | signal=flat / wait | score=-0.0113 | long=-0.2142 | short=-0.0113
+[OPUSDT] SKIP | anchor=2026-04-08T22:45:00+03:00 | signal=flat / wait | score=-0.0468 | long=-0.1225 | short=-0.0468
+[DOTUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-08T22:45:00+03:00 | pnl=-0.45% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.008 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=aaf2cbbb-a905-4435-aeba-0deaa96c7b4c reason=subframe_exit(subframe_pnl_protection) qty=39.20000000
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T20:15:00Z
+CYCLE ANCHOR: 2026-04-08T23:00:00+03:00
+--------------------------------------------------
+2026/04/08 23:15:03.666559 logger.go:169: [Debug] [DOGEUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.027
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-08T23:00:00+03:00 | signal=flat / wait | score=-0.0595 | long=-0.0595 | short=-0.0927
+[ETHUSDT] SKIP | anchor=2026-04-08T23:00:00+03:00 | signal=flat / wait | score=-0.0459 | long=-0.1958 | short=-0.0459
+[BTCUSDT] HOLD LONG | anchor=2026-04-08T23:00:00+03:00 | hold=4/4 | against=0/2 | signal=weak long | score=0.0285 | long=0.0285 | short=-0.1782
+[BNBUSDT] SKIP | anchor=2026-04-08T23:00:00+03:00 | signal=flat / wait | score=-0.0354 | long=-0.0354 | short=-0.1651
+[HBARUSDT] HOLD SHORT | anchor=2026-04-08T23:00:00+03:00 | hold=4/4 | against=0/2 | signal=strong short | score=0.0644 | long=-0.2162 | short=0.0644
+[LINKUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-08T23:00:00+03:00 | pnl=-0.31% | score_entry=0.00->-0.03 | entropy=1.48 | conf=1.00>thr=0.90 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=f9c93319-cca8-41ce-b34f-a04054c9aa6c reason=adaptive_exit(conf=1.00>thr=0.90) qty=5.50000000
+[XRPUSDT] SKIP | anchor=2026-04-08T23:00:00+03:00 | signal=flat / wait | score=0.0004 | long=-0.1941 | short=0.0004
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-08T23:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0622 | long=-0.3036 | short=0.0622
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-08T23:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0667 | long=-0.0853 | short=-0.0667
+[APTUSDT] HOLD SHORT | anchor=2026-04-08T23:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0888 | long=-0.3005 | short=0.0888
+[ARBUSDT] SKIP | anchor=2026-04-08T23:00:00+03:00 | signal=avoid | score=-0.0319 | long=-0.1315 | short=-0.0319
+[NEARUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.86% | Score dropped from 0.000 to -0.006 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=9b151c32-5fa6-4ae0-a0e1-79de3b2d517a reason=Model_Decay_TP qty=37.30000000
+[TIAUSDT] SKIP | anchor=2026-04-08T23:00:00+03:00 | signal=avoid | score=-0.0514 | long=-0.0699 | short=-0.0514
+[DOTUSDT] SKIP | anchor=2026-04-08T23:00:00+03:00 | signal=avoid | score=0.0027 | long=-0.1933 | short=0.0027
+[SUIUSDT] EXECUTED | anchor=2026-04-08T23:00:00+03:00 | placed Sell SUIUSDT | raw_qty=54.33010975 | qty=50.00000000 | step=10.00000000 | min_qty=10.00000000 | last=0.9203 | stop=0.9341 | order_id=fd3d8ab0-0178-4514-82a5-8627b843c2dc | score=0.0158 (thr=0.0100) | entropy=1.50 | vol=0.70 | long=-0.1852 | short=0.0158 | reason=short_score 0.0158 >= threshold 0.0100 (profile)
+[ATOMUSDT] CLOSED SHORT | anchor=2026-04-08T23:00:00+03:00 | hold=0/4 | against=0/2 | entry=0.0000 | peak=0.0000 | pnl=-0.10% | signal=flat / wait | score=-0.0031 | long=-0.1379 | short=-0.0031 | reduce_only_close order_id=22b7c1c4-06e1-4d29-821d-7bb26f8d7f28 reason=signal_exit_short qty=28.00000000
+[OPUSDT] SKIP | anchor=2026-04-08T23:00:00+03:00 | signal=avoid | score=-0.0053 | long=-0.1959 | short=-0.0053
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T20:30:00Z
+CYCLE ANCHOR: 2026-04-08T23:15:00+03:00
+--------------------------------------------------
+2026/04/08 23:30:03.512973 logger.go:161: [Info] [HBARUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 0.0893 -> Stop: 0.0893)
+2026/04/08 23:30:04.919748 logger.go:169: [Debug] [APTUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=up | scoreChange=0.050
+DEMO TRADER RESULTS
+--------------------------------------------------
+[ETHUSDT] SKIP | anchor=2026-04-08T23:15:00+03:00 | signal=flat / wait | score=-0.0044 | long=-0.0044 | short=-0.1229
+[LINKUSDT] SKIP | anchor=2026-04-08T23:15:00+03:00 | signal=flat / wait | score=-0.0348 | long=-0.1282 | short=-0.0348
+[SOLUSDT] SKIP | anchor=2026-04-08T23:15:00+03:00 | signal=flat / wait | score=-0.0595 | long=-0.0595 | short=-0.0927
+[BTCUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-08T23:15:00+03:00 | pnl=0.24% | score_entry=0.00->-0.07 | entropy=1.51 | conf=0.90>thr=0.90 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=2acfb933-1dcb-4380-9632-f6e2a0dbc0c9 reason=adaptive_exit(conf=0.90>thr=0.90) qty=0.00100000
+[BNBUSDT] EXECUTED | anchor=2026-04-08T23:15:00+03:00 | placed Buy BNBUSDT | raw_qty=0.08274036 | qty=0.08000000 | step=0.01000000 | min_qty=0.01000000 | last=604.3000 | stop=595.2355 | order_id=05849582-b07d-4939-8e56-05dc5862a3fa | score=0.0369 (thr=0.0050) | entropy=1.52 | vol=0.76 | long=0.0369 | short=-0.2118 | reason=long_score 0.0369 >= threshold 0.0050 (profile)
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-08T23:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0752 | long=-0.2312 | short=0.0752
+[HBARUSDT] HOLD SHORT | anchor=2026-04-08T23:15:00+03:00 | hold=5/4 | against=0/2 | signal=strong short | score=0.0713 | long=-0.2249 | short=0.0713
+[XRPUSDT] EXECUTED | anchor=2026-04-08T23:15:00+03:00 | placed Sell XRPUSDT | raw_qty=37.05350526 | qty=37.00000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3494 | stop=1.3696 | order_id=806fb3bf-5d55-4f56-8ba1-ed33586d35cf | score=0.0097 (thr=0.0050) | entropy=1.54 | vol=0.66 | long=-0.1324 | short=0.0097 | reason=short_score 0.0097 >= threshold 0.0050 (profile)
+[NEARUSDT] SKIP | anchor=2026-04-08T23:15:00+03:00 | signal=flat / wait | score=-0.0501 | long=-0.0501 | short=-0.1222
+[APTUSDT] HOLD SHORT | anchor=2026-04-08T23:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0870 | long=-0.2992 | short=0.0870
+[SUIUSDT] HOLD SHORT | anchor=2026-04-08T23:15:00+03:00 | hold=1/4 | against=0/2 | signal=avoid | score=-0.0581 | long=-0.1457 | short=-0.0581
+[ARBUSDT] SKIP | anchor=2026-04-08T23:15:00+03:00 | signal=flat / wait | score=-0.0239 | long=-0.1581 | short=-0.0239
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-08T23:15:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0557 | long=-0.2328 | short=0.0557
+[TIAUSDT] SKIP | anchor=2026-04-08T23:15:00+03:00 | signal=avoid | score=-0.0552 | long=-0.0690 | short=-0.0552
+[ATOMUSDT] SKIP | anchor=2026-04-08T23:15:00+03:00 | signal=flat / wait | score=0.0006 | long=-0.1454 | short=0.0006
+[DOTUSDT] SKIP | anchor=2026-04-08T23:15:00+03:00 | signal=avoid | score=-0.0007 | long=-0.1916 | short=-0.0007
+[OPUSDT] EXECUTED | anchor=2026-04-08T23:15:00+03:00 | placed Sell OPUSDT | raw_qty=432.97540700 | qty=432.90000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1155 | stop=0.1172 | order_id=5aa187e8-4d48-4004-85f7-b6ec882ed418 | score=0.0374 (thr=0.0080) | entropy=1.58 | vol=0.82 | long=-0.2297 | short=0.0374 | reason=short_score 0.0374 >= threshold 0.0080 (profile)
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T20:45:00Z
+CYCLE ANCHOR: 2026-04-08T23:30:00+03:00
+--------------------------------------------------
+2026/04/08 23:45:03.664695 logger.go:161: [Info] [HBARUSDT] 🔥 THRUSTERS MAX [standard]: Trailing SL at 0.0889 (PnL: 0.69%, offset: 0.002)
+2026/04/08 23:45:04.277953 logger.go:161: [Info] [AVAXUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 9.1840 -> Stop: 9.1748)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[BTCUSDT] SKIP | anchor=2026-04-08T23:30:00+03:00 | signal=flat / wait | score=-0.0337 | long=-0.0337 | short=-0.0997
+[ETHUSDT] SKIP | anchor=2026-04-08T23:30:00+03:00 | signal=weak short | score=-0.0278 | long=-0.1331 | short=-0.0278
+[SOLUSDT] SKIP | anchor=2026-04-08T23:30:00+03:00 | signal=flat / wait | score=-0.0626 | long=-0.0794 | short=-0.0626
+[XRPUSDT] HOLD SHORT | anchor=2026-04-08T23:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0153 | long=-0.1410 | short=0.0153
+[LINKUSDT] EXECUTED | anchor=2026-04-08T23:30:00+03:00 | placed Sell LINKUSDT | raw_qty=5.58284949 | qty=5.50000000 | step=0.10000000 | min_qty=0.10000000 | last=8.9560 | stop=9.0903 | order_id=62c43e41-9bea-4b8c-8631-8112806cf7fd | score=0.0271 (thr=0.0100) | entropy=1.56 | vol=0.82 | long=-0.1576 | short=0.0271 | reason=short_score 0.0271 >= threshold 0.0100 (profile)
+[BNBUSDT] HOLD LONG | anchor=2026-04-08T23:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0403 | long=0.0403 | short=-0.1621
+[HBARUSDT] HOLD SHORT | anchor=2026-04-08T23:30:00+03:00 | hold=6/4 | against=0/2 | signal=strong short | score=0.0753 | long=-0.2317 | short=0.0753
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-08T23:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0814 | long=-0.2399 | short=0.0814
+[NEARUSDT] SKIP | anchor=2026-04-08T23:30:00+03:00 | signal=flat / wait | score=-0.0629 | long=-0.0629 | short=-0.1114
+[ARBUSDT] SKIP | anchor=2026-04-08T23:30:00+03:00 | signal=flat / wait | score=-0.0342 | long=-0.1448 | short=-0.0342
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-08T23:30:00+03:00 | hold=5/4 | against=0/2 | signal=flat / wait | score=0.0601 | long=-0.2402 | short=0.0601
+[APTUSDT] HOLD SHORT | anchor=2026-04-08T23:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0731 | long=-0.2280 | short=0.0731
+[SUIUSDT] HOLD SHORT | anchor=2026-04-08T23:30:00+03:00 | hold=2/4 | against=0/2 | signal=avoid | score=-0.0609 | long=-0.1441 | short=-0.0609
+[ATOMUSDT] EXECUTED | anchor=2026-04-08T23:30:00+03:00 | placed Sell ATOMUSDT | raw_qty=28.20397112 | qty=28.20000000 | step=0.10000000 | min_qty=0.10000000 | last=1.7728 | stop=1.7994 | order_id=ba9fa2de-7af9-4447-8d65-b92dbfdbe37f | score=0.0129 (thr=0.0080) | entropy=1.58 | vol=1.00 | long=-0.1627 | short=0.0129 | reason=short_score 0.0129 >= threshold 0.0080 (profile)
+[OPUSDT] HOLD SHORT | anchor=2026-04-08T23:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0410 | long=-0.2370 | short=0.0410
+[TIAUSDT] EXECUTED | anchor=2026-04-08T23:30:00+03:00 | placed Sell TIAUSDT | raw_qty=166.00265604 | qty=166.00000000 | step=0.10000000 | min_qty=0.10000000 | last=0.3012 | stop=0.3057 | order_id=90590462-267b-4cec-83c9-29089015bedc | score=0.1138 (thr=0.0100) | entropy=1.53 | vol=0.85 | long=-0.3106 | short=0.1138 | reason=short_score 0.1138 >= threshold 0.0100 (profile)
+[DOTUSDT] EXECUTED | anchor=2026-04-08T23:30:00+03:00 | placed Sell DOTUSDT | raw_qty=39.16040100 | qty=39.10000000 | step=0.10000000 | min_qty=0.10000000 | last=1.2768 | stop=1.2960 | order_id=152f7a47-45c8-468d-ac3e-58110d2f3eac | score=0.0591 (thr=0.0080) | entropy=1.53 | vol=0.71 | long=-0.2245 | short=0.0591 | reason=short_score 0.0591 >= threshold 0.0080 (profile)
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T21:00:00Z
+CYCLE ANCHOR: 2026-04-08T23:45:00+03:00
+--------------------------------------------------
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-08T23:45:00+03:00 | signal=flat / wait | score=-0.0506 | long=-0.1879 | short=-0.0506
+[ETHUSDT] SKIP | anchor=2026-04-08T23:45:00+03:00 | signal=flat / wait | score=-0.0488 | long=-0.1934 | short=-0.0488
+[LINKUSDT] HOLD SHORT | anchor=2026-04-08T23:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0244 | long=-0.2665 | short=0.0244
+[BTCUSDT] EXECUTED | anchor=2026-04-08T23:45:00+03:00 | placed Buy BTCUSDT | raw_qty=0.00070086 | qty=0.00100000 | step=0.00100000 | min_qty=0.00100000 | last=71340.5000 | stop=70270.3925 | order_id=9acc2674-fe57-440d-bf2e-c7445d5e5105 | score=0.0291 (thr=0.0050) | entropy=1.48 | vol=0.86 | long=0.0291 | short=-0.1796 | reason=long_score 0.0291 >= threshold 0.0050 (profile)
+[XRPUSDT] HOLD SHORT | anchor=2026-04-08T23:45:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0330 | long=-0.1476 | short=-0.0330
+[BNBUSDT] HOLD LONG | anchor=2026-04-08T23:45:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0188 | long=0.0188 | short=-0.1994
+[HBARUSDT] COOLDOWN | anchor=2026-04-08T23:45:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=-0.0132 | long=-0.1691 | short=-0.0132 | note=detected_exchange_close
+[NEARUSDT] SKIP | anchor=2026-04-08T23:45:00+03:00 | signal=flat / wait | score=-0.0074 | long=-0.0074 | short=-0.1969
+[APTUSDT] HOLD SHORT | anchor=2026-04-08T23:45:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0893 | long=-0.3069 | short=0.0893
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-08T23:45:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0790 | long=-0.3271 | short=0.0790
+[SUIUSDT] HOLD SHORT | anchor=2026-04-08T23:45:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0838 | long=-0.1020 | short=-0.0838
+[DOGEUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-08T23:45:00+03:00 | pnl=-0.37% | score_entry=0.00->-0.06 | entropy=1.48 | conf=1.00>thr=0.89 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=ddac598b-c46a-438e-a9f9-e1bcd6bd90b5 reason=adaptive_exit(conf=1.00>thr=0.89) qty=539.00000000
+[TIAUSDT] HOLD SHORT | anchor=2026-04-08T23:45:00+03:00 | hold=1/4 | against=0/2 | signal=avoid | score=-0.0430 | long=-0.0846 | short=-0.0430
+[ARBUSDT] SKIP | anchor=2026-04-08T23:45:00+03:00 | signal=avoid | score=-0.0445 | long=-0.1159 | short=-0.0445
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-08T23:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0220 | long=-0.1733 | short=0.0220
+[DOTUSDT] HOLD SHORT | anchor=2026-04-08T23:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0566 | long=-0.1064 | short=-0.0566
+[OPUSDT] HOLD SHORT | anchor=2026-04-08T23:45:00+03:00 | hold=2/4 | against=0/2 | signal=avoid | score=0.0038 | long=-0.2077 | short=0.0038
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T21:15:00Z
+CYCLE ANCHOR: 2026-04-09T00:00:00+03:00
+--------------------------------------------------
+2026/04/09 00:15:01.258550 logger.go:169: [Debug] [LINKUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.001
+2026/04/09 00:15:05.219984 logger.go:169: [Debug] [SUIUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.012
+2026/04/09 00:15:05.234320 logger.go:169: [Debug] [TIAUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.010
+2026/04/09 00:15:06.484473 logger.go:169: [Debug] [OPUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.023
+2026/04/09 00:15:06.611576 logger.go:169: [Debug] [DOTUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.006
+DEMO TRADER RESULTS
+--------------------------------------------------
+[ETHUSDT] SKIP | anchor=2026-04-09T00:00:00+03:00 | signal=flat / wait | score=-0.0488 | long=-0.1934 | short=-0.0488
+[SOLUSDT] SKIP | anchor=2026-04-09T00:00:00+03:00 | signal=flat / wait | score=-0.0545 | long=-0.1791 | short=-0.0545
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T00:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0194 | long=-0.2553 | short=0.0194
+[BTCUSDT] HOLD LONG | anchor=2026-04-09T00:00:00+03:00 | hold=1/4 | against=0/2 | signal=weak long | score=0.0291 | long=0.0291 | short=-0.1796
+[HBARUSDT] SKIP | anchor=2026-04-09T00:00:00+03:00 | signal=flat / wait | score=-0.0191 | long=-0.1589 | short=-0.0191
+[BNBUSDT] HOLD LONG | anchor=2026-04-09T00:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0188 | long=0.0188 | short=-0.1994
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T00:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0345 | long=-0.1456 | short=-0.0345
+[NEARUSDT] SKIP | anchor=2026-04-09T00:00:00+03:00 | signal=flat / wait | score=-0.0074 | long=-0.0074 | short=-0.1969
+[AVAXUSDT] COOLDOWN | anchor=2026-04-09T00:00:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=0.0283 | long=-0.1994 | short=0.0283 | note=detected_exchange_close
+[DOGEUSDT] SKIP | anchor=2026-04-09T00:00:00+03:00 | signal=flat / wait | score=-0.0698 | long=-0.0762 | short=-0.0698
+[ARBUSDT] SKIP | anchor=2026-04-09T00:00:00+03:00 | signal=flat / wait | score=-0.0786 | long=-0.1511 | short=-0.0786
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T00:00:00+03:00 | hold=5/4 | against=1/2 | signal=flat / wait | score=-0.0081 | long=-0.1899 | short=-0.0081
+[TIAUSDT] HOLD SHORT | anchor=2026-04-09T00:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0515 | long=-0.2754 | short=0.0515
+[SUIUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T00:00:00+03:00 | pnl=-0.58% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.012 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=5d188b5b-9f9a-4bcf-babe-66adf04ad71a reason=subframe_exit(subframe_pnl_protection) qty=50.00000000
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-09T00:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0094 | long=-0.2395 | short=0.0094
+[OPUSDT] HOLD SHORT | anchor=2026-04-09T00:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0027 | long=-0.2310 | short=0.0027
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T00:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0623 | long=-0.0964 | short=-0.0623
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T21:30:00Z
+CYCLE ANCHOR: 2026-04-09T00:15:00+03:00
+--------------------------------------------------
+2026/04/09 00:30:00.925767 logger.go:169: [Debug] [LINKUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.040
+2026/04/09 00:30:01.462398 logger.go:161: [Info] [BTCUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 71340.5000 -> Stop: 71411.8405)
+2026/04/09 00:30:02.803450 logger.go:169: [Debug] [XRPUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.026
+2026/04/09 00:30:03.616962 logger.go:161: [Info] [BNBUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 604.3000 -> Stop: 604.9043)
+2026/04/09 00:30:05.449204 logger.go:169: [Debug] [ATOMUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=down | scoreChange=0.028
+2026/04/09 00:30:06.254516 logger.go:169: [Debug] [DOTUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.044
+2026/04/09 00:30:06.480272 logger.go:169: [Debug] [OPUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.069
+2026/04/09 00:30:06.814587 logger.go:169: [Debug] [TIAUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.043
+2026/04/09 00:30:07.080539 logger.go:145: [Warn] [TIAUSDT] SUBFRAME critical loss: -0.93% < -0.80% (min_hold not reached)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T00:15:00+03:00 | signal=flat / wait | score=-0.0640 | long=-0.0640 | short=-0.0961
+[ETHUSDT] SKIP | anchor=2026-04-09T00:15:00+03:00 | signal=flat / wait | score=-0.0614 | long=-0.1744 | short=-0.0614
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T00:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0056 | long=-0.2336 | short=0.0056
+[BTCUSDT] HOLD LONG | anchor=2026-04-09T00:15:00+03:00 | hold=2/4 | against=0/2 | signal=weak long | score=0.0403 | long=0.0403 | short=-0.1882
+[HBARUSDT] SKIP | anchor=2026-04-09T00:15:00+03:00 | signal=flat / wait | score=-0.0291 | long=-0.1461 | short=-0.0291
+[XRPUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T00:15:00+03:00 | pnl=-0.42% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.026 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=454d25b6-f001-44f9-9ab0-8a4ff606d625 reason=subframe_exit(subframe_pnl_protection) qty=37.00000000
+[AVAXUSDT] EXECUTED | anchor=2026-04-09T00:15:00+03:00 | placed Sell AVAXUSDT | raw_qty=5.43892092 | qty=5.40000000 | step=0.10000000 | min_qty=0.10000000 | last=9.1930 | stop=9.3309 | order_id=0e5f9840-c961-4d27-b232-eeac152b5acd | score=0.0130 (thr=0.0080) | entropy=1.45 | vol=0.73 | long=-0.1778 | short=0.0130 | reason=short_score 0.0130 >= threshold 0.0080 (profile)
+[BNBUSDT] HOLD LONG | anchor=2026-04-09T00:15:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0369 | long=0.0369 | short=-0.2118
+[DOGEUSDT] SKIP | anchor=2026-04-09T00:15:00+03:00 | signal=flat / wait | score=-0.0549 | long=-0.0549 | short=-0.0856
+[NEARUSDT] EXECUTED | anchor=2026-04-09T00:15:00+03:00 | placed Buy NEARUSDT | raw_qty=37.05899792 | qty=37.00000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3492 | stop=1.3290 | order_id=04c66dc5-776e-48ce-a2f9-e8a41859b311 | score=0.0767 (thr=0.0080) | entropy=1.56 | vol=0.91 | long=0.0767 | short=-0.2225 | reason=long_score 0.0767 >= threshold 0.0080 (profile)
+[SUIUSDT] SKIP | anchor=2026-04-09T00:15:00+03:00 | signal=flat / wait | score=-0.0838 | long=-0.1020 | short=-0.0838
+[ARBUSDT] SKIP | anchor=2026-04-09T00:15:00+03:00 | signal=flat / wait | score=-0.0923 | long=-0.1312 | short=-0.0923
+[APTUSDT] CLOSED SHORT | anchor=2026-04-09T00:15:00+03:00 | hold=0/4 | against=0/2 | entry=0.0000 | peak=0.0000 | pnl=-0.25% | signal=flat / wait | score=-0.0172 | long=-0.1772 | short=-0.0172 | reduce_only_close order_id=bb187c2a-24e1-4358-9c14-abc6bc1677e4 reason=signal_exit_short qty=59.53000000
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-09T00:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0435 | long=-0.1355 | short=-0.0435
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T00:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0725 | long=-0.0838 | short=-0.0725
+[OPUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T00:15:00+03:00 | pnl=-0.99% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.069 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=a558d70d-cab6-4ef0-ae3a-27fb0dc71c0b reason=subframe_exit(subframe_pnl_protection) qty=432.90000000
+[TIAUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T00:15:00+03:00 | pnl=-0.93% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.043 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=8dd8586c-6dd6-4fa5-a8cd-3d781a1bd473 reason=subframe_exit(subframe_pnl_protection) qty=166.00000000
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T21:45:00Z
+CYCLE ANCHOR: 2026-04-09T00:30:00+03:00
+--------------------------------------------------
+2026/04/09 00:45:01.353140 logger.go:169: [Debug] [LINKUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.050
+2026/04/09 00:45:06.456698 logger.go:169: [Debug] [ATOMUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.008
+2026/04/09 00:45:07.729764 logger.go:169: [Debug] [DOTUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.046
+DEMO TRADER RESULTS
+--------------------------------------------------
+[ETHUSDT] SKIP | anchor=2026-04-09T00:30:00+03:00 | signal=weak short | score=-0.0282 | long=-0.1329 | short=-0.0282
+[SOLUSDT] SKIP | anchor=2026-04-09T00:30:00+03:00 | signal=flat / wait | score=-0.0620 | long=-0.0797 | short=-0.0620
+[BTCUSDT] HOLD LONG | anchor=2026-04-09T00:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0357 | long=-0.0357 | short=-0.0964
+[LINKUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T00:30:00+03:00 | pnl=-0.47% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.050 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=e8a491ef-2793-4731-988a-fcea0ed97691 reason=subframe_exit(subframe_pnl_protection) qty=5.50000000
+[BNBUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.36% | Score dropped from 0.000 to -0.025 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=3e44b8d6-19ba-48d8-868c-0756171084f3 reason=Model_Decay_TP qty=0.08000000
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T00:30:00+03:00 | hold=1/4 | against=0/2 | signal=weak short | score=0.0893 | long=-0.2490 | short=0.0893
+[HBARUSDT] EXECUTED | anchor=2026-04-09T00:30:00+03:00 | placed Sell HBARUSDT | raw_qty=559.78504254 | qty=559.00000000 | step=1.00000000 | min_qty=1.00000000 | last=0.0893 | stop=0.0907 | order_id=260ada8e-22ef-48da-90e7-cc5539a598f1 | score=0.0234 (thr=0.0100) | entropy=1.46 | vol=0.58 | long=-0.2226 | short=0.0234 | reason=short_score 0.0234 >= threshold 0.0100 (profile)
+[NEARUSDT] HOLD LONG | anchor=2026-04-09T00:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0592 | long=-0.0592 | short=-0.1076
+[XRPUSDT] EXECUTED | anchor=2026-04-09T00:30:00+03:00 | placed Sell XRPUSDT | raw_qty=36.99593045 | qty=36.90000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3515 | stop=1.3718 | order_id=2e4c5b28-34cb-4a84-9975-128140c51651 | score=0.0163 (thr=0.0050) | entropy=1.54 | vol=0.85 | long=-0.1416 | short=0.0163 | reason=short_score 0.0163 >= threshold 0.0050 (profile)
+[DOGEUSDT] SKIP | anchor=2026-04-09T00:30:00+03:00 | signal=flat / wait | score=-0.0456 | long=-0.0456 | short=-0.0908
+[APTUSDT] EXECUTED | anchor=2026-04-09T00:30:00+03:00 | placed Sell APTUSDT | raw_qty=59.41064639 | qty=59.41000000 | step=0.01000000 | min_qty=0.01000000 | last=0.8416 | stop=0.8542 | order_id=8c242552-ad94-4272-94c1-6941ae061425 | score=0.0908 (thr=0.0100) | entropy=1.41 | vol=0.65 | long=-0.3078 | short=0.0908 | reason=short_score 0.0908 >= threshold 0.0100 (profile)
+[SUIUSDT] EXECUTED | anchor=2026-04-09T00:30:00+03:00 | placed Sell SUIUSDT | raw_qty=53.95489371 | qty=50.00000000 | step=10.00000000 | min_qty=10.00000000 | last=0.9267 | stop=0.9406 | order_id=1acc775a-dd50-4581-ac8f-90b1c857ccbd | score=0.0133 (thr=0.0100) | entropy=1.50 | vol=0.75 | long=-0.1837 | short=0.0133 | reason=short_score 0.0133 >= threshold 0.0100 (profile)
+[TIAUSDT] EXECUTED | anchor=2026-04-09T00:30:00+03:00 | placed Sell TIAUSDT | raw_qty=164.96205873 | qty=164.90000000 | step=0.10000000 | min_qty=0.10000000 | last=0.3031 | stop=0.3076 | order_id=e2f82b7b-04e8-4188-8859-131a24aef7f3 | score=0.1168 (thr=0.0100) | entropy=1.53 | vol=0.95 | long=-0.3171 | short=0.1168 | reason=short_score 0.1168 >= threshold 0.0100 (profile)
+[ATOMUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T00:30:00+03:00 | pnl=-1.07% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.008 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=e6ac891a-4bc6-42bb-b10b-458c0f56ee89 reason=subframe_exit(subframe_pnl_protection) qty=28.20000000
+[ARBUSDT] EXECUTED | anchor=2026-04-09T00:30:00+03:00 | placed Sell ARBUSDT | raw_qty=477.37254153 | qty=477.30000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1047 | stop=0.1063 | order_id=75995976-e801-4de4-8c48-5c29b98e3a25 | score=0.0459 (thr=0.0080) | entropy=1.57 | vol=1.18 | long=-0.2813 | short=0.0459 | reason=short_score 0.0459 >= threshold 0.0080 (profile)
+[DOTUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T00:30:00+03:00 | pnl=-0.57% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.046 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=7d339030-c780-4dcd-86e8-e11c2b6aeec6 reason=subframe_exit(subframe_pnl_protection) qty=39.10000000
+[OPUSDT] EXECUTED | anchor=2026-04-09T00:30:00+03:00 | placed Sell OPUSDT | raw_qty=429.44258353 | qty=429.40000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1164 | stop=0.1182 | order_id=74a49532-70b5-4508-bc7e-2741d5d96320 | score=0.0459 (thr=0.0080) | entropy=1.57 | vol=0.90 | long=-0.2447 | short=0.0459 | reason=short_score 0.0459 >= threshold 0.0080 (profile)
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T22:00:00Z
+CYCLE ANCHOR: 2026-04-09T00:45:00+03:00
+--------------------------------------------------
+2026/04/09 01:00:01.681687 logger.go:169: [Debug] [HBARUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=up | scoreChange=0.033
+2026/04/09 01:00:05.396304 logger.go:169: [Debug] [ARBUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=up | scoreChange=0.035
+DEMO TRADER RESULTS
+--------------------------------------------------
+[LINKUSDT] SKIP | anchor=2026-04-09T00:45:00+03:00 | signal=flat / wait | score=-0.0328 | long=-0.1406 | short=-0.0328
+[ETHUSDT] SKIP | anchor=2026-04-09T00:45:00+03:00 | signal=flat / wait | score=-0.0211 | long=-0.0211 | short=-0.1167
+[SOLUSDT] SKIP | anchor=2026-04-09T00:45:00+03:00 | signal=flat / wait | score=-0.0630 | long=-0.1645 | short=-0.0630
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T00:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0196 | long=-0.2204 | short=0.0196
+[BTCUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-09T00:45:00+03:00 | pnl=0.25% | score_entry=0.00->-0.09 | entropy=1.51 | conf=1.00>thr=0.88 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=9ae6a7a9-e261-42dc-b472-78da656ffe2e reason=adaptive_exit(conf=1.00>thr=0.88) qty=0.00100000
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T00:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0139 | long=-0.2176 | short=0.0139
+[DOGEUSDT] SKIP | anchor=2026-04-09T00:45:00+03:00 | signal=avoid | score=-0.0293 | long=-0.1501 | short=-0.0293
+[BNBUSDT] EXECUTED | anchor=2026-04-09T00:45:00+03:00 | placed Buy BNBUSDT | raw_qty=0.08248103 | qty=0.08000000 | step=0.01000000 | min_qty=0.01000000 | last=606.2000 | stop=597.1070 | order_id=7ce84e04-a983-4c0c-9233-a09b688b2d10 | score=0.0429 (thr=0.0050) | entropy=1.50 | vol=0.80 | long=0.0429 | short=-0.1665 | reason=long_score 0.0429 >= threshold 0.0050 (profile)
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T00:45:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0764 | long=-0.3169 | short=0.0764
+[NEARUSDT] HOLD LONG | anchor=2026-04-09T00:45:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0182 | long=-0.0182 | short=-0.1896
+[SUIUSDT] HOLD SHORT | anchor=2026-04-09T00:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0728 | long=-0.1190 | short=-0.0728
+[ARBUSDT] HOLD SHORT | anchor=2026-04-09T00:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0923 | long=-0.1312 | short=-0.0923
+[TIAUSDT] HOLD SHORT | anchor=2026-04-09T00:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0081 | long=-0.1881 | short=-0.0081
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T00:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0882 | long=-0.3059 | short=0.0882
+[DOTUSDT] SKIP | anchor=2026-04-09T00:45:00+03:00 | signal=flat / wait | score=-0.0651 | long=-0.0938 | short=-0.0651
+[OPUSDT] HOLD SHORT | anchor=2026-04-09T00:45:00+03:00 | hold=1/4 | against=0/2 | signal=avoid | score=0.0002 | long=-0.1981 | short=0.0002
+[ATOMUSDT] EXECUTED | anchor=2026-04-09T00:45:00+03:00 | placed Buy ATOMUSDT | raw_qty=28.01591304 | qty=28.00000000 | step=0.10000000 | min_qty=0.10000000 | last=1.7847 | stop=1.7579 | order_id=fa5ee418-4415-415d-a11e-e03fd386b58c | score=0.0586 (thr=0.0080) | entropy=1.53 | vol=0.96 | long=0.0586 | short=-0.0968 | reason=long_score 0.0586 >= threshold 0.0080 (profile)
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T22:15:00Z
+CYCLE ANCHOR: 2026-04-09T01:00:00+03:00
+--------------------------------------------------
+2026/04/09 01:15:03.726718 logger.go:169: [Debug] [NEARUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=up | scoreChange=0.001
+2026/04/09 01:15:05.267476 logger.go:161: [Info] [AVAXUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 9.1930 -> Stop: 9.1838)
+2026/04/09 01:15:06.035284 logger.go:169: [Debug] [ARBUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=up | scoreChange=0.001
+2026/04/09 01:15:06.295812 logger.go:145: [Warn] [ARBUSDT] SUBFRAME critical loss: -1.16% < -0.80% (min_hold not reached)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[BTCUSDT] SKIP | anchor=2026-04-09T01:00:00+03:00 | signal=flat / wait | score=-0.0260 | long=-0.0260 | short=-0.1027
+[SOLUSDT] SKIP | anchor=2026-04-09T01:00:00+03:00 | signal=flat / wait | score=-0.0632 | long=-0.0632 | short=-0.0713
+[ETHUSDT] SKIP | anchor=2026-04-09T01:00:00+03:00 | signal=weak short | score=-0.0325 | long=-0.1244 | short=-0.0325
+[BNBUSDT] HOLD LONG | anchor=2026-04-09T01:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0429 | long=0.0429 | short=-0.1665
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T01:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0110 | long=-0.1332 | short=0.0110
+[LINKUSDT] EXECUTED | anchor=2026-04-09T01:00:00+03:00 | placed Sell LINKUSDT | raw_qty=5.56668893 | qty=5.50000000 | step=0.10000000 | min_qty=0.10000000 | last=8.9820 | stop=9.1167 | order_id=02c7c81f-f485-4546-aa3c-65dd41dcbf46 | score=0.0156 (thr=0.0100) | entropy=1.55 | vol=0.91 | long=-0.1449 | short=0.0156 | reason=short_score 0.0156 >= threshold 0.0100 (profile)
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T01:00:00+03:00 | hold=2/4 | against=0/2 | signal=strong short | score=0.0700 | long=-0.2287 | short=0.0700
+[DOGEUSDT] SKIP | anchor=2026-04-09T01:00:00+03:00 | signal=flat / wait | score=-0.0007 | long=-0.1542 | short=-0.0007
+[NEARUSDT] HOLD LONG | anchor=2026-04-09T01:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0400 | long=0.0400 | short=-0.1780
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T01:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0668 | long=-0.2192 | short=0.0668
+[SUIUSDT] HOLD SHORT | anchor=2026-04-09T01:00:00+03:00 | hold=2/4 | against=0/2 | signal=weak short | score=0.0060 | long=-0.1736 | short=0.0060
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T01:00:00+03:00 | hold=3/4 | against=0/2 | signal=weak short | score=0.0918 | long=-0.2501 | short=0.0918
+[TIAUSDT] HOLD SHORT | anchor=2026-04-09T01:00:00+03:00 | hold=2/4 | against=0/2 | signal=avoid | score=-0.0500 | long=-0.0812 | short=-0.0500
+[ATOMUSDT] HOLD LONG | anchor=2026-04-09T01:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0176 | long=-0.1657 | short=0.0176
+[ARBUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T01:00:00+03:00 | pnl=-1.16% | reason=subframe_pnl_protection | trend5m=up | scoreChange=0.001 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=d9686c82-9733-4e2b-ac3f-b8e986d5cede reason=subframe_exit(subframe_pnl_protection) qty=477.30000000
+[DOTUSDT] EXECUTED | anchor=2026-04-09T01:00:00+03:00 | placed Sell DOTUSDT | raw_qty=38.97419908 | qty=38.90000000 | step=0.10000000 | min_qty=0.10000000 | last=1.2829 | stop=1.3021 | order_id=748a4a60-debf-4b1b-9205-413d72ce5bbc | score=0.0472 (thr=0.0080) | entropy=1.52 | vol=0.62 | long=-0.2118 | short=0.0472 | reason=short_score 0.0472 >= threshold 0.0080 (profile)
+[OPUSDT] HOLD SHORT | anchor=2026-04-09T01:00:00+03:00 | hold=2/4 | against=0/2 | signal=avoid | score=-0.0003 | long=-0.1978 | short=-0.0003
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T22:30:00Z
+CYCLE ANCHOR: 2026-04-09T01:15:00+03:00
+--------------------------------------------------
+2026/04/09 01:30:02.041653 logger.go:161: [Info] [LINKUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 8.9820 -> Stop: 8.9730)
+2026/04/09 01:30:02.442715 logger.go:161: [Info] [LINKUSDT] 🔥 THRUSTERS MAX [standard]: Trailing SL at 8.9449 (PnL: 0.61%, offset: 0.002)
+2026/04/09 01:30:03.246406 logger.go:169: [Debug] [NEARUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.039
+2026/04/09 01:30:03.843656 logger.go:161: [Info] [HBARUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 0.0893 -> Stop: 0.0892)
+2026/04/09 01:30:04.510194 logger.go:161: [Info] [HBARUSDT] 🔥 THRUSTERS MAX [standard]: Trailing SL at 0.0889 (PnL: 0.67%, offset: 0.002)
+2026/04/09 01:30:08.433338 logger.go:169: [Debug] [OPUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=up | scoreChange=0.056
+2026/04/09 01:30:08.642282 logger.go:161: [Info] [DOTUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 1.2829 -> Stop: 1.2816)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T01:15:00+03:00 | signal=flat / wait | score=-0.0568 | long=-0.0568 | short=-0.0801
+[BTCUSDT] SKIP | anchor=2026-04-09T01:15:00+03:00 | signal=flat / wait | score=-0.0403 | long=-0.1401 | short=-0.0403
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T01:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0192 | long=-0.1800 | short=0.0192
+[ETHUSDT] EXECUTED | anchor=2026-04-09T01:15:00+03:00 | placed Buy ETHUSDT | raw_qty=0.02280242 | qty=0.02000000 | step=0.01000000 | min_qty=0.01000000 | last=2192.7500 | stop=2159.8587 | order_id=09a3b55b-fde0-462d-bec5-3318a846b032 | score=0.0259 (thr=0.0050) | entropy=1.57 | vol=0.91 | long=0.0259 | short=-0.1252 | reason=long_score 0.0259 >= threshold 0.0050 (profile)
+[BNBUSDT] HOLD LONG | anchor=2026-04-09T01:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0217 | long=0.0217 | short=-0.1531
+[NEARUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T01:15:00+03:00 | pnl=-1.21% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.039 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=fc39bc27-2c7c-4751-a60e-76c7117c2f6b reason=subframe_exit(subframe_pnl_protection) qty=37.00000000
+[XRPUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.46% | Score dropped from 0.000 to 0.011 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=b6b5489e-5845-4eea-987e-87a4d845258b reason=Model_Decay_TP qty=36.90000000
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T01:15:00+03:00 | hold=3/4 | against=0/2 | signal=strong short | score=0.0700 | long=-0.2287 | short=0.0700
+[AVAXUSDT] 🎯 ATR TP HIT | type=SHORT | PnL: 0.82% (Target: 0.80%) | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=570a61c0-78a2-463d-8139-a15b98f80ded reason=ATR_TP qty=5.40000000
+[SUIUSDT] 🎯 ATR TP HIT | type=SHORT | PnL: 0.81% (Target: 0.80%) | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=d5ece251-33b2-4c3d-9611-44bd3d129e26 reason=ATR_TP qty=50.00000000
+[APTUSDT] 🎯 ATR TP HIT | type=SHORT | PnL: 0.95% (Target: 0.80%) | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=9a357098-73c6-4e73-88fc-bad543eae748 reason=ATR_TP qty=59.41000000
+[ARBUSDT] EXECUTED | anchor=2026-04-09T01:15:00+03:00 | placed Buy ARBUSDT | raw_qty=476.05446063 | qty=476.00000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1050 | stop=0.1035 | order_id=20219d99-7f40-434c-8c4d-7ca030d2543c | score=0.1578 (thr=0.0080) | entropy=1.49 | vol=1.27 | long=0.1578 | short=-0.1641 | reason=long_score 0.1578 >= threshold 0.0080 (profile)
+[DOGEUSDT] EXECUTED | anchor=2026-04-09T01:15:00+03:00 | placed Sell DOGEUSDT | raw_qty=538.67700927 | qty=538.00000000 | step=1.00000000 | min_qty=1.00000000 | last=0.0928 | stop=0.0942 | order_id=82839a2e-5cfb-462d-a432-a6d580d5e6ff | score=0.0105 (thr=0.0100) | entropy=1.57 | vol=0.81 | long=-0.1736 | short=0.0105 | reason=short_score 0.0105 >= threshold 0.0100 (profile)
+[TIAUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.56% | Score dropped from 0.000 to -0.001 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=e424aa7c-ed79-4479-ae1e-064cf04ece83 reason=Model_Decay_TP qty=164.90000000
+[ATOMUSDT] HOLD LONG | anchor=2026-04-09T01:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0215 | long=-0.1730 | short=0.0215
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T01:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0472 | long=-0.2118 | short=0.0472
+[OPUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.76% | Score dropped from 0.000 to -0.087 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=74da5b3c-b7c4-4e79-9bfb-227eca836649 reason=Model_Decay_TP qty=429.40000000
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T22:45:00Z
+CYCLE ANCHOR: 2026-04-09T01:30:00+03:00
+--------------------------------------------------
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T01:30:00+03:00 | signal=flat / wait | score=-0.0630 | long=-0.1645 | short=-0.0630
+[ETHUSDT] HOLD LONG | anchor=2026-04-09T01:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0540 | long=-0.1794 | short=-0.0540
+[LINKUSDT] COOLDOWN | anchor=2026-04-09T01:30:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=0.0093 | long=-0.2358 | short=0.0093 | note=detected_exchange_close
+[BTCUSDT] EXECUTED | anchor=2026-04-09T01:30:00+03:00 | placed Buy BTCUSDT | raw_qty=0.00070220 | qty=0.00100000 | step=0.00100000 | min_qty=0.00100000 | last=71205.2000 | stop=70137.1220 | order_id=6fe3077a-48d5-4a50-999a-9f22235ee279 | score=0.0464 (thr=0.0050) | entropy=1.48 | vol=0.91 | long=0.0464 | short=-0.1883 | reason=long_score 0.0464 >= threshold 0.0050 (profile)
+[HBARUSDT] COOLDOWN | anchor=2026-04-09T01:30:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=-0.0326 | long=-0.1386 | short=-0.0326 | note=detected_exchange_close
+[XRPUSDT] SKIP | anchor=2026-04-09T01:30:00+03:00 | signal=flat / wait | score=-0.0448 | long=-0.1329 | short=-0.0448
+[NEARUSDT] SKIP | anchor=2026-04-09T01:30:00+03:00 | signal=flat / wait | score=-0.0183 | long=-0.0183 | short=-0.1895
+[BNBUSDT] HOLD LONG | anchor=2026-04-09T01:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0306 | long=0.0306 | short=-0.2019
+[APTUSDT] SKIP | anchor=2026-04-09T01:30:00+03:00 | signal=flat / wait | score=-0.0274 | long=-0.1599 | short=-0.0274
+[SUIUSDT] SKIP | anchor=2026-04-09T01:30:00+03:00 | signal=flat / wait | score=-0.0663 | long=-0.1278 | short=-0.0663
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-09T01:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0580 | long=-0.0580 | short=-0.0818
+[TIAUSDT] SKIP | anchor=2026-04-09T01:30:00+03:00 | signal=flat / wait | score=-0.0158 | long=-0.1830 | short=-0.0158
+[ATOMUSDT] HOLD LONG | anchor=2026-04-09T01:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0510 | long=-0.1211 | short=-0.0510
+[AVAXUSDT] EXECUTED | anchor=2026-04-09T01:30:00+03:00 | placed Sell AVAXUSDT | raw_qty=5.46746856 | qty=5.40000000 | step=0.10000000 | min_qty=0.10000000 | last=9.1450 | stop=9.2822 | order_id=f6c3325f-5b37-4515-adcc-d0350a0755ae | score=0.0181 (thr=0.0080) | entropy=1.44 | vol=0.76 | long=-0.1801 | short=0.0181 | reason=short_score 0.0181 >= threshold 0.0080 (profile)
+[ARBUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.44% | Score dropped from 0.000 to -0.141 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=f467c98e-3e81-4208-8033-6eae93d2e071 reason=Model_Decay_TP qty=476.00000000
+[DOTUSDT] COOLDOWN | anchor=2026-04-09T01:30:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=-0.0662 | long=-0.0987 | short=-0.0662 | note=detected_exchange_close
+[OPUSDT] SKIP | anchor=2026-04-09T01:30:00+03:00 | signal=flat / wait | score=-0.0576 | long=-0.1034 | short=-0.0576
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T23:00:00Z
+CYCLE ANCHOR: 2026-04-09T01:45:00+03:00
+--------------------------------------------------
+2026/04/09 02:00:05.527968 logger.go:161: [Info] [AVAXUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 9.1450 -> Stop: 9.1359)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T01:45:00+03:00 | signal=flat / wait | score=-0.0620 | long=-0.0797 | short=-0.0620
+[ETHUSDT] HOLD LONG | anchor=2026-04-09T01:45:00+03:00 | hold=2/4 | against=0/2 | signal=weak short | score=-0.0259 | long=-0.1341 | short=-0.0259
+[BTCUSDT] HOLD LONG | anchor=2026-04-09T01:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0429 | long=-0.0429 | short=-0.0933
+[LINKUSDT] EXECUTED | anchor=2026-04-09T01:45:00+03:00 | placed Sell LINKUSDT | raw_qty=5.60538117 | qty=5.60000000 | step=0.10000000 | min_qty=0.10000000 | last=8.9200 | stop=9.0538 | order_id=b4965117-08fd-464e-9366-2b29231ca91d | score=0.0212 (thr=0.0100) | entropy=1.56 | vol=1.01 | long=-0.1541 | short=0.0212 | reason=short_score 0.0212 >= threshold 0.0100 (profile)
+[XRPUSDT] EXECUTED | anchor=2026-04-09T01:45:00+03:00 | placed Sell XRPUSDT | raw_qty=37.20514919 | qty=37.20000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3439 | stop=1.3641 | order_id=241a4657-d7e8-4f29-bc10-b07eb009d7b8 | score=0.0083 (thr=0.0050) | entropy=1.54 | vol=0.89 | long=-0.1266 | short=0.0083 | reason=short_score 0.0083 >= threshold 0.0050 (profile)
+[HBARUSDT] EXECUTED | anchor=2026-04-09T01:45:00+03:00 | placed Sell HBARUSDT | raw_qty=563.44376831 | qty=563.00000000 | step=1.00000000 | min_qty=1.00000000 | last=0.0887 | stop=0.0901 | order_id=40d5eb6f-6741-4c70-8702-22ca20a61c3e | score=0.0726 (thr=0.0100) | entropy=1.49 | vol=0.63 | long=-0.2303 | short=0.0726 | reason=short_score 0.0726 >= threshold 0.0100 (profile)
+[BNBUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-09T01:45:00+03:00 | pnl=-0.36% | score_entry=0.00->-0.07 | entropy=1.56 | conf=1.00>thr=0.88 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=3f9fd849-3f95-4bb1-89cf-c6daa010d9d8 reason=adaptive_exit(conf=1.00>thr=0.88) qty=0.08000000
+[NEARUSDT] SKIP | anchor=2026-04-09T01:45:00+03:00 | signal=flat / wait | score=-0.0497 | long=-0.0497 | short=-0.1131
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-09T01:45:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0671 | long=-0.2502 | short=0.0671
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T01:45:00+03:00 | hold=1/4 | against=0/2 | signal=weak short | score=0.0926 | long=-0.2500 | short=0.0926
+[SUIUSDT] SKIP | anchor=2026-04-09T01:45:00+03:00 | signal=flat / wait | score=-0.0510 | long=-0.0510 | short=-0.0658
+[TIAUSDT] SKIP | anchor=2026-04-09T01:45:00+03:00 | signal=flat / wait | score=-0.0074 | long=-0.1113 | short=-0.0074
+[APTUSDT] EXECUTED | anchor=2026-04-09T01:45:00+03:00 | placed Sell APTUSDT | raw_qty=59.93766483 | qty=59.93000000 | step=0.01000000 | min_qty=0.01000000 | last=0.8342 | stop=0.8467 | order_id=bae559ce-1db8-448b-a9c7-b8a08339e14d | score=0.0766 (thr=0.0100) | entropy=1.57 | vol=0.68 | long=-0.2352 | short=0.0766 | reason=short_score 0.0766 >= threshold 0.0100 (profile)
+[ATOMUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-09T01:45:00+03:00 | pnl=-0.15% | score_entry=0.00->-0.17 | entropy=1.58 | conf=1.00>thr=0.86 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=a011844e-75eb-4378-b571-3f1f5ef41009 reason=adaptive_exit(conf=1.00>thr=0.86) qty=28.00000000
+[ARBUSDT] EXECUTED | anchor=2026-04-09T01:45:00+03:00 | placed Buy ARBUSDT | raw_qty=476.28119642 | qty=476.20000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1050 | stop=0.1034 | order_id=7af3c20e-d790-4410-ac14-ce32ab0f1021 | score=0.1674 (thr=0.0080) | entropy=1.49 | vol=1.36 | long=0.1674 | short=-0.1644 | reason=long_score 0.1674 >= threshold 0.0080 (profile)
+[DOTUSDT] EXECUTED | anchor=2026-04-09T01:45:00+03:00 | placed Sell DOTUSDT | raw_qty=39.15120194 | qty=39.10000000 | step=0.10000000 | min_qty=0.10000000 | last=1.2771 | stop=1.2963 | order_id=e4577207-0748-4d43-b367-50f13c77030c | score=0.0430 (thr=0.0080) | entropy=1.52 | vol=0.75 | long=-0.2045 | short=0.0430 | reason=short_score 0.0430 >= threshold 0.0080 (profile)
+[OPUSDT] EXECUTED | anchor=2026-04-09T01:45:00+03:00 | placed Buy OPUSDT | raw_qty=433.91477914 | qty=433.90000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1152 | stop=0.1135 | order_id=401a88ac-81ee-4058-9d84-4e0feb61ec2c | score=0.0263 (thr=0.0080) | entropy=1.57 | vol=0.93 | long=0.0263 | short=-0.0929 | reason=long_score 0.0263 >= threshold 0.0080 (profile)
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T23:15:00Z
+CYCLE ANCHOR: 2026-04-09T02:00:00+03:00
+--------------------------------------------------
+2026/04/09 02:15:01.106142 logger.go:169: [Debug] [ETHUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=down | scoreChange=0.034
+2026/04/09 02:15:06.427406 logger.go:169: [Debug] [OPUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=down | scoreChange=0.080
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T02:00:00+03:00 | signal=flat / wait | score=-0.0511 | long=-0.1826 | short=-0.0511
+[ETHUSDT] HOLD LONG | anchor=2026-04-09T02:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0518 | long=-0.1855 | short=-0.0518
+[BTCUSDT] HOLD LONG | anchor=2026-04-09T02:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0358 | long=0.0358 | short=-0.1805
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T02:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0280 | long=-0.1639 | short=0.0280
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T02:00:00+03:00 | hold=2/4 | against=0/2 | signal=weak short | score=0.0966 | long=-0.2568 | short=0.0966
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T02:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0104 | long=-0.2156 | short=0.0104
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T02:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0202 | long=-0.2208 | short=0.0202
+[NEARUSDT] SKIP | anchor=2026-04-09T02:00:00+03:00 | signal=flat / wait | score=-0.0175 | long=-0.0175 | short=-0.1897
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-09T02:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0716 | long=-0.2576 | short=0.0716
+[BNBUSDT] EXECUTED | anchor=2026-04-09T02:00:00+03:00 | placed Buy BNBUSDT | raw_qty=0.08282259 | qty=0.08000000 | step=0.01000000 | min_qty=0.01000000 | last=603.7000 | stop=594.6445 | order_id=24e72767-eb05-48ae-8eb2-13df3d80df55 | score=0.0179 (thr=0.0050) | entropy=1.50 | vol=0.75 | long=0.0179 | short=-0.1468 | reason=long_score 0.0179 >= threshold 0.0050 (profile)
+[SUIUSDT] SKIP | anchor=2026-04-09T02:00:00+03:00 | signal=avoid | score=-0.0791 | long=-0.1108 | short=-0.0791
+[TIAUSDT] SKIP | anchor=2026-04-09T02:00:00+03:00 | signal=flat / wait | score=0.0012 | long=-0.1277 | short=0.0012
+[ATOMUSDT] SKIP | anchor=2026-04-09T02:00:00+03:00 | signal=flat / wait | score=-0.0018 | long=-0.2259 | short=-0.0018
+[ARBUSDT] HOLD LONG | anchor=2026-04-09T02:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0275 | long=-0.2558 | short=0.0275
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T02:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0970 | long=-0.3173 | short=0.0970
+[OPUSDT] HOLD LONG | anchor=2026-04-09T02:00:00+03:00 | hold=1/4 | against=0/2 | signal=avoid | score=-0.0048 | long=-0.1960 | short=-0.0048
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T02:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0472 | long=-0.2118 | short=0.0472
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T23:30:00Z
+CYCLE ANCHOR: 2026-04-09T02:15:00+03:00
+--------------------------------------------------
+2026/04/09 02:30:00.964015 logger.go:169: [Debug] [ETHUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=down | scoreChange=0.050
+2026/04/09 02:30:00.964205 logger.go:169: [Debug] [BTCUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=down | scoreChange=0.039
+2026/04/09 02:30:02.025876 logger.go:169: [Debug] [BNBUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.025
+2026/04/09 02:30:05.053471 logger.go:169: [Debug] [ARBUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=down | scoreChange=0.240
+2026/04/09 02:30:06.855513 logger.go:169: [Debug] [OPUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=down | scoreChange=0.138
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T02:15:00+03:00 | signal=flat / wait | score=-0.0390 | long=-0.0390 | short=-0.0863
+[BTCUSDT] HOLD LONG | anchor=2026-04-09T02:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0359 | long=-0.0359 | short=-0.0962
+[ETHUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T02:15:00+03:00 | pnl=-0.42% | reason=subframe_pnl_protection | trend5m=down | scoreChange=0.050 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=b9335d82-fd28-414a-95aa-63c21620ab35 reason=subframe_exit(subframe_pnl_protection) qty=0.02000000
+[LINKUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.75% | Score dropped from 0.000 to 0.014 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=ea527f38-6434-4c9c-8a8e-c8c71cc3969b reason=Model_Decay_TP qty=5.60000000
+[BNBUSDT] HOLD LONG | anchor=2026-04-09T02:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0887 | long=-0.0888 | short=-0.0887
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T02:15:00+03:00 | hold=2/4 | against=0/2 | signal=strong short | score=0.0656 | long=-0.2214 | short=0.0656
+[NEARUSDT] SKIP | anchor=2026-04-09T02:15:00+03:00 | signal=flat / wait | score=-0.0384 | long=-0.0384 | short=-0.1222
+[AVAXUSDT] 🎯 ATR TP HIT | type=SHORT | PnL: 0.98% (Target: 0.80%) | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=ef228c3a-8dcd-449c-87b3-24382e2e397a reason=ATR_TP qty=5.40000000
+[XRPUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.32% | Score dropped from 0.000 to 0.003 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=71f75eb4-5048-4721-b0aa-bf319dbdd718 reason=Model_Decay_TP qty=37.20000000
+[SUIUSDT] SKIP | anchor=2026-04-09T02:15:00+03:00 | signal=flat / wait | score=-0.0524 | long=-0.0524 | short=-0.0661
+[ARBUSDT] HOLD LONG | anchor=2026-04-09T02:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0393 | long=-0.1496 | short=-0.0393
+[APTUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.38% | Score dropped from 0.000 to -0.020 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=88eb9686-c3a0-4464-bfda-78b9e51b8072 reason=Model_Decay_TP qty=59.93000000
+[DOGEUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.61% | Score dropped from 0.000 to -0.001 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=e1f7d28e-29ad-4950-a546-c65f8cab5ffb reason=Model_Decay_TP qty=538.00000000
+[TIAUSDT] EXECUTED | anchor=2026-04-09T02:15:00+03:00 | placed Sell TIAUSDT | raw_qty=167.78523490 | qty=167.70000000 | step=0.10000000 | min_qty=0.10000000 | last=0.2980 | stop=0.3025 | order_id=d557f197-0b97-44f5-91a6-f9842d1e1a58 | score=0.0234 (thr=0.0100) | entropy=1.58 | vol=1.01 | long=-0.1619 | short=0.0234 | reason=short_score 0.0234 >= threshold 0.0100 (profile)
+[ATOMUSDT] EXECUTED | anchor=2026-04-09T02:15:00+03:00 | placed Buy ATOMUSDT | raw_qty=28.08673183 | qty=28.00000000 | step=0.10000000 | min_qty=0.10000000 | last=1.7802 | stop=1.7535 | order_id=8b2684a8-63c4-4116-8828-2db82c5ffe57 | score=0.0431 (thr=0.0080) | entropy=1.53 | vol=0.97 | long=0.0431 | short=-0.0899 | reason=long_score 0.0431 >= threshold 0.0080 (profile)
+[OPUSDT] HOLD LONG | anchor=2026-04-09T02:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0087 | long=0.0087 | short=-0.0832
+[DOTUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.54% | Score dropped from 0.000 to 0.025 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=3c9c1390-ee2d-4862-a342-ea6970767f57 reason=Model_Decay_TP qty=39.10000000
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-08T23:45:00Z
+CYCLE ANCHOR: 2026-04-09T02:30:00+03:00
+--------------------------------------------------
+2026/04/09 02:45:01.991602 logger.go:169: [Debug] [BNBUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=down | scoreChange=0.003
+2026/04/09 02:45:06.156075 logger.go:169: [Debug] [ARBUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=down | scoreChange=0.170
+2026/04/09 02:45:07.637166 logger.go:169: [Debug] [OPUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=down | scoreChange=0.084
+DEMO TRADER RESULTS
+--------------------------------------------------
+[ETHUSDT] SKIP | anchor=2026-04-09T02:30:00+03:00 | signal=flat / wait | score=-0.0524 | long=-0.1898 | short=-0.0524
+[SOLUSDT] SKIP | anchor=2026-04-09T02:30:00+03:00 | signal=flat / wait | score=-0.0752 | long=-0.0752 | short=-0.0881
+[BTCUSDT] HOLD LONG | anchor=2026-04-09T02:30:00+03:00 | hold=4/4 | against=0/2 | signal=weak long | score=0.0388 | long=0.0388 | short=-0.1857
+[LINKUSDT] EXECUTED | anchor=2026-04-09T02:30:00+03:00 | placed Sell LINKUSDT | raw_qty=5.65227221 | qty=5.60000000 | step=0.10000000 | min_qty=0.10000000 | last=8.8460 | stop=8.9787 | order_id=3b2eddb7-f041-4a80-817f-cfe8cd4ae450 | score=0.0340 (thr=0.0100) | entropy=1.56 | vol=1.01 | long=-0.1731 | short=0.0340 | reason=short_score 0.0340 >= threshold 0.0100 (profile)
+[BNBUSDT] HOLD LONG | anchor=2026-04-09T02:30:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0373 | long=0.0373 | short=-0.2051
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T02:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0343 | long=-0.1430 | short=-0.0343
+[XRPUSDT] EXECUTED | anchor=2026-04-09T02:30:00+03:00 | placed Sell XRPUSDT | raw_qty=37.30508095 | qty=37.30000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3403 | stop=1.3604 | order_id=cb29e420-d574-4182-9531-fd3f468960a5 | score=0.0111 (thr=0.0050) | entropy=1.33 | vol=0.87 | long=-0.2226 | short=0.0111 | reason=short_score 0.0111 >= threshold 0.0050 (profile)
+[DOGEUSDT] SKIP | anchor=2026-04-09T02:30:00+03:00 | signal=avoid | score=-0.0227 | long=-0.1618 | short=-0.0227
+[NEARUSDT] EXECUTED | anchor=2026-04-09T02:30:00+03:00 | placed Buy NEARUSDT | raw_qty=37.60246672 | qty=37.60000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3297 | stop=1.3098 | order_id=70e1e191-3d26-40d0-8c2c-9c5d6510022a | score=0.0607 (thr=0.0080) | entropy=1.56 | vol=0.79 | long=0.0607 | short=-0.2118 | reason=long_score 0.0607 >= threshold 0.0080 (profile)
+[AVAXUSDT] EXECUTED | anchor=2026-04-09T02:30:00+03:00 | placed Sell AVAXUSDT | raw_qty=5.52547243 | qty=5.50000000 | step=0.10000000 | min_qty=0.10000000 | last=9.0490 | stop=9.1847 | order_id=02deda5d-fcdb-4f16-bdd1-4f40edcc8254 | score=0.0829 (thr=0.0080) | entropy=1.45 | vol=0.77 | long=-0.3200 | short=0.0829 | reason=short_score 0.0829 >= threshold 0.0080 (profile)
+[SUIUSDT] SKIP | anchor=2026-04-09T02:30:00+03:00 | signal=avoid | score=-0.0707 | long=-0.1237 | short=-0.0707
+[APTUSDT] EXECUTED | anchor=2026-04-09T02:30:00+03:00 | placed Sell APTUSDT | raw_qty=60.20469597 | qty=60.20000000 | step=0.01000000 | min_qty=0.01000000 | last=0.8305 | stop=0.8430 | order_id=0868862a-cbd0-4386-9e17-c78a793c2085 | score=0.1047 (thr=0.0100) | entropy=1.42 | vol=0.70 | long=-0.3298 | short=0.1047 | reason=short_score 0.1047 >= threshold 0.0100 (profile)
+[ARBUSDT] HOLD LONG | anchor=2026-04-09T02:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0552 | long=-0.1275 | short=-0.0552
+[ATOMUSDT] HOLD LONG | anchor=2026-04-09T02:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0117 | long=-0.1573 | short=0.0117
+[TIAUSDT] HOLD SHORT | anchor=2026-04-09T02:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.1029 | long=-0.2948 | short=0.1029
+[OPUSDT] HOLD LONG | anchor=2026-04-09T02:30:00+03:00 | hold=3/4 | against=0/2 | signal=avoid | score=0.0024 | long=-0.2075 | short=0.0024
+[DOTUSDT] EXECUTED | anchor=2026-04-09T02:30:00+03:00 | placed Sell DOTUSDT | raw_qty=39.45395723 | qty=39.40000000 | step=0.10000000 | min_qty=0.10000000 | last=1.2673 | stop=1.2863 | order_id=46804dc1-875d-4cf9-9b52-ff0e4c0bc47a | score=0.0459 (thr=0.0080) | entropy=1.53 | vol=0.74 | long=-0.2112 | short=0.0459 | reason=short_score 0.0459 >= threshold 0.0080 (profile)
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T00:00:00Z
+CYCLE ANCHOR: 2026-04-09T02:45:00+03:00
+--------------------------------------------------
+2026/04/09 03:00:02.084894 logger.go:169: [Debug] [BNBUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=down | scoreChange=0.010
+2026/04/09 03:00:06.051143 logger.go:169: [Debug] [ARBUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=down | scoreChange=0.101
+2026/04/09 03:00:06.947331 logger.go:169: [Debug] [OPUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=down | scoreChange=0.081
+DEMO TRADER RESULTS
+--------------------------------------------------
+[ETHUSDT] SKIP | anchor=2026-04-09T02:45:00+03:00 | signal=flat / wait | score=-0.0625 | long=-0.1769 | short=-0.0625
+[SOLUSDT] SKIP | anchor=2026-04-09T02:45:00+03:00 | signal=flat / wait | score=-0.0737 | long=-0.0737 | short=-0.0914
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T02:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0254 | long=-0.1446 | short=-0.0254
+[BTCUSDT] HOLD LONG | anchor=2026-04-09T02:45:00+03:00 | hold=5/4 | against=1/2 | signal=avoid | score=-0.0997 | long=-0.0997 | short=-0.1067
+[BNBUSDT] HOLD LONG | anchor=2026-04-09T02:45:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0485 | long=0.0485 | short=-0.2147
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T02:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0504 | long=-0.1347 | short=-0.0504
+[NEARUSDT] HOLD LONG | anchor=2026-04-09T02:45:00+03:00 | hold=1/4 | against=0/2 | signal=avoid | score=0.0610 | long=0.0610 | short=-0.2154
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T02:45:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0182 | long=-0.2273 | short=0.0182
+[DOGEUSDT] SKIP | anchor=2026-04-09T02:45:00+03:00 | signal=flat / wait | score=-0.0572 | long=-0.0572 | short=-0.0831
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T02:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0803 | long=-0.3181 | short=0.0803
+[SUIUSDT] SKIP | anchor=2026-04-09T02:45:00+03:00 | signal=flat / wait | score=-0.0638 | long=-0.1350 | short=-0.0638
+[TIAUSDT] HOLD SHORT | anchor=2026-04-09T02:45:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0077 | long=-0.1883 | short=-0.0077
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T02:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.1021 | long=-0.3278 | short=0.1021
+[ATOMUSDT] HOLD LONG | anchor=2026-04-09T02:45:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0040 | long=-0.2305 | short=-0.0040
+[ARBUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.46% | Score dropped from 0.000 to -0.114 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=1c1b2ff4-83ce-4e02-9ca8-16ec15ecac8e reason=Model_Decay_TP qty=476.20000000
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T02:45:00+03:00 | hold=1/4 | against=0/2 | signal=avoid | score=-0.0108 | long=-0.1856 | short=-0.0108
+[OPUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-09T02:45:00+03:00 | pnl=-0.37% | score_entry=0.00->-0.11 | entropy=1.54 | conf=1.00>thr=0.87 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=a52a0426-f60f-4880-a51c-e2f9af749fcb reason=adaptive_exit(conf=1.00>thr=0.87) qty=433.90000000
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T00:15:00Z
+CYCLE ANCHOR: 2026-04-09T03:00:00+03:00
+--------------------------------------------------
+2026/04/09 03:15:02.712452 logger.go:169: [Debug] [BNBUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=down | scoreChange=0.020
+2026/04/09 03:15:05.813029 logger.go:161: [Info] [TIAUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 0.2980 -> Stop: 0.2977)
+2026/04/09 03:15:06.491345 logger.go:161: [Info] [TIAUSDT] 🔥 THRUSTERS MAX [standard]: Trailing SL at 0.2966 (PnL: 0.67%, offset: 0.002)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T03:00:00+03:00 | signal=flat / wait | score=-0.0755 | long=-0.0755 | short=-0.0894
+[ETHUSDT] SKIP | anchor=2026-04-09T03:00:00+03:00 | signal=flat / wait | score=-0.0660 | long=-0.1683 | short=-0.0660
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T03:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0329 | long=-0.1668 | short=0.0329
+[BTCUSDT] CLOSED LONG | anchor=2026-04-09T03:00:00+03:00 | hold=0/4 | against=0/2 | entry=0.0000 | peak=0.0000 | pnl=-0.34% | signal=flat / wait | score=-0.0078 | long=-0.0078 | short=-0.1132 | reduce_only_close order_id=1dfbc66e-b280-49e4-886d-838f8956a628 reason=signal_exit_long qty=0.00100000
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T03:00:00+03:00 | hold=5/4 | against=0/2 | signal=flat / wait | score=0.0417 | long=-0.1882 | short=0.0417
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T03:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0059 | long=-0.1023 | short=-0.0059
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T03:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.1066 | long=-0.2726 | short=0.1066
+[BNBUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T03:00:00+03:00 | pnl=-0.51% | reason=subframe_pnl_protection | trend5m=down | scoreChange=0.020 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=ca329903-6e5c-4b12-84ae-0b6719cbb066 reason=subframe_exit(subframe_pnl_protection) qty=0.08000000
+[DOGEUSDT] SKIP | anchor=2026-04-09T03:00:00+03:00 | signal=avoid | score=-0.0304 | long=-0.1490 | short=-0.0304
+[SUIUSDT] SKIP | anchor=2026-04-09T03:00:00+03:00 | signal=avoid | score=-0.0850 | long=-0.0990 | short=-0.0850
+[NEARUSDT] HOLD LONG | anchor=2026-04-09T03:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0182 | long=-0.0182 | short=-0.1886
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T03:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0855 | long=-0.2402 | short=0.0855
+[ATOMUSDT] HOLD LONG | anchor=2026-04-09T03:00:00+03:00 | hold=3/4 | against=0/2 | signal=avoid | score=0.0123 | long=-0.2468 | short=0.0123
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T03:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0447 | long=-0.2054 | short=0.0447
+[ARBUSDT] EXECUTED | anchor=2026-04-09T03:00:00+03:00 | placed Buy ARBUSDT | raw_qty=481.78839854 | qty=481.70000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1038 | stop=0.1022 | order_id=8ce0f548-abb1-4004-8e89-070891d1183d | score=0.1270 (thr=0.0080) | entropy=1.50 | vol=1.59 | long=0.1270 | short=-0.1530 | reason=long_score 0.1270 >= threshold 0.0080 (profile)
+[TIAUSDT] HOLD SHORT | anchor=2026-04-09T03:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0364 | long=-0.1789 | short=0.0364
+[OPUSDT] EXECUTED | anchor=2026-04-09T03:00:00+03:00 | placed Sell OPUSDT | raw_qty=436.94835270 | qty=436.90000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1144 | stop=0.1161 | order_id=99e2d6ce-fa7f-401b-a8d6-7383b921e154 | score=0.0548 (thr=0.0080) | entropy=1.57 | vol=0.98 | long=-0.2557 | short=0.0548 | reason=short_score 0.0548 >= threshold 0.0080 (profile)
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T00:30:00Z
+CYCLE ANCHOR: 2026-04-09T03:15:00+03:00
+--------------------------------------------------
+2026/04/09 03:30:01.947783 logger.go:161: [Info] [LINKUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 8.8460 -> Stop: 8.8372)
+2026/04/09 03:30:02.212486 logger.go:161: [Info] [LINKUSDT] 🔥 THRUSTERS MAX [standard]: Trailing SL at 8.8016 (PnL: 0.69%, offset: 0.002)
+2026/04/09 03:30:02.420469 logger.go:161: [Info] [HBARUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 0.0887 -> Stop: 0.0887)
+2026/04/09 03:30:05.067747 logger.go:169: [Debug] [ARBUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.055
+2026/04/09 03:30:06.510474 logger.go:169: [Debug] [ATOMUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.028
+2026/04/09 03:30:06.681664 logger.go:161: [Info] [DOTUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 1.2673 -> Stop: 1.2660)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T03:15:00+03:00 | signal=flat / wait | score=-0.0642 | long=-0.0642 | short=-0.0679
+[BTCUSDT] SKIP | anchor=2026-04-09T03:15:00+03:00 | signal=flat / wait | score=-0.0200 | long=-0.0200 | short=-0.1032
+[ETHUSDT] SKIP | anchor=2026-04-09T03:15:00+03:00 | signal=weak short | score=-0.0404 | long=-0.1147 | short=-0.0404
+[BNBUSDT] SKIP | anchor=2026-04-09T03:15:00+03:00 | signal=flat / wait | score=-0.0876 | long=-0.0876 | short=-0.0896
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T03:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0364 | long=-0.2021 | short=0.0364
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T03:15:00+03:00 | hold=6/4 | against=0/2 | signal=flat / wait | score=0.0548 | long=-0.2057 | short=0.0548
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T03:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0814 | long=-0.2856 | short=0.0814
+[DOGEUSDT] SKIP | anchor=2026-04-09T03:15:00+03:00 | signal=flat / wait | score=-0.0000 | long=-0.1557 | short=-0.0000
+[NEARUSDT] HOLD LONG | anchor=2026-04-09T03:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0583 | long=-0.0583 | short=-0.1094
+[SUIUSDT] SKIP | anchor=2026-04-09T03:15:00+03:00 | signal=flat / wait | score=-0.0555 | long=-0.0713 | short=-0.0555
+[AVAXUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.77% | Score dropped from 0.000 to 0.001 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=40561cd1-1789-4ed8-869f-3e5f9b3bc4df reason=Model_Decay_TP qty=5.50000000
+[ARBUSDT] COOLDOWN | anchor=2026-04-09T03:15:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=0.1027 | long=0.1027 | short=-0.1399 | note=detected_exchange_close
+[APTUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.87% | Score dropped from 0.000 to 0.000 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=1109a3c5-132c-43cf-93e2-0419116b3754 reason=Model_Decay_TP qty=60.20000000
+[TIAUSDT] 🎯 ATR TP HIT | type=SHORT | PnL: 1.24% (Target: 0.92%) | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=b8768f93-93ce-450d-9af4-f3fc6717e495 reason=ATR_TP qty=167.70000000
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T03:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0507 | long=-0.2420 | short=0.0507
+[ATOMUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T03:15:00+03:00 | pnl=-0.63% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.028 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=f67a61d3-c282-4212-a8f0-085adb4467e4 reason=subframe_exit(subframe_pnl_protection) qty=28.00000000
+[OPUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.81% | Score dropped from 0.000 to -0.077 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=88a4fe5c-392e-44e1-9ee2-830cda930de3 reason=Model_Decay_TP qty=436.90000000
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T00:45:00Z
+CYCLE ANCHOR: 2026-04-09T03:30:00+03:00
+--------------------------------------------------
+2026/04/09 03:45:02.536428 logger.go:161: [Info] [HBARUSDT] 🔥 THRUSTERS MAX [standard]: Trailing SL at 0.0883 (PnL: 0.66%, offset: 0.002)
+2026/04/09 03:45:02.941342 logger.go:161: [Info] [XRPUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 1.3403 -> Stop: 1.3390)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T03:30:00+03:00 | signal=flat / wait | score=-0.0425 | long=-0.0425 | short=-0.0823
+[BTCUSDT] SKIP | anchor=2026-04-09T03:30:00+03:00 | signal=flat / wait | score=-0.0320 | long=-0.0320 | short=-0.0937
+[ETHUSDT] SKIP | anchor=2026-04-09T03:30:00+03:00 | signal=weak short | score=-0.0302 | long=-0.1262 | short=-0.0302
+[LINKUSDT] 🎯 ATR TP HIT | type=SHORT | PnL: 0.98% (Target: 0.80%) | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=b793c4a0-ba00-4ce7-a7c2-cfb6abeafcfa reason=ATR_TP qty=5.60000000
+[BNBUSDT] SKIP | anchor=2026-04-09T03:30:00+03:00 | signal=flat / wait | score=-0.0419 | long=-0.0419 | short=-0.1538
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T03:30:00+03:00 | hold=7/4 | against=0/2 | signal=flat / wait | score=0.0616 | long=-0.2144 | short=0.0616
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T03:30:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0087 | long=-0.1163 | short=0.0087
+[AVAXUSDT] EXECUTED | anchor=2026-04-09T03:30:00+03:00 | placed Sell AVAXUSDT | raw_qty=5.58909010 | qty=5.50000000 | step=0.10000000 | min_qty=0.10000000 | last=8.9460 | stop=9.0802 | order_id=903c25a9-ef77-42a6-8cd9-4f8fe06d529d | score=0.0182 (thr=0.0080) | entropy=1.59 | vol=0.91 | long=-0.1528 | short=0.0182 | reason=short_score 0.0182 >= threshold 0.0080 (profile)
+[NEARUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-09T03:30:00+03:00 | pnl=-0.11% | score_entry=0.00->-0.07 | entropy=1.55 | conf=1.00>thr=0.88 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=358a5db6-6cd9-4b09-a7fb-3c260bcd1db0 reason=adaptive_exit(conf=1.00>thr=0.88) qty=37.60000000
+[APTUSDT] EXECUTED | anchor=2026-04-09T03:30:00+03:00 | placed Sell APTUSDT | raw_qty=60.82725061 | qty=60.82000000 | step=0.01000000 | min_qty=0.01000000 | last=0.8220 | stop=0.8343 | order_id=1e7644a7-baf3-4827-8ede-fa0c7154f679 | score=0.0974 (thr=0.0100) | entropy=1.57 | vol=0.82 | long=-0.2521 | short=0.0974 | reason=short_score 0.0974 >= threshold 0.0100 (profile)
+[DOGEUSDT] EXECUTED | anchor=2026-04-09T03:30:00+03:00 | placed Sell DOGEUSDT | raw_qty=544.66230937 | qty=544.00000000 | step=1.00000000 | min_qty=1.00000000 | last=0.0918 | stop=0.0932 | order_id=794b0074-c7ef-425f-975f-3c25c1c079ae | score=0.0740 (thr=0.0100) | entropy=1.53 | vol=0.98 | long=-0.2543 | short=0.0740 | reason=short_score 0.0740 >= threshold 0.0100 (profile)
+[TIAUSDT] SKIP | anchor=2026-04-09T03:30:00+03:00 | signal=flat / wait | score=-0.0025 | long=-0.1974 | short=-0.0025
+[SUIUSDT] EXECUTED | anchor=2026-04-09T03:30:00+03:00 | placed Sell SUIUSDT | raw_qty=55.11463845 | qty=50.00000000 | step=10.00000000 | min_qty=10.00000000 | last=0.9072 | stop=0.9208 | order_id=5184bee3-1b70-40b3-8199-594a2c4202cf | score=0.0181 (thr=0.0100) | entropy=1.51 | vol=0.90 | long=-0.1870 | short=0.0181 | reason=short_score 0.0181 >= threshold 0.0100 (profile)
+[ARBUSDT] SKIP | anchor=2026-04-09T03:30:00+03:00 | signal=flat / wait | score=-0.0441 | long=-0.1477 | short=-0.0441
+[OPUSDT] SKIP | anchor=2026-04-09T03:30:00+03:00 | signal=avoid | score=-0.0011 | long=-0.1913 | short=-0.0011
+[ATOMUSDT] EXECUTED | anchor=2026-04-09T03:30:00+03:00 | placed Sell ATOMUSDT | raw_qty=28.29494652 | qty=28.20000000 | step=0.10000000 | min_qty=0.10000000 | last=1.7671 | stop=1.7936 | order_id=b8ae4426-c1a7-4957-8e54-e207fc33bfee | score=0.0170 (thr=0.0080) | entropy=1.57 | vol=1.16 | long=-0.1505 | short=0.0170 | reason=short_score 0.0170 >= threshold 0.0080 (profile)
+[DOTUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.52% | Score dropped from 0.000 to 0.008 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=72f8e21c-1c86-41fe-a10b-fd3c2ebe5a84 reason=Model_Decay_TP qty=39.40000000
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T01:00:00Z
+CYCLE ANCHOR: 2026-04-09T03:45:00+03:00
+--------------------------------------------------
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T03:45:00+03:00 | signal=flat / wait | score=-0.0697 | long=-0.1000 | short=-0.0697
+[ETHUSDT] SKIP | anchor=2026-04-09T03:45:00+03:00 | signal=flat / wait | score=-0.0256 | long=-0.0256 | short=-0.1041
+[BTCUSDT] SKIP | anchor=2026-04-09T03:45:00+03:00 | signal=avoid | score=-0.0835 | long=-0.1265 | short=-0.0835
+[BNBUSDT] SKIP | anchor=2026-04-09T03:45:00+03:00 | signal=flat / wait | score=-0.0438 | long=-0.0438 | short=-0.1514
+[LINKUSDT] EXECUTED | anchor=2026-04-09T03:45:00+03:00 | placed Sell LINKUSDT | raw_qty=5.70385581 | qty=5.70000000 | step=0.10000000 | min_qty=0.10000000 | last=8.7660 | stop=8.8975 | order_id=b1fd3c4e-2cbf-4dad-bdae-39352bf1a1ed | score=0.0320 (thr=0.0100) | entropy=1.48 | vol=1.18 | long=-0.2560 | short=0.0320 | reason=short_score 0.0320 >= threshold 0.0100 (profile)
+[XRPUSDT] COOLDOWN | anchor=2026-04-09T03:45:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=0.0111 | long=-0.2058 | short=0.0111 | note=detected_exchange_close
+[HBARUSDT] COOLDOWN | anchor=2026-04-09T03:45:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=-0.0278 | long=-0.1469 | short=-0.0278 | note=detected_exchange_close
+[NEARUSDT] SKIP | anchor=2026-04-09T03:45:00+03:00 | signal=flat / wait | score=-0.0469 | long=-0.0469 | short=-0.1676
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T03:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0129 | long=-0.2001 | short=0.0129
+[SUIUSDT] HOLD SHORT | anchor=2026-04-09T03:45:00+03:00 | hold=1/4 | against=0/2 | signal=avoid | score=-0.0670 | long=-0.1179 | short=-0.0670
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T03:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0266 | long=-0.1788 | short=0.0266
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-09T03:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0454 | long=-0.2768 | short=0.0454
+[ARBUSDT] SKIP | anchor=2026-04-09T03:45:00+03:00 | signal=flat / wait | score=-0.0452 | long=-0.1460 | short=-0.0452
+[OPUSDT] SKIP | anchor=2026-04-09T03:45:00+03:00 | signal=flat / wait | score=-0.0188 | long=-0.1599 | short=-0.0188
+[TIAUSDT] SKIP | anchor=2026-04-09T03:45:00+03:00 | signal=flat / wait | score=-0.0073 | long=-0.1874 | short=-0.0073
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-09T03:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0244 | long=-0.2695 | short=0.0244
+[DOTUSDT] EXECUTED | anchor=2026-04-09T03:45:00+03:00 | placed Sell DOTUSDT | raw_qty=39.65421524 | qty=39.60000000 | step=0.10000000 | min_qty=0.10000000 | last=1.2609 | stop=1.2798 | order_id=0c4409dd-9536-4539-be2b-0a3b7784651a | score=0.0097 (thr=0.0080) | entropy=1.53 | vol=0.84 | long=-0.2050 | short=0.0097 | reason=short_score 0.0097 >= threshold 0.0080 (profile)
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T01:15:00Z
+CYCLE ANCHOR: 2026-04-09T04:00:00+03:00
+--------------------------------------------------
+2026/04/09 04:15:01.478772 logger.go:161: [Info] [LINKUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 8.7660 -> Stop: 8.7572)
+2026/04/09 04:15:07.559907 logger.go:161: [Info] [DOTUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 1.2609 -> Stop: 1.2596)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T04:00:00+03:00 | signal=flat / wait | score=-0.0453 | long=-0.0453 | short=-0.0793
+[BTCUSDT] SKIP | anchor=2026-04-09T04:00:00+03:00 | signal=flat / wait | score=-0.0325 | long=-0.0325 | short=-0.0931
+[BNBUSDT] SKIP | anchor=2026-04-09T04:00:00+03:00 | signal=flat / wait | score=-0.0843 | long=-0.0916 | short=-0.0843
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T04:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0456 | long=-0.2078 | short=0.0456
+[ETHUSDT] EXECUTED | anchor=2026-04-09T04:00:00+03:00 | placed Buy ETHUSDT | raw_qty=0.02303521 | qty=0.02000000 | step=0.01000000 | min_qty=0.01000000 | last=2170.5900 | stop=2138.0312 | order_id=26a7db6e-2d7e-45aa-87e6-5ee0a5d3eced | score=0.0416 (thr=0.0050) | entropy=1.57 | vol=1.04 | long=0.0416 | short=-0.1284 | reason=long_score 0.0416 >= threshold 0.0050 (profile)
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T04:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0934 | long=-0.3313 | short=0.0934
+[HBARUSDT] EXECUTED | anchor=2026-04-09T04:00:00+03:00 | placed Sell HBARUSDT | raw_qty=568.31097977 | qty=568.00000000 | step=1.00000000 | min_qty=1.00000000 | last=0.0880 | stop=0.0893 | order_id=5bbc8118-667d-4d0d-9018-44e43aa6eccb | score=0.0584 (thr=0.0100) | entropy=1.50 | vol=0.84 | long=-0.2075 | short=0.0584 | reason=short_score 0.0584 >= threshold 0.0100 (profile)
+[XRPUSDT] EXECUTED | anchor=2026-04-09T04:00:00+03:00 | placed Sell XRPUSDT | raw_qty=37.53471962 | qty=37.50000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3321 | stop=1.3521 | order_id=15d7edfb-17b7-4d08-9a82-d618a1f6c43a | score=0.0947 (thr=0.0050) | entropy=1.50 | vol=1.09 | long=-0.3036 | short=0.0947 | reason=short_score 0.0947 >= threshold 0.0050 (profile)
+[NEARUSDT] SKIP | anchor=2026-04-09T04:00:00+03:00 | signal=flat / wait | score=-0.0375 | long=-0.0375 | short=-0.1735
+[SUIUSDT] HOLD SHORT | anchor=2026-04-09T04:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0207 | long=-0.1882 | short=0.0207
+[DOGEUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.32% | Score dropped from 0.000 to 0.016 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=a4bad5f0-ddd6-4de8-a100-42f569157b6a reason=Model_Decay_TP qty=544.00000000
+[APTUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.83% | Score dropped from 0.000 to 0.016 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=89906fa2-9d0c-4d45-b99b-f91de633f956 reason=Model_Decay_TP qty=60.82000000
+[ARBUSDT] EXECUTED | anchor=2026-04-09T04:00:00+03:00 | placed Sell ARBUSDT | raw_qty=490.77345897 | qty=490.70000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1019 | stop=0.1034 | order_id=dbbdb8f6-689d-46b8-9349-e9faf436b481 | score=0.0245 (thr=0.0080) | entropy=1.58 | vol=1.70 | long=-0.2435 | short=0.0245 | reason=short_score 0.0245 >= threshold 0.0080 (profile)
+[OPUSDT] SKIP | anchor=2026-04-09T04:00:00+03:00 | signal=flat / wait | score=-0.0010 | long=-0.0010 | short=-0.0719
+[TIAUSDT] EXECUTED | anchor=2026-04-09T04:00:00+03:00 | placed Sell TIAUSDT | raw_qty=170.06802721 | qty=170.00000000 | step=0.10000000 | min_qty=0.10000000 | last=0.2940 | stop=0.2984 | order_id=e0c63250-93a1-4bc3-97c1-de2239489c06 | score=0.0382 (thr=0.0100) | entropy=1.57 | vol=1.28 | long=-0.1801 | short=0.0382 | reason=short_score 0.0382 >= threshold 0.0100 (profile)
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T04:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0527 | long=-0.2425 | short=0.0527
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-09T04:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0109 | long=-0.0109 | short=-0.0611
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T01:30:00Z
+CYCLE ANCHOR: 2026-04-09T04:15:00+03:00
+--------------------------------------------------
+2026/04/09 04:30:02.298256 logger.go:161: [Info] [LINKUSDT] 🔥 THRUSTERS MAX [standard]: Trailing SL at 8.7094 (PnL: 0.84%, offset: 0.002)
+2026/04/09 04:30:03.389069 logger.go:161: [Info] [XRPUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 1.3321 -> Stop: 1.3308)
+2026/04/09 04:30:07.065109 logger.go:161: [Info] [DOTUSDT] 🔥 THRUSTERS MAX [standard]: Trailing SL at 1.2533 (PnL: 0.79%, offset: 0.002)
+2026/04/09 04:30:07.725785 logger.go:161: [Info] [TIAUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 0.2940 -> Stop: 0.2937)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T04:15:00+03:00 | signal=flat / wait | score=-0.0634 | long=-0.1108 | short=-0.0634
+[BTCUSDT] SKIP | anchor=2026-04-09T04:15:00+03:00 | signal=flat / wait | score=-0.0421 | long=-0.0421 | short=-0.0870
+[ETHUSDT] HOLD LONG | anchor=2026-04-09T04:15:00+03:00 | hold=1/4 | against=0/2 | signal=weak short | score=-0.0195 | long=-0.1377 | short=-0.0195
+[BNBUSDT] SKIP | anchor=2026-04-09T04:15:00+03:00 | signal=flat / wait | score=-0.0552 | long=-0.0552 | short=-0.1438
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T04:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0613 | long=-0.2296 | short=0.0613
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T04:15:00+03:00 | hold=1/4 | against=0/2 | signal=strong short | score=0.0650 | long=-0.2162 | short=0.0650
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T04:15:00+03:00 | hold=1/4 | against=0/2 | signal=weak short | score=0.1128 | long=-0.3260 | short=0.1128
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T04:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.1160 | long=-0.2876 | short=0.1160
+[APTUSDT] EXECUTED | anchor=2026-04-09T04:15:00+03:00 | placed Sell APTUSDT | raw_qty=61.43260843 | qty=61.43000000 | step=0.01000000 | min_qty=0.01000000 | last=0.8139 | stop=0.8261 | order_id=e0ca928e-71e0-4ad6-b328-a6028345b78e | score=0.0994 (thr=0.0100) | entropy=1.57 | vol=1.04 | long=-0.2481 | short=0.0994 | reason=short_score 0.0994 >= threshold 0.0100 (profile)
+[DOGEUSDT] EXECUTED | anchor=2026-04-09T04:15:00+03:00 | placed Sell DOGEUSDT | raw_qty=548.12541109 | qty=548.00000000 | step=1.00000000 | min_qty=1.00000000 | last=0.0912 | stop=0.0926 | order_id=3da0ee73-d9ec-46ed-8b20-b13d5398a70a | score=0.0445 (thr=0.0100) | entropy=1.58 | vol=1.17 | long=-0.2183 | short=0.0445 | reason=short_score 0.0445 >= threshold 0.0100 (profile)
+[NEARUSDT] EXECUTED | anchor=2026-04-09T04:15:00+03:00 | placed Buy NEARUSDT | raw_qty=37.80432481 | qty=37.80000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3226 | stop=1.3028 | order_id=9c1aad23-a08a-4c73-a826-0fc6613b89f6 | score=0.0333 (thr=0.0080) | entropy=1.58 | vol=0.82 | long=0.0333 | short=-0.1684 | reason=long_score 0.0333 >= threshold 0.0080 (profile)
+[SUIUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.65% | Score dropped from 0.000 to -0.048 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=cebd5485-7f2f-4f43-8a75-ca8fbc2c1ca4 reason=Model_Decay_TP qty=50.00000000
+[ARBUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 1.17% | Score dropped from 0.000 to -0.133 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=32e57450-8099-48d8-a037-8934ba64ae56 reason=Model_Decay_TP qty=490.70000000
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T04:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0587 | long=-0.2187 | short=0.0587
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-09T04:15:00+03:00 | hold=3/4 | against=0/2 | signal=avoid | score=0.0286 | long=-0.2640 | short=0.0286
+[OPUSDT] SKIP | anchor=2026-04-09T04:15:00+03:00 | signal=flat / wait | score=-0.0188 | long=-0.0188 | short=-0.0625
+[TIAUSDT] HOLD SHORT | anchor=2026-04-09T04:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0482 | long=-0.1961 | short=0.0482
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T01:45:00Z
+CYCLE ANCHOR: 2026-04-09T04:30:00+03:00
+--------------------------------------------------
+2026/04/09 04:45:01.231187 logger.go:169: [Debug] [ETHUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=down | scoreChange=0.035
+2026/04/09 04:45:06.453565 logger.go:169: [Debug] [ATOMUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=down | scoreChange=0.063
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T04:30:00+03:00 | signal=flat / wait | score=-0.0664 | long=-0.1093 | short=-0.0664
+[LINKUSDT] COOLDOWN | anchor=2026-04-09T04:30:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=0.0202 | long=-0.2372 | short=0.0202 | note=detected_exchange_close
+[ETHUSDT] HOLD LONG | anchor=2026-04-09T04:30:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0425 | long=-0.1979 | short=-0.0425
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T04:30:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0307 | long=-0.1452 | short=-0.0307
+[XRPUSDT] COOLDOWN | anchor=2026-04-09T04:30:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=0.0214 | long=-0.2233 | short=0.0214 | note=detected_exchange_close
+[BNBUSDT] SKIP | anchor=2026-04-09T04:30:00+03:00 | signal=flat / wait | score=-0.0811 | long=-0.1790 | short=-0.0811
+[BTCUSDT] EXECUTED | anchor=2026-04-09T04:30:00+03:00 | placed Buy BTCUSDT | raw_qty=0.00070697 | qty=0.00100000 | step=0.00100000 | min_qty=0.00100000 | last=70724.3000 | stop=69663.4355 | order_id=632a09e0-0d52-4e35-aeb6-d74695566797 | score=0.0246 (thr=0.0050) | entropy=1.48 | vol=0.88 | long=0.0246 | short=-0.1717 | reason=long_score 0.0246 >= threshold 0.0050 (profile)
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T04:30:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0206 | long=-0.1683 | short=0.0206
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T04:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0159 | long=-0.2021 | short=0.0159
+[SUIUSDT] SKIP | anchor=2026-04-09T04:30:00+03:00 | signal=avoid | score=-0.0600 | long=-0.1293 | short=-0.0600
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-09T04:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0565 | long=-0.0910 | short=-0.0565
+[NEARUSDT] HOLD LONG | anchor=2026-04-09T04:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0733 | long=-0.0733 | short=-0.0942
+[ARBUSDT] SKIP | anchor=2026-04-09T04:30:00+03:00 | signal=avoid | score=-0.0476 | long=-0.1141 | short=-0.0476
+[OPUSDT] SKIP | anchor=2026-04-09T04:30:00+03:00 | signal=avoid | score=0.0042 | long=-0.1945 | short=0.0042
+[DOTUSDT] COOLDOWN | anchor=2026-04-09T04:30:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=-0.0372 | long=-0.1337 | short=-0.0372 | note=detected_exchange_close
+[TIAUSDT] COOLDOWN | anchor=2026-04-09T04:30:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=-0.0036 | long=-0.1955 | short=-0.0036 | note=detected_exchange_close
+[ATOMUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T04:30:00+03:00 | pnl=-0.45% | reason=subframe_pnl_protection | trend5m=down | scoreChange=0.063 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=2328b16e-410a-44a6-b3a1-4258fa0bfcfa reason=subframe_exit(subframe_pnl_protection) qty=28.20000000
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T02:00:00Z
+CYCLE ANCHOR: 2026-04-09T04:45:00+03:00
+--------------------------------------------------
+2026/04/09 05:00:01.233025 logger.go:169: [Debug] [ETHUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=down | scoreChange=0.038
+2026/04/09 05:00:03.999133 logger.go:169: [Debug] [APTUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=down | scoreChange=0.030
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T04:45:00+03:00 | signal=flat / wait | score=-0.0480 | long=-0.0480 | short=-0.1239
+[LINKUSDT] SKIP | anchor=2026-04-09T04:45:00+03:00 | signal=flat / wait | score=0.0071 | long=-0.2147 | short=0.0071
+[BTCUSDT] HOLD LONG | anchor=2026-04-09T04:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0132 | long=-0.2620 | short=-0.0132
+[BNBUSDT] SKIP | anchor=2026-04-09T04:45:00+03:00 | signal=flat / wait | score=-0.0924 | long=-0.1569 | short=-0.0924
+[ETHUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.33% | Score dropped from 0.000 to -0.189 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=aab8b9ca-c7db-4fec-93a1-ce31b9eb701b reason=Model_Decay_TP qty=0.02000000
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T04:45:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0336 | long=-0.2469 | short=0.0336
+[XRPUSDT] SKIP | anchor=2026-04-09T04:45:00+03:00 | signal=flat / wait | score=-0.0236 | long=-0.1654 | short=-0.0236
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T04:45:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0091 | long=-0.1903 | short=0.0091
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T04:45:00+03:00 | hold=5/4 | against=0/2 | signal=flat / wait | score=0.0159 | long=-0.1586 | short=0.0159
+[NEARUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.31% | Score dropped from 0.000 to -0.044 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=c1e19e46-4009-4bc3-ade2-96abd4a2fe3f reason=Model_Decay_TP qty=37.80000000
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-09T04:45:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0620 | long=-0.0813 | short=-0.0620
+[SUIUSDT] SKIP | anchor=2026-04-09T04:45:00+03:00 | signal=flat / wait | score=-0.0094 | long=-0.0094 | short=-0.1487
+[ARBUSDT] SKIP | anchor=2026-04-09T04:45:00+03:00 | signal=flat / wait | score=-0.0341 | long=-0.1584 | short=-0.0341
+[DOTUSDT] SKIP | anchor=2026-04-09T04:45:00+03:00 | signal=flat / wait | score=-0.0426 | long=-0.1238 | short=-0.0426
+[TIAUSDT] EXECUTED | anchor=2026-04-09T04:45:00+03:00 | placed Sell TIAUSDT | raw_qty=170.12589316 | qty=170.10000000 | step=0.10000000 | min_qty=0.10000000 | last=0.2939 | stop=0.2983 | order_id=ff7a2eeb-5c4e-481c-8d7f-f95bd9a67bcc | score=0.0328 (thr=0.0100) | entropy=1.56 | vol=1.33 | long=-0.2473 | short=0.0328 | reason=short_score 0.0328 >= threshold 0.0100 (profile)
+[ATOMUSDT] EXECUTED | anchor=2026-04-09T04:45:00+03:00 | placed Sell ATOMUSDT | raw_qty=28.14364516 | qty=28.10000000 | step=0.10000000 | min_qty=0.10000000 | last=1.7766 | stop=1.8032 | order_id=9584b9d8-8b3b-469c-b064-f5a7f6be8a8b | score=0.0211 (thr=0.0080) | entropy=1.56 | vol=1.21 | long=-0.2682 | short=0.0211 | reason=short_score 0.0211 >= threshold 0.0080 (profile)
+[OPUSDT] SKIP | anchor=2026-04-09T04:45:00+03:00 | signal=flat / wait | score=-0.0069 | long=-0.1798 | short=-0.0069
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T02:15:00Z
+CYCLE ANCHOR: 2026-04-09T05:00:00+03:00
+--------------------------------------------------
+DEMO TRADER RESULTS
+--------------------------------------------------
+[ETHUSDT] SKIP | anchor=2026-04-09T05:00:00+03:00 | signal=weak short | score=-0.0233 | long=-0.1348 | short=-0.0233
+[SOLUSDT] SKIP | anchor=2026-04-09T05:00:00+03:00 | signal=flat / wait | score=-0.0508 | long=-0.0903 | short=-0.0508
+[BTCUSDT] HOLD LONG | anchor=2026-04-09T05:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0378 | long=-0.0378 | short=-0.0942
+[LINKUSDT] EXECUTED | anchor=2026-04-09T05:00:00+03:00 | placed Sell LINKUSDT | raw_qty=5.72868928 | qty=5.70000000 | step=0.10000000 | min_qty=0.10000000 | last=8.7280 | stop=8.8589 | order_id=e134b730-3b96-4789-b8a7-2b5a34660d1a | score=0.0555 (thr=0.0100) | entropy=1.56 | vol=1.33 | long=-0.1971 | short=0.0555 | reason=short_score 0.0555 >= threshold 0.0100 (profile)
+[XRPUSDT] EXECUTED | anchor=2026-04-09T05:00:00+03:00 | placed Sell XRPUSDT | raw_qty=37.53190212 | qty=37.50000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3322 | stop=1.3522 | order_id=d3f8586c-35e0-4a32-a8b3-affe8f06b7ee | score=0.0101 (thr=0.0050) | entropy=1.55 | vol=1.15 | long=-0.1225 | short=0.0101 | reason=short_score 0.0101 >= threshold 0.0050 (profile)
+[HBARUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-09T05:00:00+03:00 | pnl=-0.17% | score_entry=0.00->-0.04 | entropy=1.52 | conf=0.90>thr=0.89 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=47efff9f-4a35-4376-ba1a-671c3ace61e3 reason=adaptive_exit(conf=0.90>thr=0.89) qty=568.00000000
+[NEARUSDT] SKIP | anchor=2026-04-09T05:00:00+03:00 | signal=flat / wait | score=-0.0642 | long=-0.0642 | short=-0.1002
+[BNBUSDT] EXECUTED | anchor=2026-04-09T05:00:00+03:00 | placed Buy BNBUSDT | raw_qty=0.08322237 | qty=0.08000000 | step=0.01000000 | min_qty=0.01000000 | last=600.8000 | stop=591.7880 | order_id=428ed3fd-ca04-4f95-927c-f6ac1a9e3c37 | score=0.0096 (thr=0.0050) | entropy=1.51 | vol=1.04 | long=0.0096 | short=-0.1423 | reason=long_score 0.0096 >= threshold 0.0050 (profile)
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T05:00:00+03:00 | hold=6/4 | against=0/2 | signal=flat / wait | score=0.1095 | long=-0.2790 | short=0.1095
+[SUIUSDT] SKIP | anchor=2026-04-09T05:00:00+03:00 | signal=avoid | score=-0.0600 | long=-0.1293 | short=-0.0600
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T05:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0946 | long=-0.2401 | short=0.0946
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-09T05:00:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0730 | long=-0.2486 | short=0.0730
+[TIAUSDT] HOLD SHORT | anchor=2026-04-09T05:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0996 | long=-0.2934 | short=0.0996
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-09T05:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0114 | long=-0.2547 | short=0.0114
+[ARBUSDT] EXECUTED | anchor=2026-04-09T05:00:00+03:00 | placed Buy ARBUSDT | raw_qty=497.16615293 | qty=497.10000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1006 | stop=0.0991 | order_id=b900a434-b624-4f25-aef3-f4c2263b66a6 | score=0.0949 (thr=0.0080) | entropy=1.52 | vol=1.51 | long=0.0949 | short=-0.1316 | reason=long_score 0.0949 >= threshold 0.0080 (profile)
+[DOTUSDT] EXECUTED | anchor=2026-04-09T05:00:00+03:00 | placed Sell DOTUSDT | raw_qty=39.94886545 | qty=39.90000000 | step=0.10000000 | min_qty=0.10000000 | last=1.2516 | stop=1.2704 | order_id=4fc1f96d-8099-445f-ab3b-93f97188918e | score=0.0496 (thr=0.0080) | entropy=1.53 | vol=0.89 | long=-0.2080 | short=0.0496 | reason=short_score 0.0496 >= threshold 0.0080 (profile)
+[OPUSDT] EXECUTED | anchor=2026-04-09T05:00:00+03:00 | placed Sell OPUSDT | raw_qty=442.86979628 | qty=442.80000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1129 | stop=0.1146 | order_id=46c92a8c-adbe-46be-ac52-300bae9a76bf | score=0.0709 (thr=0.0080) | entropy=1.57 | vol=1.06 | long=-0.2702 | short=0.0709 | reason=short_score 0.0709 >= threshold 0.0080 (profile)
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T02:30:00Z
+CYCLE ANCHOR: 2026-04-09T05:15:00+03:00
+--------------------------------------------------
+2026/04/09 05:30:01.161086 logger.go:169: [Debug] [LINKUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.015
+2026/04/09 05:30:02.509173 logger.go:169: [Debug] [AVAXUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.021
+2026/04/09 05:30:04.335989 logger.go:169: [Debug] [DOGEUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.023
+2026/04/09 05:30:05.057028 logger.go:169: [Debug] [APTUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.054
+2026/04/09 05:30:06.896825 logger.go:169: [Debug] [OPUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.004
+DEMO TRADER RESULTS
+--------------------------------------------------
+[ETHUSDT] SKIP | anchor=2026-04-09T05:15:00+03:00 | signal=flat / wait | score=-0.0673 | long=-0.0673 | short=-0.1230
+[SOLUSDT] SKIP | anchor=2026-04-09T05:15:00+03:00 | signal=flat / wait | score=-0.0480 | long=-0.0480 | short=-0.1239
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T05:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0163 | long=-0.2306 | short=0.0163
+[HBARUSDT] SKIP | anchor=2026-04-09T05:15:00+03:00 | signal=flat / wait | score=-0.0416 | long=-0.1491 | short=-0.0416
+[BTCUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.37% | Score dropped from 0.000 to -0.275 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=f182ab67-bd11-43c8-bb38-47f0fe00c30e reason=Model_Decay_TP qty=0.00100000
+[BNBUSDT] HOLD LONG | anchor=2026-04-09T05:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0842 | long=-0.1732 | short=-0.0842
+[AVAXUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T05:15:00+03:00 | pnl=-0.87% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.021 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=e4255f32-9446-4ea1-82b2-5fb4e23291f7 reason=subframe_exit(subframe_pnl_protection) qty=5.50000000
+[NEARUSDT] SKIP | anchor=2026-04-09T05:15:00+03:00 | signal=flat / wait | score=-0.0529 | long=-0.0529 | short=-0.1568
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T05:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0294 | long=-0.1619 | short=-0.0294
+[DOGEUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T05:15:00+03:00 | pnl=-0.59% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.023 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=d616617b-2a44-49d4-b650-b07d20950109 reason=subframe_exit(subframe_pnl_protection) qty=548.00000000
+[SUIUSDT] SKIP | anchor=2026-04-09T05:15:00+03:00 | signal=flat / wait | score=-0.0439 | long=-0.1588 | short=-0.0439
+[APTUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T05:15:00+03:00 | pnl=-0.85% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.054 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=f2da3595-b785-4c9c-8c32-09bfca07bc68 reason=subframe_exit(subframe_pnl_protection) qty=61.43000000
+[ARBUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.50% | Score dropped from 0.000 to -0.088 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=df9fa15f-f39d-483f-a0ff-52f0757d8971 reason=Model_Decay_TP qty=497.10000000
+[TIAUSDT] HOLD SHORT | anchor=2026-04-09T05:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0090 | long=-0.1922 | short=-0.0090
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T05:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0432 | long=-0.1288 | short=-0.0432
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-09T05:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0012 | long=-0.2409 | short=0.0012
+[OPUSDT] HOLD SHORT | anchor=2026-04-09T05:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0165 | long=-0.2190 | short=0.0165
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T02:45:00Z
+CYCLE ANCHOR: 2026-04-09T05:30:00+03:00
+--------------------------------------------------
+2026/04/09 05:45:05.990793 logger.go:169: [Debug] [DOTUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.007
+2026/04/09 05:45:06.173761 logger.go:169: [Debug] [OPUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.015
+DEMO TRADER RESULTS
+--------------------------------------------------
+[ETHUSDT] SKIP | anchor=2026-04-09T05:30:00+03:00 | signal=weak short | score=-0.0222 | long=-0.1361 | short=-0.0222
+[BTCUSDT] SKIP | anchor=2026-04-09T05:30:00+03:00 | signal=avoid | score=-0.0901 | long=-0.1166 | short=-0.0901
+[HBARUSDT] SKIP | anchor=2026-04-09T05:30:00+03:00 | signal=flat / wait | score=-0.0469 | long=-0.1245 | short=-0.0469
+[BNBUSDT] HOLD LONG | anchor=2026-04-09T05:30:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0069 | long=0.0069 | short=-0.1394
+[SOLUSDT] SKIP | anchor=2026-04-09T05:30:00+03:00 | signal=flat / wait | score=-0.0508 | long=-0.0903 | short=-0.0508
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T05:30:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0497 | long=-0.1886 | short=0.0497
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T05:30:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0075 | long=-0.1150 | short=0.0075
+[NEARUSDT] SKIP | anchor=2026-04-09T05:30:00+03:00 | signal=flat / wait | score=-0.0392 | long=-0.0392 | short=-0.1803
+[DOGEUSDT] SKIP | anchor=2026-04-09T05:30:00+03:00 | signal=avoid | score=-0.0119 | long=-0.1751 | short=-0.0119
+[AVAXUSDT] EXECUTED | anchor=2026-04-09T05:30:00+03:00 | placed Sell AVAXUSDT | raw_qty=5.54323725 | qty=5.50000000 | step=0.10000000 | min_qty=0.10000000 | last=9.0200 | stop=9.1553 | order_id=b019d988-17c9-4e6e-8cd9-e0f292cae29b | score=0.0926 (thr=0.0080) | entropy=1.45 | vol=1.01 | long=-0.3445 | short=0.0926 | reason=short_score 0.0926 >= threshold 0.0080 (profile)
+[APTUSDT] SKIP | anchor=2026-04-09T05:30:00+03:00 | signal=flat / wait | score=0.0050 | long=-0.1879 | short=0.0050
+[SUIUSDT] SKIP | anchor=2026-04-09T05:30:00+03:00 | signal=avoid | score=-0.0775 | long=-0.1037 | short=-0.0775
+[ARBUSDT] SKIP | anchor=2026-04-09T05:30:00+03:00 | signal=flat / wait | score=-0.0387 | long=-0.1620 | short=-0.0387
+[TIAUSDT] HOLD SHORT | anchor=2026-04-09T05:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0165 | long=-0.1807 | short=-0.0165
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T05:30:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0513 | long=-0.1175 | short=-0.0513
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-09T05:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0048 | long=-0.1379 | short=0.0048
+[OPUSDT] HOLD SHORT | anchor=2026-04-09T05:30:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0093 | long=-0.1840 | short=-0.0093
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T03:00:00Z
+CYCLE ANCHOR: 2026-04-09T05:45:00+03:00
+--------------------------------------------------
+2026/04/09 06:00:01.025649 logger.go:169: [Debug] [LINKUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=up | scoreChange=0.011
+2026/04/09 06:00:07.933035 logger.go:169: [Debug] [OPUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=up | scoreChange=0.007
+DEMO TRADER RESULTS
+--------------------------------------------------
+[ETHUSDT] SKIP | anchor=2026-04-09T05:45:00+03:00 | signal=flat / wait | score=-0.0451 | long=-0.1948 | short=-0.0451
+[BTCUSDT] SKIP | anchor=2026-04-09T05:45:00+03:00 | signal=flat / wait | score=-0.0970 | long=-0.1055 | short=-0.0970
+[SOLUSDT] SKIP | anchor=2026-04-09T05:45:00+03:00 | signal=flat / wait | score=-0.0508 | long=-0.0903 | short=-0.0508
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T05:45:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0263 | long=-0.2505 | short=0.0263
+[BNBUSDT] HOLD LONG | anchor=2026-04-09T05:45:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0241 | long=-0.0241 | short=-0.1632
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T05:45:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0111 | long=-0.2138 | short=0.0111
+[HBARUSDT] EXECUTED | anchor=2026-04-09T05:45:00+03:00 | placed Sell HBARUSDT | raw_qty=564.27039837 | qty=564.00000000 | step=1.00000000 | min_qty=1.00000000 | last=0.0886 | stop=0.0899 | order_id=eaa84ec9-fb30-4e45-9a45-d9f317bf448d | score=0.0195 (thr=0.0100) | entropy=1.46 | vol=0.90 | long=-0.2281 | short=0.0195 | reason=short_score 0.0195 >= threshold 0.0100 (profile)
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T05:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0039 | long=-0.1514 | short=0.0039
+[NEARUSDT] EXECUTED | anchor=2026-04-09T05:45:00+03:00 | placed Buy NEARUSDT | raw_qty=37.62510347 | qty=37.60000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3289 | stop=1.3090 | order_id=40aa2bc5-5e6c-42c1-b0fc-b3bbf7e3143f | score=0.0179 (thr=0.0080) | entropy=1.58 | vol=0.89 | long=0.0179 | short=-0.1607 | reason=long_score 0.0179 >= threshold 0.0080 (profile)
+[ARBUSDT] SKIP | anchor=2026-04-09T05:45:00+03:00 | signal=avoid | score=-0.0569 | long=-0.0993 | short=-0.0569
+[DOGEUSDT] EXECUTED | anchor=2026-04-09T05:45:00+03:00 | placed Sell DOGEUSDT | raw_qty=545.85152838 | qty=545.00000000 | step=1.00000000 | min_qty=1.00000000 | last=0.0916 | stop=0.0930 | order_id=4d00153c-06f9-46c2-9433-5e23747ed1d8 | score=0.0600 (thr=0.0100) | entropy=1.54 | vol=1.17 | long=-0.2312 | short=0.0600 | reason=short_score 0.0600 >= threshold 0.0100 (profile)
+[APTUSDT] EXECUTED | anchor=2026-04-09T05:45:00+03:00 | placed Sell APTUSDT | raw_qty=60.96074128 | qty=60.96000000 | step=0.01000000 | min_qty=0.01000000 | last=0.8202 | stop=0.8325 | order_id=34666a4f-6a09-499c-87b2-73eee218c238 | score=0.0841 (thr=0.0100) | entropy=1.57 | vol=1.24 | long=-0.2242 | short=0.0841 | reason=short_score 0.0841 >= threshold 0.0100 (profile)
+[SUIUSDT] EXECUTED | anchor=2026-04-09T05:45:00+03:00 | placed Sell SUIUSDT | raw_qty=55.07214451 | qty=50.00000000 | step=10.00000000 | min_qty=10.00000000 | last=0.9079 | stop=0.9215 | order_id=0e690a0c-c668-42c5-bba2-f23ca91d03b1 | score=0.0179 (thr=0.0100) | entropy=1.51 | vol=0.93 | long=-0.1928 | short=0.0179 | reason=short_score 0.0179 >= threshold 0.0100 (profile)
+[ATOMUSDT] HOLD SHORT | anchor=2026-04-09T05:45:00+03:00 | hold=4/4 | against=1/2 | signal=flat / wait | score=0.0012 | long=-0.2409 | short=0.0012
+[TIAUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-09T05:45:00+03:00 | pnl=-0.37% | score_entry=0.00->-0.07 | entropy=1.55 | conf=0.90>thr=0.78 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=df1b1be8-6d8f-41a4-95c8-44e77b0fbee0 reason=adaptive_exit(conf=0.90>thr=0.78) qty=170.10000000
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T05:45:00+03:00 | hold=3/4 | against=0/2 | signal=avoid | score=-0.0063 | long=-0.1954 | short=-0.0063
+[OPUSDT] HOLD SHORT | anchor=2026-04-09T05:45:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0631 | long=-0.2613 | short=0.0631
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T03:15:00Z
+CYCLE ANCHOR: 2026-04-09T06:00:00+03:00
+--------------------------------------------------
+2026/04/09 06:15:04.556298 logger.go:169: [Debug] [APTUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=up | scoreChange=0.033
+2026/04/09 06:15:05.770283 logger.go:169: [Debug] [SUIUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=up | scoreChange=0.037
+2026/04/09 06:15:06.462103 logger.go:169: [Debug] [ATOMUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=flat | scoreChange=0.013
+2026/04/09 06:15:07.445469 logger.go:169: [Debug] [OPUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=up | scoreChange=0.032
+DEMO TRADER RESULTS
+--------------------------------------------------
+[BTCUSDT] SKIP | anchor=2026-04-09T06:00:00+03:00 | signal=flat / wait | score=-0.0406 | long=-0.0406 | short=-0.0905
+[ETHUSDT] SKIP | anchor=2026-04-09T06:00:00+03:00 | signal=flat / wait | score=-0.0228 | long=-0.0228 | short=-0.1104
+[SOLUSDT] SKIP | anchor=2026-04-09T06:00:00+03:00 | signal=flat / wait | score=-0.0442 | long=-0.1003 | short=-0.0442
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T06:00:00+03:00 | hold=4/4 | against=1/2 | signal=flat / wait | score=-0.0122 | long=-0.1570 | short=-0.0122
+[BNBUSDT] HOLD LONG | anchor=2026-04-09T06:00:00+03:00 | hold=4/4 | against=1/2 | signal=flat / wait | score=-0.0731 | long=-0.1112 | short=-0.0731
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T06:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=-0.0031 | long=-0.1403 | short=-0.0031
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T06:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0343 | long=-0.1451 | short=-0.0343
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T06:00:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0138 | long=-0.2153 | short=0.0138
+[NEARUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.35% | Score dropped from 0.000 to -0.046 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=798cb84b-db6f-4995-b3d8-9b3c90473b6a reason=Model_Decay_TP qty=37.60000000
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-09T06:00:00+03:00 | hold=1/4 | against=0/2 | signal=avoid | score=-0.0144 | long=-0.1730 | short=-0.0144
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T06:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0061 | long=-0.1880 | short=0.0061
+[TIAUSDT] SKIP | anchor=2026-04-09T06:00:00+03:00 | signal=flat / wait | score=-0.0216 | long=-0.1773 | short=-0.0216
+[SUIUSDT] HOLD SHORT | anchor=2026-04-09T06:00:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0274 | long=-0.2038 | short=0.0274
+[ATOMUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T06:00:00+03:00 | pnl=-0.50% | reason=subframe_pnl_protection | trend5m=flat | scoreChange=0.013 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=8c04edc0-9538-4700-8275-cf067c07a70d reason=subframe_exit(subframe_pnl_protection) qty=28.10000000
+[ARBUSDT] EXECUTED | anchor=2026-04-09T06:00:00+03:00 | placed Sell ARBUSDT | raw_qty=494.55984174 | qty=494.50000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1011 | stop=0.1026 | order_id=82953563-64c1-4387-9188-cd73958dc969 | score=0.0221 (thr=0.0080) | entropy=1.58 | vol=1.37 | long=-0.2425 | short=0.0221 | reason=short_score 0.0221 >= threshold 0.0080 (profile)
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T06:00:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0338 | long=-0.1885 | short=0.0338
+[OPUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T06:00:00+03:00 | pnl=-0.65% | reason=subframe_pnl_protection | trend5m=up | scoreChange=0.032 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=3e897e98-6fd3-4db5-98ab-759362248382 reason=subframe_exit(subframe_pnl_protection) qty=442.80000000
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T03:30:00Z
+CYCLE ANCHOR: 2026-04-09T06:15:00+03:00
+--------------------------------------------------
+2026/04/09 06:30:03.842565 logger.go:169: [Debug] [AVAXUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=up | scoreChange=0.038
+2026/04/09 06:30:04.973758 logger.go:169: [Debug] [APTUSDT] SUBFRAME ALERT: subframe_trend_reversal | trend5m=up | scoreChange=0.047
+2026/04/09 06:30:06.866812 logger.go:161: [Info] [ARBUSDT] 🛡️ THRUSTERS: SL moved to True BE (Entry: 0.1011 -> Stop: 0.1010)
+DEMO TRADER RESULTS
+--------------------------------------------------
+[BTCUSDT] SKIP | anchor=2026-04-09T06:15:00+03:00 | signal=flat / wait | score=-0.0506 | long=-0.0506 | short=-0.0838
+[SOLUSDT] SKIP | anchor=2026-04-09T06:15:00+03:00 | signal=flat / wait | score=-0.0763 | long=-0.0920 | short=-0.0763
+[ETHUSDT] SKIP | anchor=2026-04-09T06:15:00+03:00 | signal=weak short | score=-0.0271 | long=-0.1281 | short=-0.0271
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T06:15:00+03:00 | hold=5/4 | against=0/2 | signal=flat / wait | score=0.0436 | long=-0.1794 | short=0.0436
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T06:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0163 | long=-0.2160 | short=0.0163
+[XRPUSDT] HOLD SHORT | anchor=2026-04-09T06:15:00+03:00 | hold=5/4 | against=0/2 | signal=weak short | score=0.0968 | long=-0.3024 | short=0.0968
+[BNBUSDT] CLOSED LONG | anchor=2026-04-09T06:15:00+03:00 | hold=0/4 | against=0/2 | entry=0.0000 | peak=0.0000 | pnl=-0.15% | signal=flat / wait | score=0.0045 | long=0.0045 | short=-0.1364 | reduce_only_close order_id=7ae398c9-64e9-4712-bad7-c73795932eaa reason=signal_exit_long qty=0.08000000
+[NEARUSDT] SKIP | anchor=2026-04-09T06:15:00+03:00 | signal=flat / wait | score=-0.0450 | long=-0.0450 | short=-0.1128
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T06:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0914 | long=-0.2595 | short=0.0914
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T06:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0834 | long=-0.2188 | short=0.0834
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-09T06:15:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0525 | long=-0.2215 | short=0.0525
+[SUIUSDT] HOLD SHORT | anchor=2026-04-09T06:15:00+03:00 | hold=2/4 | against=0/2 | signal=avoid | score=-0.0739 | long=-0.1052 | short=-0.0739
+[ATOMUSDT] SKIP | anchor=2026-04-09T06:15:00+03:00 | signal=avoid | score=0.0053 | long=-0.2431 | short=0.0053
+[ARBUSDT] HOLD SHORT | anchor=2026-04-09T06:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0274 | long=-0.2506 | short=0.0274
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T06:15:00+03:00 | hold=5/4 | against=0/2 | signal=flat / wait | score=0.0382 | long=-0.1961 | short=0.0382
+[TIAUSDT] EXECUTED | anchor=2026-04-09T06:15:00+03:00 | placed Sell TIAUSDT | raw_qty=169.66406515 | qty=169.60000000 | step=0.10000000 | min_qty=0.10000000 | last=0.2947 | stop=0.2991 | order_id=0dc86b28-182f-4454-880b-2d288ad812f1 | score=0.0806 (thr=0.0100) | entropy=1.53 | vol=1.19 | long=-0.2716 | short=0.0806 | reason=short_score 0.0806 >= threshold 0.0100 (profile)
+[OPUSDT] EXECUTED | anchor=2026-04-09T06:15:00+03:00 | placed Sell OPUSDT | raw_qty=440.76163611 | qty=440.70000000 | step=0.10000000 | min_qty=0.10000000 | last=0.1134 | stop=0.1151 | order_id=c7875e08-ecc3-4f1c-a328-9540afc4c6ae | score=0.0594 (thr=0.0080) | entropy=1.57 | vol=1.06 | long=-0.2533 | short=0.0594 | reason=short_score 0.0594 >= threshold 0.0080 (profile)
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T03:45:00Z
+CYCLE ANCHOR: 2026-04-09T06:30:00+03:00
+--------------------------------------------------
+2026/04/09 06:45:02.142970 logger.go:169: [Debug] [HBARUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=up | scoreChange=0.005
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T06:30:00+03:00 | signal=flat / wait | score=-0.0769 | long=-0.0920 | short=-0.0769
+[ETHUSDT] SKIP | anchor=2026-04-09T06:30:00+03:00 | signal=flat / wait | score=-0.0222 | long=-0.0222 | short=-0.1094
+[BTCUSDT] SKIP | anchor=2026-04-09T06:30:00+03:00 | signal=flat / wait | score=-0.0920 | long=-0.1085 | short=-0.0920
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T06:30:00+03:00 | hold=6/4 | against=0/2 | signal=flat / wait | score=0.0481 | long=-0.1876 | short=0.0481
+[BNBUSDT] SKIP | anchor=2026-04-09T06:30:00+03:00 | signal=flat / wait | score=-0.0348 | long=-0.0348 | short=-0.1577
+[XRPUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-09T06:30:00+03:00 | pnl=0.12% | score_entry=0.00->-0.02 | entropy=1.50 | conf=1.00>thr=0.86 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=cf46177d-5bbd-46a2-acc6-4b8171c285fb reason=adaptive_exit(conf=1.00>thr=0.86) qty=37.50000000
+[HBARUSDT] HOLD SHORT | anchor=2026-04-09T06:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0471 | long=-0.1346 | short=-0.0471
+[NEARUSDT] SKIP | anchor=2026-04-09T06:30:00+03:00 | signal=flat / wait | score=-0.0548 | long=-0.0548 | short=-0.1068
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T06:30:00+03:00 | hold=4/4 | against=1/2 | signal=flat / wait | score=-0.0027 | long=-0.1465 | short=-0.0027
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-09T06:30:00+03:00 | hold=3/4 | against=0/2 | signal=avoid | score=-0.0118 | long=-0.1814 | short=-0.0118
+[SUIUSDT] HOLD SHORT | anchor=2026-04-09T06:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=-0.0513 | long=-0.1494 | short=-0.0513
+[ARBUSDT] COOLDOWN | anchor=2026-04-09T06:30:00+03:00 | remaining=1 | pnl=0.00% | signal=flat / wait | score=-0.0723 | long=-0.0723 | short=-0.1237 | note=detected_exchange_close
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T06:30:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.0865 | long=-0.2256 | short=0.0865
+[TIAUSDT] HOLD SHORT | anchor=2026-04-09T06:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0806 | long=-0.2716 | short=0.0806
+[ATOMUSDT] SKIP | anchor=2026-04-09T06:30:00+03:00 | signal=avoid | score=0.0022 | long=-0.2414 | short=0.0022
+[DOTUSDT] HOLD SHORT | anchor=2026-04-09T06:30:00+03:00 | hold=6/4 | against=1/2 | signal=avoid | score=-0.0062 | long=-0.1955 | short=-0.0062
+[OPUSDT] HOLD SHORT | anchor=2026-04-09T06:30:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.0628 | long=-0.2554 | short=0.0628
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-09T04:00:00Z
+CYCLE ANCHOR: 2026-04-09T06:45:00+03:00
+--------------------------------------------------
+2026/04/09 07:00:03.340603 logger.go:169: [Debug] [HBARUSDT] SUBFRAME ALERT: subframe_pnl_protection | trend5m=up | scoreChange=0.046
+DEMO TRADER RESULTS
+--------------------------------------------------
+[SOLUSDT] SKIP | anchor=2026-04-09T06:45:00+03:00 | signal=flat / wait | score=-0.0713 | long=-0.1022 | short=-0.0713
+[ETHUSDT] SKIP | anchor=2026-04-09T06:45:00+03:00 | signal=flat / wait | score=-0.0491 | long=-0.1917 | short=-0.0491
+[LINKUSDT] HOLD SHORT | anchor=2026-04-09T06:45:00+03:00 | hold=7/4 | against=0/2 | signal=flat / wait | score=0.0256 | long=-0.2489 | short=0.0256
+[BTCUSDT] EXECUTED | anchor=2026-04-09T06:45:00+03:00 | placed Buy BTCUSDT | raw_qty=0.00070463 | qty=0.00100000 | step=0.00100000 | min_qty=0.00100000 | last=70958.9000 | stop=69894.5165 | order_id=2da51924-2d3e-4df0-a092-7e659416e246 | score=0.0431 (thr=0.0050) | entropy=1.49 | vol=0.72 | long=0.0431 | short=-0.1836 | reason=long_score 0.0431 >= threshold 0.0050 (profile)
+[BNBUSDT] SKIP | anchor=2026-04-09T06:45:00+03:00 | signal=flat / wait | score=-0.0368 | long=-0.0368 | short=-0.1550
+[XRPUSDT] EXECUTED | anchor=2026-04-09T06:45:00+03:00 | placed Sell XRPUSDT | raw_qty=37.57985720 | qty=37.50000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3305 | stop=1.3505 | order_id=6bb5524e-0379-46f2-b63a-24a7cac2324d | score=0.0185 (thr=0.0050) | entropy=1.35 | vol=0.98 | long=-0.2265 | short=0.0185 | reason=short_score 0.0185 >= threshold 0.0050 (profile)
+[HBARUSDT] SUBFRAME EXIT | type=SHORT | anchor=2026-04-09T06:45:00+03:00 | pnl=-1.16% | reason=subframe_pnl_protection | trend5m=up | scoreChange=0.046 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=d2523139-6e1b-4871-a173-8dc4972e918a reason=subframe_exit(subframe_pnl_protection) qty=564.00000000
+[AVAXUSDT] HOLD SHORT | anchor=2026-04-09T06:45:00+03:00 | hold=5/4 | against=0/2 | signal=flat / wait | score=0.0786 | long=-0.2423 | short=0.0786
+[NEARUSDT] EXECUTED | anchor=2026-04-09T06:45:00+03:00 | placed Buy NEARUSDT | raw_qty=37.62793498 | qty=37.60000000 | step=0.10000000 | min_qty=0.10000000 | last=1.3288 | stop=1.3089 | order_id=d6b89c35-d428-4822-b726-b136e5ea89c9 | score=0.1214 (thr=0.0080) | entropy=1.55 | vol=0.81 | long=0.1214 | short=-0.2370 | reason=long_score 0.1214 >= threshold 0.0080 (profile)
+[APTUSDT] HOLD SHORT | anchor=2026-04-09T06:45:00+03:00 | hold=4/4 | against=0/2 | signal=flat / wait | score=0.0134 | long=-0.1982 | short=0.0134
+[DOGEUSDT] HOLD SHORT | anchor=2026-04-09T06:45:00+03:00 | hold=4/4 | against=1/2 | signal=avoid | score=-0.0151 | long=-0.1798 | short=-0.0151
+[ARBUSDT] SKIP | anchor=2026-04-09T06:45:00+03:00 | signal=flat / wait | score=-0.0505 | long=-0.1492 | short=-0.0505
+[SUIUSDT] HOLD SHORT | anchor=2026-04-09T06:45:00+03:00 | hold=4/4 | against=1/2 | signal=avoid | score=-0.0816 | long=-0.0928 | short=-0.0816
+[ATOMUSDT] SKIP | anchor=2026-04-09T06:45:00+03:00 | signal=flat / wait | score=-0.0144 | long=-0.1160 | short=-0.0144
+[OPUSDT] HOLD SHORT | anchor=2026-04-09T06:45:00+03:00 | hold=2/4 | against=0/2 | signal=avoid | score=-0.0103 | long=-0.1793 | short=-0.0103
+[TIAUSDT] 📉 MODEL DECAY TP | type=SHORT | PnL: 0.64% | Score dropped from 0.000 to 0.040 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=1b347334-fcd7-4010-a8c0-9d7da16d5cd3 reason=Model_Decay_TP qty=169.60000000
+[DOTUSDT] ADAPTIVE EXIT | type=SHORT | anchor=2026-04-09T06:45:00+03:00 | pnl=-0.10% | score_entry=0.00->-0.06 | entropy=1.50 | conf=1.00>thr=0.90 | entry=0.0000 | peak=0.0000 | reduce_only_close order_id=bf82bbe8-ad7a-4f59-bd69-44a6c7bc2a2a reason=adaptive_exit(conf=1.00>thr=0.90) qty=39.90000000
+LIVE CYCLE COMPLETE

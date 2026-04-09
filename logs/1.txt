@@ -1,0 +1,210 @@
+DEMO TRADER LIVE EXECUTION
+--------------------------------------------------
+DEMO TRADER LIVE EXECUTION
+--------------------------------------------------
+TIMEFRAME: 15m
+SYMBOLS: [BTCUSDT ETHUSDT SOLUSDT LINKUSDT HBARUSDT BNBUSDT XRPUSDT AVAXUSDT NEARUSDT DOGEUSDT APTUSDT SUIUSDT ARBUSDT TIAUSDT ATOMUSDT DOTUSDT OPUSDT]
+EXECUTION ENABLED: true
+DRY RUN: false
+USDT PER TRADE: 50
+BOOTSTRAP DAYS: 3
+RUN ON START: true
+POLL INTERVAL SEC: 5
+
+ACTIVE SETTINGS
+--------------------------------------------------
+timeframe=15m | candles=1000 | markov_window=500 | vol_window=100
+adaptive_mode=true | regime_filter_enabled=false | use_dynamic_zscore=true
+long_threshold=0.0400 | short_threshold=0.0450 | bootstrap_days=3
+min_hold=4 | cooldown=1 | long_exit_confirm=2 | short_exit_confirm=2
+usdt_per_trade=50.0000 | stop_loss_percent=1.5000
+MONETAS / SYMBOLS:
+ - BTCUSDT
+ - ETHUSDT
+ - SOLUSDT
+ - LINKUSDT
+ - HBARUSDT
+ - BNBUSDT
+ - XRPUSDT
+ - AVAXUSDT
+ - NEARUSDT
+ - DOGEUSDT
+ - APTUSDT
+ - SUIUSDT
+ - ARBUSDT
+ - TIAUSDT
+ - ATOMUSDT
+ - DOTUSDT
+ - OPUSDT
+
+
+BOOTSTRAP COMPLETE
+--------------------------------------------------
+[BTCUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[ETHUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[SOLUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[LINKUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[HBARUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[BNBUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[XRPUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[AVAXUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[NEARUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[DOGEUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[APTUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[SUIUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[ARBUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[TIAUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[ATOMUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[DOTUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+[OPUSDT] last_closed_open=2026-04-06T08:45:00+03:00 | next_close_expected=2026-04-06T09:15:00+03:00
+
+INITIAL RUN
+--------------------------------------------------
+DEMO TRADER RESULTS
+--------------------------------------------------
+[BTCUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=-0.0862 | long=-0.0862 | short=-0.0893
+[SOLUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=-0.0129 | long=-0.0129 | short=-0.0874
+[ETHUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=-0.0424 | long=-0.1253 | short=-0.0424
+[LINKUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=-0.0180 | long=-0.1728 | short=-0.0180
+[BNBUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=-0.0968 | long=-0.1558 | short=-0.0968
+[XRPUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=-0.0108 | long=-0.2104 | short=-0.0108
+[NEARUSDT] HOLD LONG | anchor=2026-04-06T08:45:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=0.2689 | long=0.2689 | short=-0.3033
+[DOGEUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=0.0025 | long=-0.1194 | short=0.0025
+[AVAXUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=-0.0298 | long=-0.1380 | short=-0.0298
+[HBARUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=0.0146 | long=-0.1330 | short=0.0146
+[APTUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=-0.0108 | long=-0.0886 | short=-0.0108
+[SUIUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=-0.0628 | long=-0.0639 | short=-0.0628
+[ARBUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=avoid | score=-0.0508 | long=-0.1165 | short=-0.0508
+[TIAUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=0.0146 | long=-0.1727 | short=0.0146
+[ATOMUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=-0.0214 | long=-0.1045 | short=-0.0214
+[DOTUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=flat / wait | score=-0.0075 | long=-0.0786 | short=-0.0075
+[OPUSDT] SKIP | anchor=2026-04-06T08:45:00+03:00 | signal=avoid | score=-0.0445 | long=-0.0445 | short=-0.0985
+INITIAL CYCLE COMPLETE
+
+LIVE LOOP STARTED
+--------------------------------------------------
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-06T06:15:00Z
+CYCLE ANCHOR: 2026-04-06T09:00:00+03:00
+--------------------------------------------------
+DEMO TRADER RESULTS
+--------------------------------------------------
+[BTCUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=flat / wait | score=-0.0942 | long=-0.1324 | short=-0.0942
+[SOLUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=flat / wait | score=-0.0769 | long=-0.1643 | short=-0.0769
+[ETHUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=flat / wait | score=-0.0054 | long=-0.2511 | short=-0.0054
+[HBARUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=flat / wait | score=-0.0212 | long=-0.1790 | short=-0.0212
+[BNBUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=flat / wait | score=0.0198 | long=0.0198 | short=-0.1713
+[XRPUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=flat / wait | score=-0.0721 | long=-0.0721 | short=-0.0813
+[LINKUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=flat / wait | score=-0.0108 | long=-0.2443 | short=-0.0108
+[DOGEUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=flat / wait | score=0.0065 | long=-0.2497 | short=0.0065
+[NEARUSDT] HOLD LONG | anchor=2026-04-06T09:00:00+03:00 | hold=2/4 | against=0/2 | signal=flat / wait | score=0.0126 | long=0.0126 | short=-0.2373
+[APTUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=flat / wait | score=-0.0521 | long=-0.1370 | short=-0.0521
+[AVAXUSDT] EXECUTED | anchor=2026-04-06T09:00:00+03:00 | placed Buy AVAXUSDT | raw_qty=5.25983589 | qty=5.20000000 | step=0.10000000 | min_qty=0.10000000 | last=9.5060 | stop=9.3634 | order_id=eb45b2cb-7e4c-4899-aa16-f66d56c24a7c | score=0.0544 | long=0.0544 | short=-0.1777 | reason=long_score 0.0544 >= threshold 0.0400
+[SUIUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=flat / wait | score=-0.0430 | long=-0.2005 | short=-0.0430
+[TIAUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=avoid | score=-0.0359 | long=-0.1444 | short=-0.0359
+[ATOMUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=avoid | score=-0.0177 | long=-0.2078 | short=-0.0177
+[DOTUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=flat / wait | score=0.0212 | long=-0.2613 | short=0.0212
+[ARBUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=flat / wait | score=-0.0413 | long=-0.1712 | short=-0.0413
+[OPUSDT] SKIP | anchor=2026-04-06T09:00:00+03:00 | signal=flat / wait | score=-0.0553 | long=-0.0648 | short=-0.0553
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-06T06:30:00Z
+CYCLE ANCHOR: 2026-04-06T09:15:00+03:00
+--------------------------------------------------
+DEMO TRADER RESULTS
+--------------------------------------------------
+[LINKUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=0.0202 | long=0.0202 | short=-0.0667
+[ETHUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=0.0184 | long=0.0184 | short=-0.0805
+[SOLUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=-0.0176 | long=-0.1571 | short=-0.0176
+[BTCUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=0.0022 | long=0.0022 | short=-0.1134
+[HBARUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=-0.0024 | long=-0.1305 | short=-0.0024
+[XRPUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=-0.0045 | long=-0.1764 | short=-0.0045
+[BNBUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=0.0181 | long=0.0181 | short=-0.1470
+[AVAXUSDT] HOLD LONG | anchor=2026-04-06T09:15:00+03:00 | hold=1/4 | against=0/2 | signal=flat / wait | score=-0.0484 | long=-0.1143 | short=-0.0484
+[DOGEUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=-0.0424 | long=-0.0702 | short=-0.0424
+[NEARUSDT] HOLD LONG | anchor=2026-04-06T09:15:00+03:00 | hold=3/4 | against=0/2 | signal=flat / wait | score=0.2685 | long=0.2685 | short=-0.3027
+[APTUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=0.0088 | long=-0.1362 | short=0.0088
+[SUIUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=-0.0476 | long=-0.0476 | short=-0.0706
+[ARBUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=-0.0088 | long=-0.1225 | short=-0.0088
+[ATOMUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=-0.0158 | long=-0.1130 | short=-0.0158
+[OPUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=-0.0530 | long=-0.0849 | short=-0.0530
+[TIAUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=0.0138 | long=-0.1722 | short=0.0138
+[DOTUSDT] SKIP | anchor=2026-04-06T09:15:00+03:00 | signal=flat / wait | score=0.0019 | long=-0.1499 | short=0.0019
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-06T06:45:00Z
+CYCLE ANCHOR: 2026-04-06T09:30:00+03:00
+--------------------------------------------------
+DEMO TRADER RESULTS
+--------------------------------------------------
+[ETHUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=-0.0114 | long=-0.2528 | short=-0.0114
+[BTCUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=-0.0987 | long=-0.1349 | short=-0.0987
+[LINKUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=-0.0310 | long=-0.1540 | short=-0.0310
+[SOLUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=-0.0048 | long=-0.0048 | short=-0.1343
+[XRPUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=-0.0041 | long=-0.1920 | short=-0.0041
+[BNBUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=-0.1138 | long=-0.1408 | short=-0.1138
+[HBARUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=-0.0312 | long=-0.1739 | short=-0.0312
+[AVAXUSDT] HOLD LONG | anchor=2026-04-06T09:30:00+03:00 | hold=2/4 | against=0/2 | signal=avoid | score=-0.0789 | long=-0.1436 | short=-0.0789
+[NEARUSDT] HOLD LONG | anchor=2026-04-06T09:30:00+03:00 | hold=4/4 | against=1/2 | signal=flat / wait | score=0.0134 | long=0.0134 | short=-0.2394
+[DOGEUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=-0.0250 | long=-0.2097 | short=-0.0250
+[APTUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=-0.0542 | long=-0.1413 | short=-0.0542
+[SUIUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=-0.0956 | long=-0.0982 | short=-0.0956
+[ARBUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=-0.0421 | long=-0.1718 | short=-0.0421
+[ATOMUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=0.0215 | long=-0.3038 | short=0.0215
+[OPUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=0.0267 | long=-0.3174 | short=0.0267
+[TIAUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=-0.0320 | long=-0.1777 | short=-0.0320
+[DOTUSDT] SKIP | anchor=2026-04-06T09:30:00+03:00 | signal=flat / wait | score=-0.0149 | long=-0.2159 | short=-0.0149
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-06T07:00:00Z
+CYCLE ANCHOR: 2026-04-06T09:45:00+03:00
+--------------------------------------------------
+DEMO TRADER RESULTS
+--------------------------------------------------
+[ETHUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=flat / wait | score=-0.0181 | long=-0.2418 | short=-0.0181
+[LINKUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=flat / wait | score=0.0112 | long=-0.2925 | short=0.0112
+[BTCUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=flat / wait | score=-0.1026 | long=-0.1264 | short=-0.1026
+[SOLUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=flat / wait | score=-0.0718 | long=-0.1681 | short=-0.0718
+[HBARUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=avoid | score=0.0106 | long=-0.2282 | short=0.0106
+[XRPUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=flat / wait | score=-0.0213 | long=-0.1984 | short=-0.0213
+[BNBUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=flat / wait | score=-0.1172 | long=-0.1330 | short=-0.1172
+[AVAXUSDT] HOLD LONG | anchor=2026-04-06T09:45:00+03:00 | hold=3/4 | against=0/2 | signal=strong short | score=-0.0175 | long=-0.0175 | short=-0.0780
+[NEARUSDT] CLOSED LONG | anchor=2026-04-06T09:45:00+03:00 | hold=0/4 | against=0/2 | signal=flat / wait | score=0.0206 | long=0.0206 | short=-0.2425 | reduce_only_close order_id=784674e7-0bcc-4dd6-9ff5-773e1949b56a reason=signal_exit_long qty=39.30000000
+[SUIUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=flat / wait | score=-0.0891 | long=-0.0891 | short=-0.1002
+[APTUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=flat / wait | score=-0.0590 | long=-0.1321 | short=-0.0590
+[DOGEUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=flat / wait | score=-0.0305 | long=-0.1412 | short=-0.0305
+[ARBUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=flat / wait | score=-0.0469 | long=-0.1617 | short=-0.0469
+[ATOMUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=flat / wait | score=-0.0365 | long=-0.1741 | short=-0.0365
+[DOTUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=avoid | score=-0.0073 | long=-0.2019 | short=-0.0073
+[TIAUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=flat / wait | score=-0.0394 | long=-0.1667 | short=-0.0394
+[OPUSDT] SKIP | anchor=2026-04-06T09:45:00+03:00 | signal=avoid | score=-0.0449 | long=-0.0449 | short=-0.0958
+LIVE CYCLE COMPLETE
+
+NEW CLOSED CANDLE DETECTED
+TIME: 2026-04-06T07:15:00Z
+CYCLE ANCHOR: 2026-04-06T10:00:00+03:00
+--------------------------------------------------
+DEMO TRADER RESULTS
+--------------------------------------------------
+[LINKUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=strong short | score=0.0038 | long=-0.0986 | short=0.0038
+[BTCUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=strong short | score=-0.0283 | long=-0.0283 | short=-0.0808
+[SOLUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=flat / wait | score=0.0051 | long=0.0051 | short=-0.1404
+[ETHUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=strong short | score=-0.0157 | long=-0.0981 | short=-0.0157
+[HBARUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=flat / wait | score=-0.0076 | long=-0.1274 | short=-0.0076
+[XRPUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=flat / wait | score=-0.0050 | long=-0.1763 | short=-0.0050
+[AVAXUSDT] ADAPTIVE EXIT | anchor=2026-04-06T10:00:00+03:00 | pnl=-1.22% | score_entry=0.00->-0.14 | entropy=1.54 | conf=1.00>0.80 | reduce_only_close order_id=a764284f-df77-4d3a-9cc2-c9e7732c6dd3 reason=adaptive_exit(conf=1.00>thr=0.80) qty=5.20000000
+[DOGEUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=flat / wait | score=-0.0091 | long=-0.1076 | short=-0.0091
+[BNBUSDT] EXECUTED | anchor=2026-04-06T10:00:00+03:00 | placed Buy BNBUSDT | raw_qty=0.08330556 | qty=0.08000000 | step=0.01000000 | min_qty=0.01000000 | last=600.2000 | stop=591.1970 | order_id=97acc611-0af8-4e05-8934-369f8531e624 | score=0.0805 | long=0.0805 | short=-0.1469 | reason=long_score 0.0805 >= threshold 0.0400
+[APTUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=flat / wait | score=-0.0263 | long=-0.0730 | short=-0.0263
+[SUIUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=weak short | score=-0.0205 | long=-0.1372 | short=-0.0205
+[NEARUSDT] EXECUTED | anchor=2026-04-06T10:00:00+03:00 | placed Buy NEARUSDT | raw_qty=39.38868757 | qty=39.30000000 | step=0.10000000 | min_qty=0.10000000 | last=1.2694 | stop=1.2504 | order_id=c5690e9f-b875-4170-b66e-9e5b19a440f4 | score=0.2844 | long=0.2844 | short=-0.3144 | reason=long_score 0.2844 >= threshold 0.0400
+[ARBUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=flat / wait | score=-0.0212 | long=-0.1177 | short=-0.0212
+[ATOMUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=flat / wait | score=0.0080 | long=-0.2835 | short=0.0080
+[DOTUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=flat / wait | score=-0.0128 | long=-0.0759 | short=-0.0128
+[TIAUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=flat / wait | score=-0.0013 | long=-0.1513 | short=-0.0013
+[OPUSDT] SKIP | anchor=2026-04-06T10:00:00+03:00 | signal=flat / wait | score=-0.0482 | long=-0.0801 | short=-0.0482
+LIVE CYCLE COMPLETE
